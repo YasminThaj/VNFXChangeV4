@@ -1,0 +1,73 @@
+<!-- <label> Please select file to upload </label> -->
+<!-- <input style="margin-top:20px" name="imageUpload" type="file" custom-on-change="uploadFile" /> -->
+
+<div class="col-md-3" style="width:25%;margin-top:4%;" >
+<label for="vnfname">VNF Name : </label>
+ <input type="text" ng-model="ovnfName" style="border-radius:20px;margin-left: 4%;width:125px;height:27px;"/>
+</div>
+
+<div class="col-md-3" style="width:30%;margin-top:4%;" >
+<label for="simtype">Server Type : </label>
+<select id="simtype" ng-model="selectedserver" ng-change="servertypeChange(selectedserver);" style="height:27px;border-radius:20px;width:160px;" required>
+<option value="" >---Please Select---</option>
+<option value="RedHat" >RedHat</option>
+<option value="vmware">vmware</option>
+</select>
+</div >
+
+
+<div class="col-md-3" style="width:30%;margin-top:4%;" >
+<label for="simtype">Image Type : </label>
+<select id="simtype" ng-model="selectedimgtype" ng-change="imgtypeChange(selectedimgtype);" style="height:27px;border-radius:20px;width:160px;" required>
+<option value="" >---Please Select---</option>
+<option value="qcow2">qcow2</option>
+<option value="iso">iso</option>
+<option value="vdmk">vdmk</option>
+<option value="raw">raw</option>
+<option value="ova">ova</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:30%;margin-top:7%;" >
+<label for="simtype">Container Type : </label>
+<select id="simtype" ng-model="selectedcontainer" ng-change="containertypeChange(selectedcontainer);" style="height:27px;border-radius:20px;width:160px;" required>
+<option value="" >---Please Select---</option>
+<option value="bare" >bare</option>
+<option value="ovf">ovf</option>
+<option value="docker">docker</option>
+<option value="ova">ova</option>
+</select>
+</div >
+
+
+<div class="col-md-3" style="margin-top:7%;">
+ <label for="imgupl"> Select Image</label> 
+<input  id="imgupl" style="margin-top:20px" name="imageUpload" type="file" custom-on-change="uploadImage"/>
+</div>
+
+<div class="col-md-3" style="margin-top:7%;">
+ <label for="fileupl">Select Flavour</label> 
+<input ng-model="filenms" id="fileupl" style="margin-top:20px" name="ifileUpload" type="file" custom-on-filechange="uploadfile"/>
+</div>
+
+
+<div class="row">
+<div  class="col-md-3" style="margin-top:7%;margin-left:35%;">
+<input type="button" value="Upload" class="btn btn-primary" style="width;150px;" ng-click="finalsubmit(ovnfName);"/>
+<input type="button" value="Reset" class="btn btn-primary" style="width;150px;" ng-click="selectedVMName='';rlsnms='';"/>
+<input type="button" value="Cancel" class="btn btn-primary" style="width;150px;" ng-click=""/>
+</div>
+</div>
+
+<span id="overlay1" ng-show="searchButtonText == 'Searching'" style="margin-left:45%;margin-top:2%;">
+    <img class="loading_circle" src="../img/loading.gif" width="60px" height="60px"></img>
+</span> 
+
+<div class="col-md-9" style="margin-top:2%">
+<div ng-if="uploadedFileSuccess" class="alert alert-success" >
+	 <strong>Success!</strong> {{successmessage}}
+</div> 
+<div  ng-if="uploadedFilefailure" class="alert alert-danger">
+	 <strong>Failure!</strong> {{successmessage}}
+</div> 
+</div>

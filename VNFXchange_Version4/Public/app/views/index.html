@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="routerApp">
+<head>
+	<!-- JS (load angular, ui-router, and our custom js file) -->
+	<script src="../lib/js/angular.min.js"></script>
+	<script src="../lib/js/FileSaver.min.js"></script>
+	<script src="../lib/js/angular-ui-router.min.js"></script>
+	<script src="../lib/js/jquery.min.js"></script>
+	<script src="../lib/js/bootstrap.min.js"></script>	
+	<script src="../lib/js/ui-bootstrap-tpls.min.js"></script>
+	<script src="../lib/js/angular-animate.js"></script>
+	<script src="../lib/js/ng-file-upload-shim.min.js"></script>
+	<script src="../lib/js/ng-file-upload.min.js"></script>
+
+	<!-- CSS (bootstrap.min, and our custom css file)-->
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css"></link> 
+	<link rel="stylesheet" href="../css/style.css"></link>
+	  
+<title>VNF Exchange</title>	
+</head>
+<body >
+	<!-- NAVIGATION -->
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header row" style="width:100%;position:relative">
+			 <div class="col-sm-2"><img src="../img/logo.png"  >  </div>
+			 <div class="col-sm-8 title" >VNF Xchange </div>
+			 <div class="col-sm-2 logout" > {{name}}  <span ui-sref="vnfHelp" id="help" style="cursor:pointer;" > | Help </span>  <span data-toggle="tab" style="cursor:pointer;" id="logout" style="color:white;" ng-click="logout();"> | Logout  </span>
+		</div>
+	   </div>
+	</nav>
+	<!-- MAIN CONTENT -->
+	<div class="container">
+		<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT  -->
+		<div ui-view></div>
+	</div>
+	<script >
+	var routerApp = angular.module('routerApp', ['ui.router','ngAnimate','ui.bootstrap','ngFileUpload']);
+	</script>
+	<!-- JS (load our custom/controller js file) -->
+	<script src="../js/directives/customOnChange.js"></script>
+	<script src="../js/route.js"></script>
+	<script src="../js/controllers/logController.js"></script>
+	<script src="../js/controllers/dashboardController.js"></script>
+	<script src="../js/controllers/funReportController.js"></script>
+	<script src="../js/controllers/vnffuncController.js"></script>
+	<script src="../js/controllers/vnfimageController.js"></script>
+	<script src="../js/controllers/onbordingcontroller.js"></script>
+	<script src="../js/controllers/vnfonboardinfocontroller.js"></script>
+	<script src="../js/controllers/vnfwikilinkController.js"></script>
+	<script src="../js/controllers/vnfimsfuncController.js"></script>
+	<script src="../js/controllers/vnfimsimageController.js"></script>
+	<script src="../js/controllers/imsonboardingController.js"></script>
+	<script src="../js/controllers/sbcimageController.js"></script>
+	<script src="../js/FileSaver.js"></script>
+	
+	</body>
+</html>

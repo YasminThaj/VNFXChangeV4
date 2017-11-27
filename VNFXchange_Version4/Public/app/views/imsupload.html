@@ -1,0 +1,49 @@
+<!-- <label> Please select file to upload </label> -->
+<!-- <input style="margin-top:20px" name="imageUpload" type="file" custom-on-change="uploadFile" /> -->
+<div style="margin-top:30px">
+
+
+<div class="col-md-3" style="width:30%;" >
+<label for="simtype">VNF Type : </label>
+<select id="simtype" ng-model="selectedimsVMName" ng-change="onimsvimgtypeChange(selectedimsVMName);" style="height:27px;border-radius:20px;width:160px;">
+<option value="" >---Please Select---</option>
+<option value="1,VPCSCF" >VPCSCF</option>
+</select>
+</div >
+
+
+<div class="col-md-3" style="width:30%;">
+<form name="myForm">
+<label for="rlsnm"> Releases: </label> 
+<input ng-model="imsrlsnms" id="imsrlsnms"  name="version" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" ng-maxlength="6" />
+</form>
+</div>
+
+<div class="col-md-3">
+<label for="imgupl"> Select Image</label> 
+<input  id="imgupl" style="margin-top:20px" name="imageUpload" type="file" custom-on-change="uploadImage"/>
+</div>
+
+<!-- <div class="col-md-3" >
+ <label for="fileupl">Select Flavour</label> 
+<input ng-model="filenms" id="fileupl" style="margin-top:20px" name="ifileUpload" type="file" custom-on-filechange="uploadfile"/>
+</div> -->
+
+ <span id="overlay1" ng-show="searchButtonText == 'Searching'" style="margin-left:45%;" >
+    <img class="loading_circle" src="../img/loading.gif" width="60px" height="60px"></img>
+</span> 
+ 
+<div  class="col-md-3" style="margin-top:7%;margin-left:35%;">
+<input type="button" value="Upload" class="btn btn-primary" style="width;150px;" ng-click="finalimssubmit(imsrlsnms);"/>
+<input type="button" value="Reset" class="btn btn-primary" style="width;150px;" ng-click="selectedimsVMName='';imsrlsnms='';"/>
+<input type="button" value="Cancel" class="btn btn-primary" style="width;150px;"/>
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-9" style="margin-top:2%">
+<div ng-if="uploadedFileSuccess" class="alert alert-success" >
+	 <strong>Success!</strong> {{successmessage}}
+</div> 
+</div>
+</div>

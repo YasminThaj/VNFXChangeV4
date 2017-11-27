@@ -1,0 +1,54 @@
+<div class="tab-content">
+<div id="View" class="tab-pane fade-in active" style="margin-top:5%">
+<!--  <table style="margin-top:20px;width:320px">
+	<tr>
+	<th>Views</th>
+	</tr>
+	<tr ng-repeat="x in names track by $index">
+	<td>{{x}}</td>
+	</tr>
+	<tr>
+	<td>
+	<span ng-if="vnfImageLoading" style="font-weight:bold;">Loading VNF Images...</span></td></tr> 
+ </table> -->
+ <div class="col-md-3" >
+<label for="vvnftype">VNF Type : </label>
+<select id="vvnftype" ng-model="selectedVvnftype" ng-change="onvvnftypeChange(selectedVvnftype);" style="height:27px;border-radius:20px;width:150px;">
+<option value="" >--Please Select--</option>
+<option value="1" >vRouter</option>
+<option value="2">vFirewall</option>
+</select>
+</div >
+<div  class="col-md-3" style="width:32%;" >
+<label for="vvnfimg">Images : </label>
+ <select id="vvnfimg" ng-model="selectedvVNFimgName" ng-change="onvvimgChange(selectedvVNFimgName);" style="height:27px;border-radius:20px;width:150px;">
+  <option value="" >--Please Select--</option>
+<option ng-repeat="y in vimfnames" value="{{y.ImageName}}">{{y.ImageName}}</option>
+</select>
+</div>
+<!-- <div>{{x.FlavourName}}</div> -->
+<!-- <div  class="col-md-3" style="width:32%">
+<label for="vvnfflv">Flavours : </label>
+ <select id="vvnfflv" ng-model="selectedvFName" ng-change="onvfavChange(selectedvFName);" style="height:27px;border-radius:20px;width:150px;">  '
+ <option value="" >--Please Select--</option>
+<option ng-repeat="x in vfnames" value="{{x.FlavourId}}" >{{x.FlavourName}}</option>
+</select> 
+</div> -->
+<div ng-if="showtable" class="row">
+<div class="col-md-9">
+<table style="margin-top:50px;margin-left:20px;width:320px">
+	<tr>
+	<th>Vnf Type</th>
+	<th>Image</th>
+	<th>Flavour</th>
+	</tr>
+	<tr ng-repeat="x in vfnames">
+	<td>{{x.vnfType}}</td>
+	<td>{{x.Image}}</td>
+	<td>{{x.Flavour}}</td>
+	</tr>
+ </table>
+ </div>
+ </div>
+</div>
+</div>

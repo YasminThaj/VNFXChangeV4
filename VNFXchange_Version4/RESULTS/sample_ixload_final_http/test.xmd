@@ -1,0 +1,125 @@
+<?xml version="1.0" ?><XMD>
+  <Sources>
+    <Source entity_name="None" format_id="xml.xslt.csv.db" scope="DDOS_Attacks.xsl"/>
+    <Source entity_name="DDOS_Attacks" format_id="Default" scope="DDOS_Attacks.csv"/>
+    <Source entity_name="" format_id="IxLoad-1002" scope="Global">
+      <Fields>
+        <Field>
+          <Name>AppName</Name>
+          <Value>IxLoad</Value>
+        </Field>
+        <Field>
+          <Name>AppVersion</Name>
+          <Value>8.10.0.300</Value>
+        </Field>
+        <Field>
+          <Name>AppVersion</Name>
+          <Value>8.10.0.300</Value>
+          <Name>IxOsVersion</Name>
+          <Value>ixos 8.10.1250.8 ea-patch1</Value>
+        </Field>
+        <Field>
+          <Name>HostName</Name>
+          <Value>Vinoy</Value>
+        </Field>
+        <Field>
+          <Name>UserName</Name>
+          <Value>IxLoad/S2/INBASDPC12364/Vinoy</Value>
+        </Field>
+        <Field>
+          <Name>TestName</Name>
+          <Value>Test1</Value>
+        </Field>
+        <Field>
+          <Name>TestTime</Name>
+          <Value>09/27/2017 15:17:19</Value>
+        </Field>
+        <Field>
+          <Name>TestDirectory</Name>
+          <Value>C:\xampp\htdocs\VNFXchange\RESULTS\sample_ixload_final_http</Value>
+        </Field>
+        <Field>
+          <Name>RepositoryName</Name>
+          <Value>None</Value>
+        </Field>
+        <Field>
+          <Name>ThroughputUnits</Name>
+          <Value>Kbps</Value>
+        </Field>
+      </Fields>
+    </Source>
+    <Source entity_name="Test_Client" format_id="IxLoad-1002" scope="Test_Client.csv"/>
+    <Source entity_name="Protocol_HTTP_Client_Other" format_id="IxLoad-1002" scope="HTTP_Client.csv">
+      <Fields>
+        <Field>
+          <Name>Protocol</Name>
+          <Value>HTTP</Value>
+        </Field>
+        <Field>
+          <Name>ProtocolType</Name>
+          <Value>Client</Value>
+        </Field>
+      </Fields>
+    </Source>
+    <Source entity_name="Protocol_HTTP_Client" format_id="IxLoad-1002" scope="*HTTP_Client.csv">
+      <Fields>
+        <Field>
+          <Name>Protocol</Name>
+          <Value>HTTP</Value>
+        </Field>
+        <Field>
+          <Name>ProtocolType</Name>
+          <Value>Client</Value>
+        </Field>
+      </Fields>
+    </Source>
+    <Source entity_name="HTTP_Client_Other" format_id="IxLoad-1002" scope="HTTP_Client_-_Default_CSV_Logs_HTTPClient1_Traffic1@Network1.csv">
+      <Fields>
+        <Field>
+          <Name>Protocol</Name>
+          <Value>HTTP</Value>
+        </Field>
+        <Field>
+          <Name>ProtocolType</Name>
+          <Value>Client</Value>
+        </Field>
+        <Field>
+          <Name>AgentInstanceName</Name>
+          <Value>HTTPClient1</Value>
+        </Field>
+        <Field>
+          <Name>Community</Name>
+          <Value>Traffic1@Network1</Value>
+        </Field>
+      </Fields>
+    </Source>
+    <Source entity_name="HTTP_Client" format_id="IxLoad-1002" scope="*HTTP_Client_-_Default_CSV_Logs_HTTPClient1_Traffic1@Network1.csv">
+      <Fields>
+        <Field>
+          <Name>Protocol</Name>
+          <Value>HTTP</Value>
+        </Field>
+        <Field>
+          <Name>ProtocolType</Name>
+          <Value>Client</Value>
+        </Field>
+        <Field>
+          <Name>AgentInstanceName</Name>
+          <Value>HTTPClient1</Value>
+        </Field>
+        <Field>
+          <Name>Community</Name>
+          <Value>Traffic1@Network1</Value>
+        </Field>
+        <Field>
+          <Name>SelectedUserTestObjective</Name>
+          <Value>simulatedUsers</Value>
+        </Field>
+      </Fields>
+    </Source>
+    <Source entity_name="TestCfgSection" format_id="xml.xslt.xml.chapter" scope="None"/>
+    <Source entity_name="TestCfgSection_Network" format_id="xml.xslt.xml.chapter" scope="C:\xampp\htdocs\VNFXchange\RESULTS\sample_ixload_final_http\Network.xml"/>
+    <Source entity_name="NessusResultsXML" format_id="xml.xslt.xml.chapter" scope="results.xml"/>
+    <Source entity_name="CaptureReplayResultsXML" format_id="xml.xslt.xml.chapter" scope="TraceFileReplayResults.xml"/>
+  </Sources>
+</XMD>

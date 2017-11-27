@@ -1,0 +1,16 @@
+*** Settings ***
+Library           SSHLibrary
+
+*** Test Cases ***
+tc1
+    Open Connection    10.53.214.10
+    Login    root    techm123
+    sleep    2
+    write    ssh user@172.18.0.210
+    sleep    2
+    write    Root@123
+    SLEEP    5
+    ${output}    read
+    sleep    3
+    Should Contain    ${output}    SBC>
+    LOG    SUCCESSFUL SESSION***

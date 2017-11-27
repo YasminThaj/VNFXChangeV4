@@ -1,0 +1,58 @@
+<div class="tab-content">
+<div id="View" class="tab-pane fade-in active" style="margin-top:5%">
+<!--  <table style="margin-top:20px;width:320px">
+	<tr>
+	<th>Views</th>
+	</tr>
+	<tr ng-repeat="x in names track by $index">
+	<td>{{x}}</td>
+	</tr>
+	<tr>
+	<td>
+	<span ng-if="vnfImageLoading" style="font-weight:bold;">Loading VNF Images...</span></td></tr> 
+ </table> -->
+ <div class="col-md-3" >
+<label for="ovnftype">VNF Type : </label>
+<select id="ovnftype" ng-model="selectedovnftype" ng-change="offboardVnftypeChange(selectedovnftype);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="1,SBC" >SBC</option>
+<option value="2,EPC">EPC</option>
+</select>
+</div >
+
+<div  class="col-md-3" style="width:32%;" >
+<label for="ovnfimg">VNF Name : </label>
+ <select id="0vnfimg" ng-model="selectedoVNFName" ng-change="onovimgChange(selectedoVNFName);" style="height:27px;border-radius:20px;width:125px;">
+  <option value="" >--Please Select--</option>
+<option ng-repeat="y in vnfNames" value="{{y.VnfName}}">{{y.VnfName}}</option>
+</select>
+</div>
+
+
+<!-- <div  class="col-md-3" style="width:32%">
+<label for="0vnfflv">Flavours : </label>
+ <select id="0vnfflv" ng-model="selectedoFName" ng-change="onofavChange(selectedoFName);" style="height:27px;border-radius:20px;width:150px;">  '
+ <option value="" >--Please Select--</option>
+<option ng-repeat="x in ofnames" value="{{x.FlavourId}}" >{{x.FlavourName}}</option>
+</select> 
+</div> -->
+
+<span class="col-md-3" id="overlay4" ng-show="searchButtonview == 'Serachingg'" style="margin-left:40%;margin-top:5%;">
+    <img class="loading_circle" src="../img/loading.gif" width="60px" height="60px"></img>
+</span>
+
+ <div class="row">
+<div class="col-md-3" style="width:40%;margin-left:30%;margin-top:8%">
+<input type="button" value="Offboard" class="btn btn-primary" style="width;150px;" ng-click="offboardfile(selectedovnftype,selectedoVNFName);"/>
+<input type="button" value="Reset" class="btn btn-primary" style="width;150px;" ng-click="selectedovnftype='';selectedoVNFName='';"/>
+<input type="button" value="Cancel" class="btn btn-primary" style="width;150px;"/>
+</div></div>
+
+<div ng-if="offboardFileSuccess" class="alert alert-success">
+	 <strong>Success!</strong> {{offboardMessage}} 
+</div> 
+<div ng-if="offboardFileFailure" class="alert alert-danger">
+	 <strong>Failure!</strong> {{offboardMessage}}
+</div> 
+</div>
+</div>

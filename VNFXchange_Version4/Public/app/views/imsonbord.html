@@ -1,0 +1,144 @@
+
+
+<!-- <iframe ng-src="{{url}}" width="100%" height="1000" style="margin-top:20px;border:none;margin-left:-10px"></iframe> -->
+<div class="col-md-3" style="width:30%;margin-top:4%;" >
+<label for="ovnfname">Vnf Name : </label>
+ <input type="text" ng-model="onbrdvnfName" style="border-radius:20px;margin-left: 4%;width:125px;height:27px;"/>
+</div>
+
+<!-- <div class="col-md-3" style="width:30%;margin-top:4%;">
+<label for="onvnftype">Vnf Type : </label>
+<select id="onvnftype" ng-model="vnftypemodel" ng-change="onvnftypechange(vnftypemodel);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="1,vIMS" >vIMS</option>
+<option value="2,EPC" >EPC</option>
+</select>
+</div > -->
+
+
+<div class="col-md-3" style="width:30%;margin-top:4%;">
+<label for="onvnftype">Vnf Type : </label>
+<select id="onvnftype" style="height:27px;border-radius:20px;width:125px;" ng-model="option1" ng-options="option for option in options1" ng-change="onvnftypechange()">
+<option value="" >--Please Select--</option>
+</select>
+
+
+<select id="onepstype" style="height:27px;border-radius:20px;width:125px;" ng-model="option2" ng-options="option for option in options2" ng-show='options2.length'>
+<label for="onvnftype">EPC Type : </label>
+<option value="" >--Please Select--</option>
+</select>
+</div>
+
+<!--<div class="col-md-3" style="width:30%;margin-top:4%;">
+<label for="onvnftype">EPC Type : </label>
+<select id="epctype" ng-model="epctypemodel" ng-change="onepctypechange(epctypemodel);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="1,MCM" >MCM</option>
+<option value="2,CSM" >CSM</option>
+<option value="2,SSM" >SSM</option>
+</select>
+</div >-->
+
+<div class="col-md-3" style="width:30%;margin-top:4%;" >
+<label for="imgname">Image Name : </label>
+ <input type="text" ng-model="onbrdimgName" style="border-radius:20px;margin-left: 4%;width:125px;height:27px;"/>
+</div>
+
+<div class="col-md-3" style="width:30%;margin-top:4%;">
+<label for="grpname">Group Name : </label>
+ <input type="text" ng-model="groupName" style="border-radius:20px;margin-left: 4%;width:125px;height:27px;"/>
+</div>
+
+<div class="col-md-3" style="width:30%;margin-top:4%;">
+<label for="sevrftype">Server Type : </label>
+<select id="sevrftype" ng-model="servrtype" ng-change="servrtypechange(servrtype);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="RedHat" >RedHat</option>
+<option value="RedHat" >vMware</option>
+</select>
+</div >
+
+
+<div class="col-md-3" style="width:30%;margin-top:4%;">
+<label for="dskfrmt">Disk Format : </label>
+<select id="dskfrmt" ng-model="diskformat" ng-change="diskformatchange(diskformat);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="qcow2" >qcow2</option>
+</select>
+</div >
+
+<div class="col-md-5" style="width:30%;margin-top:4%;">
+<label for="contformat">Container Format : </label>
+<select id="contformat" ng-model="containertype" ng-change="containertypechange(containertype);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="bare" >bare</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:30%;margin-top:4%">
+<label for="procol">Protocol : </label>
+<select id="procol" ng-model="Protocoltype" ng-change="Protocolchange(Protocol);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="TCP" >TCP</option>
+<option value="UDP">UDP</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:30%;margin-top:4%">
+<label for="dirctype">Direction : </label>
+<select id="dirctype" ng-model="Directiontype" ng-change="Directiontypechange(Directiontype);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="Ingress" >Ingress</option>
+<option value="Egress">Egress</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:30%;margin-top:4%">
+<label for="ethertype">Ether Type : </label>
+<select id="ethertype" ng-model="Etherftype" ng-change="Etherftypechange(Etherftype);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="ipv4" >ipv4</option>
+<option value="ipv6">ipv6</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:30%;margin-top:4%">
+<label for="availzon">Availability Zone : </label>
+<select id="availzon" ng-model="availablezonetype" ng-change="availablezonetypechange(availablezonetype);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="nova:compute3">nova:compute3</option>
+<option value="nova:compute2">nova:compute2</option>
+<option value="nova:compute1">nova:compute2</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:35%;margin-top:4%">
+ <label for="imgupl"> Select Image</label> 
+<input  id="imgupl" style="margin-top:20px" name="imageUpload" type="file" custom-on-change="uploadImage"/>
+</div>
+
+<div class="col-md-3" style="width:25%;margin-top:4%">
+ <label for="fileupl">Select Flavour</label> 
+<input ng-model="filenms" id="fileupl" style="margin-top:20px" name="ifileUpload" type="file" custom-on-filechange="uploadfile"/>
+</div>
+
+
+<div class="row">
+<div class="col-md-3" style="width:40%;margin-left:35%;margin-top:5%">
+<input type="button" value="Onboard" class="btn btn-primary" style="width;150px;" ng-click="onboardfile(onbrdvnfName);"/>
+<input type="button" value="Reset" class="btn btn-primary" style="width;150px;" ng-click="onbrdvnfName='';selectedovnftype='';onselectedOpenstack='';selectedoimg='';selectedflvrs='';"/>
+<input type="button" value="Cancel" class="btn btn-primary" style="width;150px;"/>
+</div></div>
+
+<span class="col-md-3" id="overlay2" ng-show="searchButton == 'seraching'" style="margin-left:45%;">
+    <img class="loading_circle" src="../img/loading.gif" width="60px" height="60px"></img>
+</span>
+
+<div ng-if="onboardFileSuccess" class="alert alert-success" style="margin-top:2%;">
+	 <strong>Success!</strong> {{osuccessmessage}}
+</div> 
+<div ng-if="onboardFileFailure" class="alert alert-danger" style="margin-top:2%;">
+	 <strong>Failure!</strong> {{osuccessmessage}}
+</div> 
+
+

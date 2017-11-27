@@ -1,0 +1,57 @@
+<!-- <label> Please select file to upload </label> -->
+<!-- <input style="margin-top:20px" name="imageUpload" type="file" custom-on-change="uploadFile" /> -->
+
+
+
+<div class="col-md-3" style="width:30%;margin-top:4%;" >
+<label for="simtype">VNF Type : </label>
+<select id="simtype" ng-model="selectedVMName" ng-change="onvimgtypeChange(selectedVMName);" style="height:27px;border-radius:20px;width:160px;" required>
+<option value="" >---Please Select---</option>
+<option value="1" >vRouter</option>
+<option value="2">vFirewall</option>
+</select>
+<span style="color:red" "margin-right:100%">{{msg}}</span><br/>
+</div >
+
+
+<div class="col-md-3" style="width:30%;margin-top:4%;">
+<form name="myForm">
+<label for="rlsnm"> Releases: </label> 
+<input ng-model="rlsnms" id="rlsnam"  name="version" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" ng-maxlength="6" />
+<span style="color:red" "margin-right:100%">{{ermsg1}}</span><br />
+</form>
+</div>
+
+<div class="col-md-3" style="margin-top:4%;">
+ <label for="imgupl"> Select Image</label> 
+<input  id="imgupl" style="margin-top:20px" name="imageUpload" type="file" custom-on-change="uploadImage"/>
+<span style="color:red" "margin-right:100%">{{errimg}}</span><br />
+</div>
+
+<div class="col-md-3" style="margin-top:4%;">
+ <label for="fileupl">Select Flavour</label> 
+<input ng-model="filenms" id="fileupl" style="margin-top:20px" name="ifileUpload" type="file" custom-on-filechange="uploadfile"/>
+<span style="color:red" "margin-right:100%">{{errflv}}</span><br />
+</div>
+
+
+<div class="row">
+<div  class="col-md-3" style="margin-top:7%;margin-left:12%;">
+<input type="button" value="Upload" class="btn btn-primary" style="width;150px;" ng-click="finalsubmit(rlsnms);"/>
+<input type="button" value="Reset" class="btn btn-primary" style="width;150px;" ng-click="selectedVMName='';rlsnms='';"/>
+<input type="button" value="Cancel" class="btn btn-primary" style="width;150px;" ng-click=""/>
+</div>
+</div>
+
+<span id="overlay1" ng-show="searchButtonText == 'Searching'" "position:relative;margin-left:-35%;margin-top:2%;">
+    <img class="loading_circle" src="../img/loading.gif" width="60px" height="60px"></img>
+</span> 
+
+<div class="col-md-9" style="margin-top:2%">
+<div ng-if="uploadedFileSuccess" class="alert alert-success" >
+	 <strong>Success!</strong> {{successmessage}}
+</div> 
+<div  ng-if="uploadedFilefailure" class="alert alert-danger">
+	 <strong>Failure!</strong> {{successmessage}}
+</div> 
+</div>

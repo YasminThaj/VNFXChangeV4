@@ -1,0 +1,15 @@
+[ConfigDetails]
+Server="RedHat"
+VNFName=oracle1
+ImageName=oracl1
+DiskFormat=qcow2
+ImageFilePath=/root/auto_heatfiles
+ContainerFormat=bare
+FlavourPath=C:\xampp\htdocs\VNFXchange
+AvailabilityZone=nova:compute2
+SecurityGroupname=perimetaseg
+Protocol=TCP
+Direction=Ingress
+Ethertype=ipv4
+FlavourName=Oracle_sbc_flavour.txt
+ImageFileName=nnSCZ739p1-img-vm_kvm.qcow2

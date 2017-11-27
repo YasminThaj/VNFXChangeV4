@@ -1,0 +1,3272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171031 18:27:47.397" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\Genric_Script\SBC_Onboarding_TestCases.robot" id="s1" name="SBC Onboarding TestCases">
+<test id="s1-t1" name="TC1_Verification of on-boarded vnf on RHOSP">
+<kw name="ImportDetails" library="Genric_Keywords">
+<arguments>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<assign>
+<var>@{Server}</var>
+</assign>
+<kw name="Parseconfdata" library="Library">
+<arguments>
+<arg>${ConfigPath}</arg>
+<arg>${Label}</arg>
+</arguments>
+<assign>
+<var>@{Param}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">@{Param} = [ "RedHat" | oracle1 | oracle1 | qcow2 | /root/auto_heatfiles | bare | C:\xampp\htdocs\VNFXchange | nova:compute2 | permitaseg | TCP | Ingress | ipv4 | Oracle_SBC_Flavour_Template.txt | nnSCZ739p1-img...</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${server}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${server} = "RedHat"</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${VNFName}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${ImageName}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${ImageName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${DiskFormat}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${DiskFormat} = qcow2</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${ImageFilePath}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${ImageFilePath} = /root/auto_heatfiles</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${ConatinerFormat}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${ConatinerFormat} = bare</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>6</arg>
+</arguments>
+<assign>
+<var>${FlavorP}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${FlavorP} = C:\xampp\htdocs\VNFXchange</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>7</arg>
+</arguments>
+<assign>
+<var>${AvZone}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${AvZone} = nova:compute2</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>8</arg>
+</arguments>
+<assign>
+<var>${Security}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${Security} = permitaseg</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>9</arg>
+</arguments>
+<assign>
+<var>${Protocol}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${Protocol} = TCP</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>10</arg>
+</arguments>
+<assign>
+<var>${Direction}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${Direction} = Ingress</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>11</arg>
+</arguments>
+<assign>
+<var>${Ethertype}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${Ethertype} = ipv4</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>12</arg>
+</arguments>
+<assign>
+<var>${FN}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${FN} = Oracle_SBC_Flavour_Template.txt</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>13</arg>
+</arguments>
+<assign>
+<var>${ImageFileName}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.115" level="INFO">${ImageFileName} = nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic1}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>12</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic2}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>13</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:48.115" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic3}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>14</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Split Extension" library="OperatingSystem">
+<doc>Splits the extension from the given path.</doc>
+<arguments>
+<arg>${FN}</arg>
+</arguments>
+<assign>
+<var>${FlavourName}</var>
+<var>${Ext}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${FlavourName} = Oracle_SBC_Flavour_Template</msg>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${Ext} = txt</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageFileName}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${ImageFileName} = nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FN}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${FN} = Oracle_SBC_Flavour_Template.txt</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FlavourName}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${FlavourName} = Oracle_SBC_Flavour_Template</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VNFName}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${server}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${server} = "RedHat"</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageName}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${ImageName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${DiskFormat}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${DiskFormat} = qcow2</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageFilePath}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${ImageFilePath} = /root/auto_heatfiles</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ConatinerFormat}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${ConatinerFormat} = bare</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FlavorP}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${FlavorP} = C:\xampp\htdocs\VNFXchange</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${AvZone}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${AvZone} = nova:compute2</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Security}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${Security} = permitaseg</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Protocol}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${Protocol} = TCP</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Direction}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${Direction} = Ingress</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Ethertype}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${Ethertype} = ipv4</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic1}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic2}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VNFName}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.130" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic3}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:48.130" starttime="20171031 18:27:48.130"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${server}=="RedHat"</arg>
+<arg>Return From Keyword</arg>
+<arg>@{RedHat}</arg>
+</arguments>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>@{RedHat}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.146" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.130"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.130"></status>
+</kw>
+<msg timestamp="20171031 18:27:48.146" level="INFO">@{Server} = [ 10.53.214.10 | root | techm123 ]</msg>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.115"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>@{Server}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.146" level="INFO">@{Server} = [ 10.53.214.10 | root | techm123 ]</msg>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.146"></status>
+</kw>
+<kw name="Server_Login" library="Genric_Keywords">
+<arguments>
+<arg>@{Server}</arg>
+</arguments>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${HOST}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.146" level="INFO">${HOST} = 10.53.214.10</msg>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.146"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${USERNAME}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.146" level="INFO">${USERNAME} = root</msg>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.146"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${PASSWORD}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.146" level="INFO">${PASSWORD} = techm123</msg>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.146"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<assign>
+<var>${Index}</var>
+</assign>
+<msg timestamp="20171031 18:27:48.146" level="INFO">${Index} = 1</msg>
+<status status="PASS" endtime="20171031 18:27:48.146" starttime="20171031 18:27:48.146"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:48.146" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20171031 18:27:54.357" level="INFO">Read output: Last login: Tue Oct 31 08:10:51 2017 from 10.53.172.4
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20171031 18:27:54.357" starttime="20171031 18:27:48.146"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************ServerLogin_Validation**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:27:54.357" level="INFO">*****************ServerLogin_Validation**********************</msg>
+<status status="PASS" endtime="20171031 18:27:54.357" starttime="20171031 18:27:54.357"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>ifconfig | grep inet</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ifconfig | grep inet</arg>
+</arguments>
+<msg timestamp="20171031 18:27:54.357" level="INFO">ifconfig | grep inet</msg>
+<status status="PASS" endtime="20171031 18:27:54.357" starttime="20171031 18:27:54.357"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:54.357" starttime="20171031 18:27:54.357"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.366" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:54.357"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.366" level="INFO">[01;31m[Kinet[m[K 169.254.1.8  netmask 255.255.255.0  broadcast 169.254.1.255
+        [01;31m[Kinet[m[K6 fe80::cca5:25ff:fe65:134b  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 172.18.0.60  netmask 255.255.255.0  broadcast 172.18.0.255
+        [01;31m[Kinet[m[K6 fe80::4d7:59ff:fe85:5f45  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.80.1.8  netmask 255.255.255.0  broadcast 10.80.1.255
+        [01;31m[Kinet[m[K6 fe80::fc8a:54ff:fe8a:974e  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.81.1.8  netmask 255.255.255.0  broadcast 10.81.1.255
+        [01;31m[Kinet[m[K6 fe80::283b:ecff:fee2:1e40  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3c8  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 168.254.17.8  netmask 255.255.255.0  broadcast 168.254.17.255
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3ca  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.53.214.10  netmask 255.255.255.0  broadcast 10.53.214.255
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3cc  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3cd  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 127.0.0.1  netmask 255.0.0.0
+        [01;31m[Kinet[m[K6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        [01;31m[Kinet[m[K6 fe80::a236:9fff:fe78:4b14  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::a236:9fff:fe78:4b16  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+[root@controller ~]#</msg>
+<msg timestamp="20171031 18:27:58.366" level="INFO">${output} =         [01;31m[Kinet[m[K 169.254.1.8  netmask 255.255.255.0  broadcast 169.254.1.255
+        [01;31m[Kinet[m[K6 fe80::cca5:25ff:fe65:134b  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m...</msg>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************ServerLogin_Validation Completed**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.366" level="INFO">*****************ServerLogin_Validation Completed**********************</msg>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>source keystonerc_admin</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>source keystonerc_admin</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.366" level="INFO">source keystonerc_admin</msg>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.366" level="INFO">[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:27:58.366" level="INFO">${output} = [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:48.146"></status>
+</kw>
+<kw name="SBC_CreateFlavor" library="Oracle_SBC_Keywords">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>@{Server}</arg>
+<arg>ImportDetails</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Server_Login</arg>
+<arg>@{Server}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.366" starttime="20171031 18:27:58.366"></status>
+</kw>
+<kw name="Create Flavor" library="Genric_Keywords">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>********************Create Flavor start*****************************</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.381" level="INFO">********************Create Flavor start*****************************</msg>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\</arg>
+<arg>${FN}</arg>
+</arguments>
+<assign>
+<var>${path}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.381" level="INFO">${path} = C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\Genric_Script\Config\Oracle_SBC_Flavour_Template.txt</msg>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="ImportFlavor" library="Genric_Keywords">
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${Path}</arg>
+</arguments>
+<assign>
+<var>${File}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.381" html="yes" level="INFO">Getting file '&lt;a href="file://C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\Genric_Script\Config\Oracle_SBC_Flavour_Template.txt"&gt;C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\Genric_Script\Config\Oracle_SBC_Flavour_Template.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20171031 18:27:58.381" level="INFO">${File} = Ram:8192
+disk:80
+vcpus:4</msg>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>${Flavor_list}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.381" level="INFO">${Flavor_list} = []</msg>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Split To Lines" library="String">
+<doc>Splits the given string to lines.</doc>
+<arguments>
+<arg>${File}</arg>
+</arguments>
+<assign>
+<var>@{list}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.381" level="INFO">3 lines returned</msg>
+<msg timestamp="20171031 18:27:58.381" level="INFO">@{list} = [ Ram:8192 | disk:80 | vcpus:4 ]</msg>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${i}</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw type="for" name="${line} IN [ @{list} ]">
+<kw type="foritem" name="${line} = Ram:8192">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${line}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Split String From Right" library="String">
+<doc>Splits the ``string`` using ``separator`` starting from right.</doc>
+<arguments>
+<arg>${line}</arg>
+<arg>:</arg>
+</arguments>
+<assign>
+<var>@{data}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.381" level="INFO">@{data} = [ Ram | 8192 ]</msg>
+<status status="PASS" endtime="20171031 18:27:58.381" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${data}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${Value}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.397" level="INFO">${Value} = 8192</msg>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Flavor_list}</arg>
+<arg>${Value}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw type="foritem" name="${line} = disk:80">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${line}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Split String From Right" library="String">
+<doc>Splits the ``string`` using ``separator`` starting from right.</doc>
+<arguments>
+<arg>${line}</arg>
+<arg>:</arg>
+</arguments>
+<assign>
+<var>@{data}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.397" level="INFO">@{data} = [ disk | 80 ]</msg>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${data}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${Value}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.397" level="INFO">${Value} = 80</msg>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Flavor_list}</arg>
+<arg>${Value}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw type="foritem" name="${line} = vcpus:4">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${line}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Split String From Right" library="String">
+<doc>Splits the ``string`` using ``separator`` starting from right.</doc>
+<arguments>
+<arg>${line}</arg>
+<arg>:</arg>
+</arguments>
+<assign>
+<var>@{data}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.397" level="INFO">@{data} = [ vcpus | 4 ]</msg>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${data}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${Value}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.397" level="INFO">${Value} = 4</msg>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Flavor_list}</arg>
+<arg>${Value}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Flavor_list}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${Ram}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.397" level="INFO">${Ram} = 8192</msg>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Flavor_list}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${Disk}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.397" level="INFO">${Disk} = 80</msg>
+<status status="PASS" endtime="20171031 18:27:58.397" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Flavor_list}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${CPU}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.413" level="INFO">${CPU} = 4</msg>
+<status status="PASS" endtime="20171031 18:27:58.413" starttime="20171031 18:27:58.397"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Ram}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.413" level="INFO">${Ram} = 8192</msg>
+<status status="PASS" endtime="20171031 18:27:58.413" starttime="20171031 18:27:58.413"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Disk}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.413" level="INFO">${Disk} = 80</msg>
+<status status="PASS" endtime="20171031 18:27:58.413" starttime="20171031 18:27:58.413"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${CPU}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.413" level="INFO">${CPU} = 4</msg>
+<status status="PASS" endtime="20171031 18:27:58.413" starttime="20171031 18:27:58.413"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:27:58.413" starttime="20171031 18:27:58.381"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>nova flavor-create</arg>
+<arg>${FlavourName}</arg>
+<arg>auto</arg>
+<arg>${Ram}</arg>
+<arg>${Disk}</arg>
+<arg>${CPU}</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20171031 18:27:58.413" level="INFO">${str} = nova flavor-create Oracle_SBC_Flavour_Template auto 8192 80 4</msg>
+<status status="PASS" endtime="20171031 18:27:58.413" starttime="20171031 18:27:58.413"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str}</arg>
+</arguments>
+<msg timestamp="20171031 18:27:58.413" level="INFO">nova flavor-create Oracle_SBC_Flavour_Templ ate auto 8192 80 4</msg>
+<status status="PASS" endtime="20171031 18:27:58.413" starttime="20171031 18:27:58.413"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:28:03.422" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:27:58.413"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:28:03.422" level="INFO">+--------------------------------------+-----------------------------+-----------+------+-----------+------+-------+-------------+-----------+
+| ID                                   | Name                        | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor | Is_Public |
++--------------------------------------+-----------------------------+-----------+------+-----------+------+-------+-------------+-----------+
+| 2907f417-a58e-4a46-800c-5e261991476f | Oracle_SBC_Flavour_Template | 8192      | 80   | 0         |      | 4     | 1.0         | True      |
++--------------------------------------+-----------------------------+-----------+------+-----------+------+-------+-------------+-----------+
+[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:28:03.422" level="INFO">${output} = +--------------------------------------+-----------------------------+-----------+------+-----------+------+-------+-------------+-----------+
+| ID                                   | Name           ...</msg>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:28:03.422"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>********************Create Flavor Complete*****************************</arg>
+</arguments>
+<msg timestamp="20171031 18:28:03.422" level="INFO">********************Create Flavor Complete*****************************</msg>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:28:03.422"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:27:58.381"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:27:58.366"></status>
+</kw>
+<kw name="Flavor_Validation" library="Oracle_SBC_Keywords">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>@{Server}</arg>
+<arg>ImportDetails</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:28:03.422"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Server_Login</arg>
+<arg>@{Server}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:28:03.422"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>nova flavor-list |grep \ -i</arg>
+<arg>${FlavourName}</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20171031 18:28:03.422" level="INFO">${str} = nova flavor-list |grep  -i Oracle_SBC_Flavour_Template</msg>
+<status status="PASS" endtime="20171031 18:28:03.422" starttime="20171031 18:28:03.422"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>${str}</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str}</arg>
+</arguments>
+<msg timestamp="20171031 18:28:03.438" level="INFO">nova flavor-list |grep  -i Oracle_SBC_Flavo ur_Template</msg>
+<status status="PASS" endtime="20171031 18:28:03.438" starttime="20171031 18:28:03.422"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:03.438" starttime="20171031 18:28:03.422"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20171031 18:28:13.440" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:03.438"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:28:13.440" level="INFO">| 2907f417-a58e-4a46-800c-5e261991476f | [01;31m[KOracle_SBC_Flavour_Template[m[K | 8192      | 80   | 0         |      | 4     | 1.0         | True      |
+[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:28:13.440" level="INFO">${output} = | 2907f417-a58e-4a46-800c-5e261991476f | [01;31m[KOracle_SBC_Flavour_Template[m[K | 8192      | 80   | 0         |      | 4     | 1.0         | True      |
+[root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>${FlavourName}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:03.422"></status>
+</kw>
+<kw name="SBC_CreateImage" library="Oracle_SBC_Keywords">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>@{Server}</arg>
+<arg>ImportDetails</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Server_Login</arg>
+<arg>@{Server}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>**************Push Image started***********</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>PushimagefiletoServer</arg>
+<arg>@{Server}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>**************Push Image Completed***********</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>**************Image Create Started ***********</arg>
+</arguments>
+<msg timestamp="20171031 18:28:13.440" level="INFO">**************Image Create Started ***********</msg>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="GlanceImageUpload" library="Genric_Keywords">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>******************Create Image on Glance Started*******************</arg>
+</arguments>
+<msg timestamp="20171031 18:28:13.440" level="INFO">******************Create Image on Glance Started*******************</msg>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Switch Connection</arg>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${IN}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>0</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${DF}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.440" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${IFP}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${CF}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${FP}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>4</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Getimagename" library="Library">
+<arguments>
+<arg>${ImageFilePath}</arg>
+<arg>${ImageFileName}</arg>
+</arguments>
+<assign>
+<var>${remotepathwithimagename}</var>
+</assign>
+<msg timestamp="20171031 18:28:13.455" level="INFO">${remotepathwithimagename} = /root/auto_heatfiles/nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${dstImage}</arg>
+<arg>Catenate</arg>
+<arg>SEPERATOR=/</arg>
+<arg>/root/auto_heatfiles</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${IN}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>glance image-create --name</arg>
+<arg>${ImageName}</arg>
+</arguments>
+<assign>
+<var>${str1}</var>
+</assign>
+<msg timestamp="20171031 18:28:13.455" level="INFO">${str1} = glance image-create --name oracle1</msg>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>--disk-format</arg>
+<arg>${DiskFormat}</arg>
+</arguments>
+<assign>
+<var>${str2}</var>
+</assign>
+<msg timestamp="20171031 18:28:13.455" level="INFO">${str2} = --disk-format qcow2</msg>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>--file</arg>
+<arg>${remotepathwithimagename}</arg>
+</arguments>
+<assign>
+<var>${str3}</var>
+</assign>
+<msg timestamp="20171031 18:28:13.455" level="INFO">${str3} = --file /root/auto_heatfiles/nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>--container-format</arg>
+<arg>${ConatinerFormat}</arg>
+</arguments>
+<assign>
+<var>${str4}</var>
+</assign>
+<msg timestamp="20171031 18:28:13.455" level="INFO">${str4} = --container-format bare</msg>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str1}</arg>
+<arg>${str2}</arg>
+<arg>${str4}</arg>
+<arg>${str3}</arg>
+</arguments>
+<assign>
+<var>${str5}</var>
+</assign>
+<msg timestamp="20171031 18:28:13.455" level="INFO">${str5} = glance image-create --name oracle1 --disk-format qcow2 --container-format bare --file /root/auto_heatfiles/nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:28:13.455" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>${str5}</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str5}</arg>
+</arguments>
+<msg timestamp="20171031 18:28:13.471" level="INFO">glance image-create --name oracle1 --disk-f ormat qcow2 --container-format bare --file /root/auto_heatfiles/nnSCZ739p1-img-v m_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:28:13.471" starttime="20171031 18:28:13.455"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:13.471" starttime="20171031 18:28:13.455"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>15</arg>
+</arguments>
+<msg timestamp="20171031 18:28:28.483" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:13.471"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>******************Create Image on Glance completed*******************</arg>
+</arguments>
+<msg timestamp="20171031 18:28:28.483" level="INFO">******************Create Image on Glance completed*******************</msg>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:28.483"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:28:28.483" level="INFO">+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| checksum         | 9c12c518d6358b2826b30d82597d4feb     |
+| container_format | bare                                 |
+| created_at       | 2017-10-31T12:57:21Z                 |
+| disk_format      | qcow2                                |
+| id               | dea9ea64-ae30-4198-af85-67e7b066bd8e |
+| min_disk         | 0                                    |
+| min_ram          | 0                                    |
+| name             | oracle1                              |
+| owner            | 8f6857039a224ab1b596bfd42147dc88     |
+| protected        | False                                |
+| size             | 93847552                             |
+| status           | active                               |
+| tags             | []                                   |
+| updated_at       | 2017-10-31T12:57:21Z                 |
+| virtual_size     | None                                 |
+| visibility       | private                              |
++------------------+--------------------------------------+
+[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:28:28.483" level="INFO">${output} = +------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| checksum       ...</msg>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:28.483"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>**************Image Create Completed ***********</arg>
+</arguments>
+<msg timestamp="20171031 18:28:28.483" level="INFO">**************Image Create Completed ***********</msg>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:28.483"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:13.440"></status>
+</kw>
+<kw name="Image_Validation" library="Oracle_SBC_Keywords">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>@{Server}</arg>
+<arg>ImportDetails</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:28.483"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Server_Login</arg>
+<arg>@{Server}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:28.483"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Image Validation Started**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:28:28.483" level="INFO">*****************************Image Validation Started**********************</msg>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:28.483"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>nova image-list |grep \ -i</arg>
+<arg>${ImageName}</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20171031 18:28:28.483" level="INFO">${str} = nova image-list |grep  -i oracle1</msg>
+<status status="PASS" endtime="20171031 18:28:28.483" starttime="20171031 18:28:28.483"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>${str}</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str}</arg>
+</arguments>
+<msg timestamp="20171031 18:28:28.499" level="INFO">nova image-list |grep  -i oracle1</msg>
+<status status="PASS" endtime="20171031 18:28:28.499" starttime="20171031 18:28:28.483"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:28.499" starttime="20171031 18:28:28.483"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:28:33.506" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:28.499"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:28:33.506" level="INFO">| dea9ea64-ae30-4198-af85-67e7b066bd8e | [01;31m[Koracle1[m[K                                         | ACTIVE |                                      |
+[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:28:33.506" level="INFO">${output} = | dea9ea64-ae30-4198-af85-67e7b066bd8e | [01;31m[Koracle1[m[K                                         | ACTIVE |                                      |
+[root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>${ImageName}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Image Validation Completed**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:28:33.506" level="INFO">*****************************Image Validation Completed**********************</msg>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:28.483"></status>
+</kw>
+<kw name="SBC_OnboardVM" library="Oracle_SBC_Keywords">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>@{Server}</arg>
+<arg>ImportDetails</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Server_Login</arg>
+<arg>@{Server}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*************VM Create Started ***********</arg>
+</arguments>
+<msg timestamp="20171031 18:28:33.506" level="INFO">*************VM Create Started ***********</msg>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="VMCreation" library="Genric_Keywords">
+<arguments>
+<arg>${Label}</arg>
+<arg>${NicSBC}</arg>
+</arguments>
+<kw name="Getimagename" library="Library">
+<arguments>
+<arg>${ImageFilePath}</arg>
+<arg>${ImageFileName}</arg>
+</arguments>
+<assign>
+<var>${remotepathwithimagename}</var>
+</assign>
+<msg timestamp="20171031 18:28:33.506" level="INFO">${remotepathwithimagename} = /root/auto_heatfiles/nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>write</arg>
+<arg>neutron net-list | head -6 | tail -3 | awk -F "|" '{print $2}' &gt;&gt; nicID.txt</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Get File</arg>
+<arg>/root/nicID.txt</arg>
+<arg>C://Users//Admin//Desktop//Sukesh-Automation//RobotFramework//Genric_Script//Python_Script//</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Switch Connection</arg>
+<arg>${Index}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.506" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>@{FlvrParam}</arg>
+<arg>Parseconfdata</arg>
+<arg>${FlavorP}</arg>
+<arg>${Label}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.522" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${FlavourName}</arg>
+<arg>Get From List</arg>
+<arg>${FlvrParam}</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.522" starttime="20171031 18:28:33.522"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>--flavor</arg>
+<arg>${FlavourName}</arg>
+</arguments>
+<assign>
+<var>${flavor}</var>
+</assign>
+<msg timestamp="20171031 18:28:33.522" level="INFO">${flavor} = --flavor Oracle_SBC_Flavour_Template</msg>
+<status status="PASS" endtime="20171031 18:28:33.522" starttime="20171031 18:28:33.522"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>--availability_zone</arg>
+<arg>${AvZone}</arg>
+</arguments>
+<assign>
+<var>${AvailZone}</var>
+</assign>
+<msg timestamp="20171031 18:28:33.522" level="INFO">${AvailZone} = --availability_zone nova:compute2</msg>
+<status status="PASS" endtime="20171031 18:28:33.522" starttime="20171031 18:28:33.522"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>--security-groups</arg>
+<arg>${Security}</arg>
+</arguments>
+<assign>
+<var>${SecurityPol}</var>
+</assign>
+<msg timestamp="20171031 18:28:33.522" level="INFO">${SecurityPol} = --security-groups permitaseg</msg>
+<status status="PASS" endtime="20171031 18:28:33.522" starttime="20171031 18:28:33.522"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${image}</arg>
+<arg>Catenate</arg>
+<arg>--image</arg>
+<arg>${IN}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:28:33.522" starttime="20171031 18:28:33.522"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>nova boot</arg>
+<arg>${flavor}</arg>
+<arg>--image</arg>
+<arg>${ImageName}</arg>
+<arg>${AvailZone}</arg>
+<arg>${SecurityPol}</arg>
+<arg>${Nic}</arg>
+<arg>--config-drive=true</arg>
+<arg>${VNFName}</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20171031 18:28:33.522" level="INFO">${str} = nova boot --flavor Oracle_SBC_Flavour_Template --image oracle1 --availability_zone nova:compute2 --security-groups permitaseg --nic net-id=3f4a053f-3b05-4388-8e4a-8e47bcd757fb --nic net-id=78d1ec17-39...</msg>
+<status status="PASS" endtime="20171031 18:28:33.522" starttime="20171031 18:28:33.522"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:28:38.531" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:28:38.531" starttime="20171031 18:28:33.522"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>${str}</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str}</arg>
+</arguments>
+<msg timestamp="20171031 18:28:38.547" level="INFO">nova boot --flavor Oracle_SBC_Flavour_Templ ate --image oracle1 --availability_zone nova:compute2 --security-groups permitas eg --nic net-id=3f4a053f-3b05-4388-8e4a-8e47bcd757fb --nic net-id=78d1ec17-397d- 455c-9d4d-3e79116d6337 --nic net-id=78d1ec17-397d-455c-9d4d-3e79116d6337 --confi g-drive=true oracle1</msg>
+<status status="PASS" endtime="20171031 18:28:38.547" starttime="20171031 18:28:38.531"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:28:38.547" starttime="20171031 18:28:38.531"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>40</arg>
+</arguments>
+<msg timestamp="20171031 18:29:18.555" level="INFO">Slept 40 seconds</msg>
+<status status="PASS" endtime="20171031 18:29:18.555" starttime="20171031 18:28:38.547"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:29:18.555" level="INFO">ERROR (BadRequest): Unable to find security_group with name 'permitaseg' (HTTP 400) (Request-ID: req-f337f166-46d3-4ce3-ab5f-69d56da77f6c)
+[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:29:18.555" level="INFO">${output} = ERROR (BadRequest): Unable to find security_group with name 'permitaseg' (HTTP 400) (Request-ID: req-f337f166-46d3-4ce3-ab5f-69d56da77f6c)
+[root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:29:18.555" starttime="20171031 18:29:18.555"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:29:18.555" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>100</arg>
+</arguments>
+<msg timestamp="20171031 18:30:58.556" level="INFO">Slept 1 minute 40 seconds</msg>
+<status status="PASS" endtime="20171031 18:30:58.556" starttime="20171031 18:29:18.555"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>********In Progress Bringing up the VM *************</arg>
+</arguments>
+<msg timestamp="20171031 18:30:58.556" level="INFO">********In Progress Bringing up the VM *************</msg>
+<status status="PASS" endtime="20171031 18:30:58.556" starttime="20171031 18:30:58.556"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>80</arg>
+</arguments>
+<msg timestamp="20171031 18:32:18.558" level="INFO">Slept 1 minute 20 seconds</msg>
+<status status="PASS" endtime="20171031 18:32:18.558" starttime="20171031 18:30:58.556"></status>
+</kw>
+<kw name="known_hostremoval" library="Genric_Keywords">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>rm /root/.ssh/known_hosts</arg>
+</arguments>
+<msg timestamp="20171031 18:32:18.558" level="INFO">rm /root/.ssh/known_hosts</msg>
+<status status="PASS" endtime="20171031 18:32:18.558" starttime="20171031 18:32:18.558"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:32:23.567" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:18.558"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>yes</arg>
+</arguments>
+<msg timestamp="20171031 18:32:23.567" level="INFO">rm: remove regular file ‘/root/.ssh/known_hosts’? yes</msg>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:23.567"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:18.558"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*************VM Create Completed ***********</arg>
+</arguments>
+<msg timestamp="20171031 18:32:23.567" level="INFO">*************VM Create Completed ***********</msg>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:23.567"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:28:33.506"></status>
+</kw>
+<kw name="Onboard_Validation" library="Oracle_SBC_Keywords">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>@{Server}</arg>
+<arg>ImportDetails</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:23.567"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Server_Login</arg>
+<arg>@{Server}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:23.567"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>***************************** Onboard Validation Started**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:32:23.567" level="INFO">***************************** Onboard Validation Started**********************</msg>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:23.567"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>nova list |grep -i</arg>
+<arg>${VNFName}</arg>
+</arguments>
+<assign>
+<var>${str}</var>
+</assign>
+<msg timestamp="20171031 18:32:23.567" level="INFO">${str} = nova list |grep -i oracle1</msg>
+<status status="PASS" endtime="20171031 18:32:23.567" starttime="20171031 18:32:23.567"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>${str}</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:23.582" level="INFO">[root@controller ~(keystone_admin)]# nova list |grep -i oracle1</msg>
+<status status="PASS" endtime="20171031 18:32:23.582" starttime="20171031 18:32:23.567"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:32:23.582" starttime="20171031 18:32:23.567"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.595" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:32:28.595" starttime="20171031 18:32:23.582"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.595" level="INFO">[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:32:28.595" level="INFO">${output} = [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:32:28.595" starttime="20171031 18:32:28.595"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>${VNFName}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.595" level="FAIL">'[root@controller ~(keystone_admin)]# ' does not contain 'oracle1'</msg>
+<status status="FAIL" endtime="20171031 18:32:28.595" starttime="20171031 18:32:28.595"></status>
+</kw>
+<status status="FAIL" endtime="20171031 18:32:28.595" starttime="20171031 18:32:23.567"></status>
+</kw>
+<doc>Verify the Cloud environment (RHOSP) before we start Onboarding of VNF VM’s process.</doc>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="FAIL" endtime="20171031 18:32:28.595" critical="yes" starttime="20171031 18:27:48.115">'[root@controller ~(keystone_admin)]# ' does not contain 'oracle1'</status>
+</test>
+<test id="s1-t2" name="TC2_Verify able to login/logout into vSBC">
+<kw name="ImportDetails" library="Genric_Keywords">
+<arguments>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<assign>
+<var>@{Server}</var>
+</assign>
+<kw name="Parseconfdata" library="Library">
+<arguments>
+<arg>${ConfigPath}</arg>
+<arg>${Label}</arg>
+</arguments>
+<assign>
+<var>@{Param}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.595" level="INFO">@{Param} = [ "RedHat" | oracle1 | oracle1 | qcow2 | /root/auto_heatfiles | bare | C:\xampp\htdocs\VNFXchange | nova:compute2 | permitaseg | TCP | Ingress | ipv4 | Oracle_SBC_Flavour_Template.txt | nnSCZ739p1-img...</msg>
+<status status="PASS" endtime="20171031 18:32:28.595" starttime="20171031 18:32:28.595"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${server}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${server} = "RedHat"</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.595"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${VNFName}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${ImageName}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${ImageName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${DiskFormat}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${DiskFormat} = qcow2</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${ImageFilePath}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${ImageFilePath} = /root/auto_heatfiles</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${ConatinerFormat}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${ConatinerFormat} = bare</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>6</arg>
+</arguments>
+<assign>
+<var>${FlavorP}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${FlavorP} = C:\xampp\htdocs\VNFXchange</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>7</arg>
+</arguments>
+<assign>
+<var>${AvZone}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${AvZone} = nova:compute2</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>8</arg>
+</arguments>
+<assign>
+<var>${Security}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${Security} = permitaseg</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>9</arg>
+</arguments>
+<assign>
+<var>${Protocol}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${Protocol} = TCP</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>10</arg>
+</arguments>
+<assign>
+<var>${Direction}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${Direction} = Ingress</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>11</arg>
+</arguments>
+<assign>
+<var>${Ethertype}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${Ethertype} = ipv4</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>12</arg>
+</arguments>
+<assign>
+<var>${FN}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.610" level="INFO">${FN} = Oracle_SBC_Flavour_Template.txt</msg>
+<status status="PASS" endtime="20171031 18:32:28.610" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>13</arg>
+</arguments>
+<assign>
+<var>${ImageFileName}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${ImageFileName} = nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.610"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic1}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>12</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic2}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>13</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic3}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>14</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Split Extension" library="OperatingSystem">
+<doc>Splits the extension from the given path.</doc>
+<arguments>
+<arg>${FN}</arg>
+</arguments>
+<assign>
+<var>${FlavourName}</var>
+<var>${Ext}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${FlavourName} = Oracle_SBC_Flavour_Template</msg>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${Ext} = txt</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageFileName}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${ImageFileName} = nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FN}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${FN} = Oracle_SBC_Flavour_Template.txt</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FlavourName}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${FlavourName} = Oracle_SBC_Flavour_Template</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VNFName}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${server}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${server} = "RedHat"</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageName}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${ImageName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${DiskFormat}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${DiskFormat} = qcow2</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageFilePath}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.626" level="INFO">${ImageFilePath} = /root/auto_heatfiles</msg>
+<status status="PASS" endtime="20171031 18:32:28.626" starttime="20171031 18:32:28.626"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ConatinerFormat}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${ConatinerFormat} = bare</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FlavorP}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${FlavorP} = C:\xampp\htdocs\VNFXchange</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${AvZone}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${AvZone} = nova:compute2</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Security}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${Security} = permitaseg</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Protocol}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${Protocol} = TCP</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Direction}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${Direction} = Ingress</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Ethertype}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${Ethertype} = ipv4</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic1}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic2}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VNFName}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic3}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${server}=="RedHat"</arg>
+<arg>Return From Keyword</arg>
+<arg>@{RedHat}</arg>
+</arguments>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>@{RedHat}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.642" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.642"></status>
+</kw>
+<msg timestamp="20171031 18:32:28.642" level="INFO">@{Server} = [ 10.53.214.10 | root | techm123 ]</msg>
+<status status="PASS" endtime="20171031 18:32:28.642" starttime="20171031 18:32:28.595"></status>
+</kw>
+<kw name="Server_Login" library="Genric_Keywords">
+<arguments>
+<arg>@{Server}</arg>
+</arguments>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${HOST}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.657" level="INFO">${HOST} = 10.53.214.10</msg>
+<status status="PASS" endtime="20171031 18:32:28.657" starttime="20171031 18:32:28.657"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${USERNAME}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.657" level="INFO">${USERNAME} = root</msg>
+<status status="PASS" endtime="20171031 18:32:28.657" starttime="20171031 18:32:28.657"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${PASSWORD}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.657" level="INFO">${PASSWORD} = techm123</msg>
+<status status="PASS" endtime="20171031 18:32:28.657" starttime="20171031 18:32:28.657"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<assign>
+<var>${Index}</var>
+</assign>
+<msg timestamp="20171031 18:32:28.657" level="INFO">${Index} = 2</msg>
+<status status="PASS" endtime="20171031 18:32:28.657" starttime="20171031 18:32:28.657"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:28.657" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20171031 18:32:34.804" level="INFO">Read output: Last login: Tue Oct 31 08:57:00 2017 from 10.53.172.4
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20171031 18:32:34.804" starttime="20171031 18:32:28.657"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************ServerLogin_Validation**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:32:34.804" level="INFO">*****************ServerLogin_Validation**********************</msg>
+<status status="PASS" endtime="20171031 18:32:34.804" starttime="20171031 18:32:34.804"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>ifconfig | grep inet</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ifconfig | grep inet</arg>
+</arguments>
+<msg timestamp="20171031 18:32:34.804" level="INFO">ifconfig | grep inet</msg>
+<status status="PASS" endtime="20171031 18:32:34.804" starttime="20171031 18:32:34.804"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:32:34.804" starttime="20171031 18:32:34.804"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20171031 18:32:38.817" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:34.804"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:32:38.817" level="INFO">[01;31m[Kinet[m[K 169.254.1.8  netmask 255.255.255.0  broadcast 169.254.1.255
+        [01;31m[Kinet[m[K6 fe80::cca5:25ff:fe65:134b  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 172.18.0.60  netmask 255.255.255.0  broadcast 172.18.0.255
+        [01;31m[Kinet[m[K6 fe80::4d7:59ff:fe85:5f45  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.80.1.8  netmask 255.255.255.0  broadcast 10.80.1.255
+        [01;31m[Kinet[m[K6 fe80::fc8a:54ff:fe8a:974e  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.81.1.8  netmask 255.255.255.0  broadcast 10.81.1.255
+        [01;31m[Kinet[m[K6 fe80::283b:ecff:fee2:1e40  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3c8  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 168.254.17.8  netmask 255.255.255.0  broadcast 168.254.17.255
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3ca  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.53.214.10  netmask 255.255.255.0  broadcast 10.53.214.255
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3cc  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3cd  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 127.0.0.1  netmask 255.0.0.0
+        [01;31m[Kinet[m[K6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        [01;31m[Kinet[m[K6 fe80::a236:9fff:fe78:4b14  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::a236:9fff:fe78:4b16  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+[root@controller ~]#</msg>
+<msg timestamp="20171031 18:32:38.817" level="INFO">${output} =         [01;31m[Kinet[m[K 169.254.1.8  netmask 255.255.255.0  broadcast 169.254.1.255
+        [01;31m[Kinet[m[K6 fe80::cca5:25ff:fe65:134b  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m...</msg>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:38.817"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:38.817"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************ServerLogin_Validation Completed**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:32:38.817" level="INFO">*****************ServerLogin_Validation Completed**********************</msg>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:38.817"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>source keystonerc_admin</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>source keystonerc_admin</arg>
+</arguments>
+<msg timestamp="20171031 18:32:38.817" level="INFO">source keystonerc_admin</msg>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:38.817"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:38.817"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:32:38.817" level="INFO">[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:32:38.817" level="INFO">${output} = [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:38.817"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:32:38.817" starttime="20171031 18:32:28.657"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>nova list | grep -i ${VNFName}| awk -F ";" '{print $2}' | awk -F "=" '{print $2}'| awk -F " \ " '{print $1}'</arg>
+</arguments>
+<msg timestamp="20171031 18:32:38.832" level="INFO">nova list | grep -i oracle1| awk -F ";" '{p rint $2}' | awk -F "=" '{print $2}'| awk -F "  " '{print $1}'</msg>
+<status status="PASS" endtime="20171031 18:32:38.832" starttime="20171031 18:32:38.817"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20171031 18:32:48.832" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20171031 18:32:48.832" starttime="20171031 18:32:38.832"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${Output}</var>
+</assign>
+<msg timestamp="20171031 18:32:48.832" level="INFO">[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:32:48.832" level="INFO">${Output} = [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:32:48.832" starttime="20171031 18:32:48.832"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Output}</arg>
+</arguments>
+<assign>
+<var>@{Output}</var>
+</assign>
+<msg timestamp="20171031 18:32:48.832" level="INFO">@{Output} = [ [root@controller | ~(keystone_admin)]# ]</msg>
+<status status="PASS" endtime="20171031 18:32:48.832" starttime="20171031 18:32:48.832"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Output}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${SBC_Mgmt_IP}</var>
+</assign>
+<msg timestamp="20171031 18:32:48.832" level="INFO">${SBC_Mgmt_IP} = [root@controller</msg>
+<status status="PASS" endtime="20171031 18:32:48.832" starttime="20171031 18:32:48.832"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>**************** Configuration Start ************</arg>
+</arguments>
+<msg timestamp="20171031 18:32:48.832" level="INFO">**************** Configuration Start ************</msg>
+<status status="PASS" endtime="20171031 18:32:48.832" starttime="20171031 18:32:48.832"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:32:53.840" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:32:53.840" starttime="20171031 18:32:48.832"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ssh -o "StrictHostKeyChecking no" user@${SBC_Mgmt_IP}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:53.840" level="INFO">ssh -o "StrictHostKeyChecking no" user@[roo t@controller</msg>
+<status status="PASS" endtime="20171031 18:32:53.840" starttime="20171031 18:32:53.840"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:32:58.847" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:32:58.847" starttime="20171031 18:32:53.840"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Output}</arg>
+<arg>Read</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:32:58.847" starttime="20171031 18:32:58.847"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${SBC_NewPassword}</arg>
+</arguments>
+<msg timestamp="20171031 18:32:58.847" level="INFO">Warning: Permanently added 'controller,172.18.0.60' (ECDSA) to the list of known hosts.</msg>
+<status status="PASS" endtime="20171031 18:32:58.847" starttime="20171031 18:32:58.847"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.862" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:01.862" starttime="20171031 18:32:58.847"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${Output}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.862" level="INFO">user@[root@controller's password: 
+Permission denied, please try again.
+user@[root@controller's password:</msg>
+<msg timestamp="20171031 18:33:01.862" level="INFO">${Output} = user@[root@controller's password: 
+Permission denied, please try again.
+user@[root@controller's password: </msg>
+<status status="PASS" endtime="20171031 18:33:01.862" starttime="20171031 18:33:01.862"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${Output}</arg>
+<arg>SBC&gt;</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.862" level="FAIL">'user@[root@controller's password: 
+Permission denied, please try again.
+user@[root@controller's password: ' does not contain 'SBC&gt;'</msg>
+<status status="FAIL" endtime="20171031 18:33:01.862" starttime="20171031 18:33:01.862"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="FAIL" endtime="20171031 18:33:01.862" critical="yes" starttime="20171031 18:32:28.595">'user@[root@controller's password: 
+Permission denied, please try again.
+user@[root@controller's password: ' does not contain 'SBC&gt;'</status>
+</test>
+<test id="s1-t3" name="TC3_Verify ping from all network interfaces of vSBC">
+<kw name="ImportDetails" library="Genric_Keywords">
+<arguments>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\Genric_Script\\Config\\Enterprise_Config.txt</arg>
+<arg>${Label}</arg>
+</arguments>
+<assign>
+<var>@{Server}</var>
+</assign>
+<kw name="Parseconfdata" library="Library">
+<arguments>
+<arg>${ConfigPath}</arg>
+<arg>${Label}</arg>
+</arguments>
+<assign>
+<var>@{Param}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.862" level="INFO">@{Param} = [ "RedHat" | oracle1 | oracle1 | qcow2 | /root/auto_heatfiles | bare | C:\xampp\htdocs\VNFXchange | nova:compute2 | permitaseg | TCP | Ingress | ipv4 | Oracle_SBC_Flavour_Template.txt | nnSCZ739p1-img...</msg>
+<status status="PASS" endtime="20171031 18:33:01.862" starttime="20171031 18:33:01.862"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${server}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.862" level="INFO">${server} = "RedHat"</msg>
+<status status="PASS" endtime="20171031 18:33:01.862" starttime="20171031 18:33:01.862"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${VNFName}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${ImageName}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${ImageName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${DiskFormat}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${DiskFormat} = qcow2</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${ImageFilePath}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${ImageFilePath} = /root/auto_heatfiles</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${ConatinerFormat}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${ConatinerFormat} = bare</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>6</arg>
+</arguments>
+<assign>
+<var>${FlavorP}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${FlavorP} = C:\xampp\htdocs\VNFXchange</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>7</arg>
+</arguments>
+<assign>
+<var>${AvZone}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${AvZone} = nova:compute2</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>8</arg>
+</arguments>
+<assign>
+<var>${Security}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${Security} = permitaseg</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>9</arg>
+</arguments>
+<assign>
+<var>${Protocol}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${Protocol} = TCP</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>10</arg>
+</arguments>
+<assign>
+<var>${Direction}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${Direction} = Ingress</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>11</arg>
+</arguments>
+<assign>
+<var>${Ethertype}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${Ethertype} = ipv4</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>12</arg>
+</arguments>
+<assign>
+<var>${FN}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${FN} = Oracle_SBC_Flavour_Template.txt</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Param}</arg>
+<arg>13</arg>
+</arguments>
+<assign>
+<var>${ImageFileName}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.878" level="INFO">${ImageFileName} = nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic1}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>12</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic2}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>13</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Nic3}</arg>
+<arg>Get From List</arg>
+<arg>${Param}</arg>
+<arg>14</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:01.878" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Split Extension" library="OperatingSystem">
+<doc>Splits the extension from the given path.</doc>
+<arguments>
+<arg>${FN}</arg>
+</arguments>
+<assign>
+<var>${FlavourName}</var>
+<var>${Ext}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${FlavourName} = Oracle_SBC_Flavour_Template</msg>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${Ext} = txt</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.878"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageFileName}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${ImageFileName} = nnSCZ739p1-img-vm_kvm.qcow2</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FN}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${FN} = Oracle_SBC_Flavour_Template.txt</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FlavourName}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${FlavourName} = Oracle_SBC_Flavour_Template</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VNFName}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${server}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${server} = "RedHat"</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageName}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${ImageName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${DiskFormat}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${DiskFormat} = qcow2</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ImageFilePath}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${ImageFilePath} = /root/auto_heatfiles</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ConatinerFormat}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${ConatinerFormat} = bare</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${FlavorP}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${FlavorP} = C:\xampp\htdocs\VNFXchange</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${AvZone}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${AvZone} = nova:compute2</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Security}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${Security} = permitaseg</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Protocol}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.893" level="INFO">${Protocol} = TCP</msg>
+<status status="PASS" endtime="20171031 18:33:01.893" starttime="20171031 18:33:01.893"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Direction}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.909" level="INFO">${Direction} = Ingress</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Ethertype}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.909" level="INFO">${Ethertype} = ipv4</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic1}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic2}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VNFName}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.909" level="INFO">${VNFName} = oracle1</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Global Variable</arg>
+<arg>${Nic3}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${server}=="RedHat"</arg>
+<arg>Return From Keyword</arg>
+<arg>@{RedHat}</arg>
+</arguments>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>@{RedHat}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.909" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<msg timestamp="20171031 18:33:01.909" level="INFO">@{Server} = [ 10.53.214.10 | root | techm123 ]</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.862"></status>
+</kw>
+<kw name="Server_Login" library="Genric_Keywords">
+<arguments>
+<arg>@{Server}</arg>
+</arguments>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${HOST}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.909" level="INFO">${HOST} = 10.53.214.10</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${USERNAME}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.909" level="INFO">${USERNAME} = root</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${PASSWORD}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.909" level="INFO">${PASSWORD} = techm123</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<assign>
+<var>${Index}</var>
+</assign>
+<msg timestamp="20171031 18:33:01.909" level="INFO">${Index} = 3</msg>
+<status status="PASS" endtime="20171031 18:33:01.909" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:01.909" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20171031 18:33:08.057" level="INFO">Read output: Last login: Tue Oct 31 09:01:41 2017 from 10.53.172.4
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20171031 18:33:08.057" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************ServerLogin_Validation**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:33:08.057" level="INFO">*****************ServerLogin_Validation**********************</msg>
+<status status="PASS" endtime="20171031 18:33:08.057" starttime="20171031 18:33:08.057"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>ifconfig | grep inet</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ifconfig | grep inet</arg>
+</arguments>
+<msg timestamp="20171031 18:33:08.057" level="INFO">ifconfig | grep inet</msg>
+<status status="PASS" endtime="20171031 18:33:08.057" starttime="20171031 18:33:08.057"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:33:08.057" starttime="20171031 18:33:08.057"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20171031 18:33:12.068" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:08.057"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:33:12.068" level="INFO">[01;31m[Kinet[m[K 169.254.1.8  netmask 255.255.255.0  broadcast 169.254.1.255
+        [01;31m[Kinet[m[K6 fe80::cca5:25ff:fe65:134b  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 172.18.0.60  netmask 255.255.255.0  broadcast 172.18.0.255
+        [01;31m[Kinet[m[K6 fe80::4d7:59ff:fe85:5f45  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.80.1.8  netmask 255.255.255.0  broadcast 10.80.1.255
+        [01;31m[Kinet[m[K6 fe80::fc8a:54ff:fe8a:974e  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.81.1.8  netmask 255.255.255.0  broadcast 10.81.1.255
+        [01;31m[Kinet[m[K6 fe80::283b:ecff:fee2:1e40  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3c8  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 168.254.17.8  netmask 255.255.255.0  broadcast 168.254.17.255
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3ca  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 10.53.214.10  netmask 255.255.255.0  broadcast 10.53.214.255
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3cc  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::eef4:bbff:fedb:a3cd  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 127.0.0.1  netmask 255.0.0.0
+        [01;31m[Kinet[m[K6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        [01;31m[Kinet[m[K6 fe80::a236:9fff:fe78:4b14  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K6 fe80::a236:9fff:fe78:4b16  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m[Kinet[m[K 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+[root@controller ~]#</msg>
+<msg timestamp="20171031 18:33:12.068" level="INFO">${output} =         [01;31m[Kinet[m[K 169.254.1.8  netmask 255.255.255.0  broadcast 169.254.1.255
+        [01;31m[Kinet[m[K6 fe80::cca5:25ff:fe65:134b  prefixlen 64  scopeid 0x20&lt;link&gt;
+        [01;31m...</msg>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:12.068"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:12.068"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************ServerLogin_Validation Completed**********************</arg>
+</arguments>
+<msg timestamp="20171031 18:33:12.068" level="INFO">*****************ServerLogin_Validation Completed**********************</msg>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:12.068"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>2</arg>
+<arg>write</arg>
+<arg>source keystonerc_admin</arg>
+</arguments>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>source keystonerc_admin</arg>
+</arguments>
+<msg timestamp="20171031 18:33:12.068" level="INFO">source keystonerc_admin</msg>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:12.068"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:12.068"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:33:12.068" level="INFO">[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:33:12.068" level="INFO">${output} = [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:12.068"></status>
+</kw>
+<status status="PASS" endtime="20171031 18:33:12.068" starttime="20171031 18:33:01.909"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>nova list | grep -i ${VNFName}| awk -F ";" '{print $2}' | awk -F "=" '{print $2}'| awk -F " \ " '{print $1}'</arg>
+</arguments>
+<msg timestamp="20171031 18:33:12.084" level="INFO">nova list | grep -i oracle1| awk -F ";" '{p rint $2}' | awk -F "=" '{print $2}'| awk -F "  " '{print $1}'</msg>
+<status status="PASS" endtime="20171031 18:33:12.084" starttime="20171031 18:33:12.068"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20171031 18:33:22.086" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:22.086" starttime="20171031 18:33:12.084"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${Output}</var>
+</assign>
+<msg timestamp="20171031 18:33:22.086" level="INFO">[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:33:22.086" level="INFO">${Output} = [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:33:22.086" starttime="20171031 18:33:22.086"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${Output}</arg>
+</arguments>
+<assign>
+<var>@{Output}</var>
+</assign>
+<msg timestamp="20171031 18:33:22.086" level="INFO">@{Output} = [ [root@controller | ~(keystone_admin)]# ]</msg>
+<status status="PASS" endtime="20171031 18:33:22.086" starttime="20171031 18:33:22.086"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Output}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${SBC_Mgmt_IP}</var>
+</assign>
+<msg timestamp="20171031 18:33:22.086" level="INFO">${SBC_Mgmt_IP} = [root@controller</msg>
+<status status="PASS" endtime="20171031 18:33:22.086" starttime="20171031 18:33:22.086"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>**************** Configuration Start ************</arg>
+</arguments>
+<msg timestamp="20171031 18:33:22.086" level="INFO">**************** Configuration Start ************</msg>
+<status status="PASS" endtime="20171031 18:33:22.086" starttime="20171031 18:33:22.086"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:33:27.093" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:27.093" starttime="20171031 18:33:22.086"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ssh -o "StrictHostKeyChecking no" user@${SBC_Mgmt_IP}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:27.093" level="INFO">ssh -o "StrictHostKeyChecking no" user@[roo t@controller</msg>
+<status status="PASS" endtime="20171031 18:33:27.093" starttime="20171031 18:33:27.093"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20171031 18:33:32.104" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:32.104" starttime="20171031 18:33:27.093"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${output}=</arg>
+<arg>Read</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:32.104" starttime="20171031 18:33:32.104"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${SBC_NewPassword}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:32.104" level="INFO">user@[root@controller's password:</msg>
+<status status="PASS" endtime="20171031 18:33:32.104" starttime="20171031 18:33:32.104"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20171031 18:33:34.116" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:34.116" starttime="20171031 18:33:32.104"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>en</arg>
+</arguments>
+<msg timestamp="20171031 18:33:34.116" level="INFO">Permission denied, please try again.</msg>
+<status status="PASS" endtime="20171031 18:33:34.116" starttime="20171031 18:33:34.116"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20171031 18:33:35.130" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20171031 18:33:35.130" starttime="20171031 18:33:34.116"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${SBC_NewPassword}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:35.130" level="INFO">user@[root@controller's password:</msg>
+<status status="PASS" endtime="20171031 18:33:35.130" starttime="20171031 18:33:35.130"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${output}=</arg>
+<arg>Read</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:35.130" starttime="20171031 18:33:35.130"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20171031 18:33:37.143" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:37.143" starttime="20171031 18:33:35.130"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Write</arg>
+<arg>ifconfig -a</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:37.143" starttime="20171031 18:33:37.143"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>read</arg>
+</arguments>
+<status status="PASS" endtime="20171031 18:33:37.143" starttime="20171031 18:33:37.143"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Server}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${HOST}</var>
+</assign>
+<msg timestamp="20171031 18:33:37.143" level="INFO">${HOST} = 10.53.214.10</msg>
+<status status="PASS" endtime="20171031 18:33:37.143" starttime="20171031 18:33:37.143"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>ping</arg>
+<arg>${HOST}</arg>
+</arguments>
+<assign>
+<var>${store}</var>
+</assign>
+<msg timestamp="20171031 18:33:37.143" level="INFO">${store} = ping 10.53.214.10</msg>
+<status status="PASS" endtime="20171031 18:33:37.143" starttime="20171031 18:33:37.143"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${store}</arg>
+</arguments>
+<msg timestamp="20171031 18:33:37.143" level="INFO">Root@123</msg>
+<status status="PASS" endtime="20171031 18:33:37.143" starttime="20171031 18:33:37.143"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20171031 18:33:47.145" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20171031 18:33:47.145" starttime="20171031 18:33:37.143"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20171031 18:33:47.145" level="INFO">Permission denied, please try again.
+user@[root@controller's password: 
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20171031 18:33:47.145" level="INFO">${output} = Permission denied, please try again.
+user@[root@controller's password: 
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+[root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20171031 18:33:47.145" starttime="20171031 18:33:47.145"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>time</arg>
+</arguments>
+<msg timestamp="20171031 18:33:47.145" level="FAIL">'Permission denied, please try again.
+user@[root@controller's password: 
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+[root@controller ~(keystone_admin)]# ' does not contain 'time'</msg>
+<status status="FAIL" endtime="20171031 18:33:47.145" starttime="20171031 18:33:47.145"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="FAIL" endtime="20171031 18:33:47.145" critical="yes" starttime="20171031 18:33:01.862">'Permission denied, please try again.
+user@[root@controller's password: 
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+[root@controller ~(keystone_admin)]# ' does not contain 'time'</status>
+</test>
+<status status="FAIL" endtime="20171031 18:33:47.145" starttime="20171031 18:27:47.397"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="3" pass="0">Critical Tests</stat>
+<stat fail="3" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="3" pass="0">Onboard</stat>
+</tag>
+<suite>
+<stat fail="3" id="s1" name="SBC Onboarding TestCases" pass="0">SBC Onboarding TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

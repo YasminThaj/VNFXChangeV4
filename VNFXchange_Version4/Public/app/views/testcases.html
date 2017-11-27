@@ -1,0 +1,81 @@
+<div class="tab-content">
+<div id="tstcase" class="tab-pane fade in active">
+
+    
+<!--  <table style="margin-top:20px;width:320px">
+<tr>
+<th>Testcase</th>
+</tr>
+  <tr>
+    <td>Configuration set up</td></tr>
+	<tr><td>Basic Tesing</td></tr>
+	<tr><td>Show Interfaces</td></tr>
+	<tr><td>Packet Loss dpos5</td></tr>
+	<tr><td>Packet Loss dpos6</td></tr>
+
+	<tr><td>IXIA Traffic</td></tr>
+	<tr><td>Delete configuration</td>
+  </tr>
+</table> -->
+<div style="margin-top:30px">
+<div class="col-md-3" >
+<label for="stype">VNF Type : </label>
+<select id="stype" ng-model="selectedName" ng-change="ontypeChange(selectedName);" class="dropdown-toggle" style="height: 27px;">
+<option value="" >--Please Select--</option>
+<!--<option value="1,VRouter" >VRouter</option> -->
+<!-- <option value="2,VFirewall" >VFirewall</option> -->
+<option value="1,SBC" >SBC</option>
+</select>
+</div >
+
+<div ng-if="showdrdwn" class="col-md-3" style="width:30%">
+<label for="snmtype">VNF Name : </label>
+<select id="snmtype" ng-model="selectedVName"  ng-change="onnameChange(selectedVName);" style="height: 27px;" style="height:27px;border-radius:20px;width:150px;">
+<option value="" >--Please Select--</option>
+<option ng-repeat="y in vimfunnames" value="{{y.VnfName}}">{{y.VnfName}}</option>
+
+<!-- <select id="snmtype" ng-model="selectedVName" ng-change="onnameChange(selectedVName);" ng-options="x for x in vnames" style="height: 27px;"> -->
+
+ <!-- <option value="" ng-repeat="x in names track by $index" >--Please Select--</option> -->
+
+</select>
+</div>
+
+
+<!--<div class="col-md-3" ng-if="showcheckbox" class="col-md-3" style="width:30%; font-size:30; margin: 19px;margin-right:60%;margin-top:2%" >
+<div ng-repeat="tc in testcase">
+        <label>
+            <input type="checkbox" ng-model="tc.isChecked" ng-value="tc.name" ng-change="tctypeChange(tc.name)" />
+			<span>{{tc.name}}</span>
+        </label>
+    </div>
+</div> 
+</div> -->
+<div ng-if="showcheckbox" class="col-md-3" style="width:40%; font-size:30; margin: 19px;margin-right:60%;margin-top:2%" >
+<input id="chckbtn1" name="chktest1" ng-model="test1"  value="tc1" type="checkbox" ng-change="Testcase1(test1);">TC1:Register User through SBC 
+<br>
+<input id="chckbtn2" name="chktest2" ng-model="test2" value="tc2"  type="checkbox" ng-change="Testcase2(test2);">TC2:Make call from Orginiator,RemoteUser drop the call
+<br>
+<input id="chckbtn3" name="chktest3" ng-model="test3" value="tc3"  type="checkbox" ng-change="Testcase3(test3);">TC3:Un_Registering User
+</div> 
+
+<span  id="overlay1" ng-show="searchButtonText == 'Searching'" >
+    <img class="loading_circle" src="../img/loading.gif" width="60px" height="60px"></img>
+</span>
+
+<div  class="col-md-3" style="margin-top:5%;margin-left:35%;">
+<div ng-if="showbtn" >
+<button id="tstbutn" class="btn btn-primary" ng-disabled="isDis" ng-click="gotoexecute();" style="margin-left:30%;margin-top:20%">
+Execute
+</button>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+
+

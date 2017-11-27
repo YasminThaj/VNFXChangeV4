@@ -1,0 +1,3764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170919 10:27:37.312" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\VolteComponent.robot" id="s1" name="VolteComponent">
+<kw type="setup" name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:27:37.733" starttime="20170919 10:27:37.733"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:27:37.733" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:27:43.929" level="INFO">Read output: Last login: Tue Sep 19 00:46:11 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:27:43.929" starttime="20170919 10:27:37.733"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:27:43.929" starttime="20170919 10:27:37.733"></status>
+</kw>
+<test id="s1-t1" name="Perimeta vm creation">
+<kw name="Perimeta vm creation" library="Keywords2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Perimeta VM Create Start**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:27:43.929" level="INFO">*****************************Perimeta VM Create Start**********************</msg>
+<status status="PASS" endtime="20170919 10:27:43.929" starttime="20170919 10:27:43.929"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:27:43.929" starttime="20170919 10:27:43.929"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:27:43.929" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:27:50.063" level="INFO">Read output: Last login: Tue Sep 19 00:57:04 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:27:50.063" starttime="20170919 10:27:43.929"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:27:50.063" starttime="20170919 10:27:43.929"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.063" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:27:50.063" starttime="20170919 10:27:50.063"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.063" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:27:50.063" starttime="20170919 10:27:50.063"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.063" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:27:50.063" starttime="20170919 10:27:50.063"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.063" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:27:50.063" starttime="20170919 10:27:50.063"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.079" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:27:50.079" starttime="20170919 10:27:50.079"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.079" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:27:50.079" starttime="20170919 10:27:50.079"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.079" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:27:50.079" starttime="20170919 10:27:50.079"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:27:50.079" starttime="20170919 10:27:50.063"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>heat stack-create -f /root/auto_heatfiles/ha_isc_4vnic/perimeta_ha_isc_4vnic.yaml -e /root/auto_heatfiles/ha_isc_4vnic/perimeta_ha_isc_4vnic_env.yaml PerimetaStack4</arg>
+</arguments>
+<msg timestamp="20170919 10:27:50.079" level="INFO">[root@controller ~(keystone_admin)]# heat stack-create -f /root/auto_heatfiles/ ha_isc_4vnic/perimeta_ha_isc_4vnic.yaml -e /root/auto_heatfiles/ha_isc_4vnic/per imeta_ha_isc_4vnic_env.yaml PerimetaStack4</msg>
+<status status="PASS" endtime="20170919 10:27:50.079" starttime="20170919 10:27:50.079"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>80</arg>
+</arguments>
+<msg timestamp="20170919 10:29:10.088" level="INFO">Slept 1 minute 20 seconds</msg>
+<status status="PASS" endtime="20170919 10:29:10.088" starttime="20170919 10:27:50.079"></status>
+</kw>
+<kw name="Known host removal" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>rm /root/.ssh/known_hosts</arg>
+</arguments>
+<msg timestamp="20170919 10:29:10.088" level="INFO">+--------------------------------------+------------------+--------------------+---------------------+--------------+</msg>
+<status status="PASS" endtime="20170919 10:29:10.088" starttime="20170919 10:29:10.088"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:29:15.098" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:29:15.098" starttime="20170919 10:29:10.088"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>yes</arg>
+</arguments>
+<msg timestamp="20170919 10:29:15.098" level="INFO">| id                                   | stack_name       | stack_status       | creation_time       | updated_time |</msg>
+<status status="PASS" endtime="20170919 10:29:15.098" starttime="20170919 10:29:15.098"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:29:15.098" starttime="20170919 10:29:10.088"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>******************************Perimieta VM Creation Completed*********************************</arg>
+</arguments>
+<msg timestamp="20170919 10:29:15.098" level="INFO">******************************Perimieta VM Creation Completed*********************************</msg>
+<status status="PASS" endtime="20170919 10:29:15.098" starttime="20170919 10:29:15.098"></status>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" endtime="20170919 10:29:15.238" starttime="20170919 10:29:15.098"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************VM Create \ Validation Started**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:29:15.238" level="INFO">*****************************VM Create  Validation Started**********************</msg>
+<status status="PASS" endtime="20170919 10:29:15.238" starttime="20170919 10:29:15.238"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:29:15.238" starttime="20170919 10:29:15.238"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:29:15.238" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:29:21.369" level="INFO">Read output: Last login: Tue Sep 19 00:57:10 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:15.238"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:15.238"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.369" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.369" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.369" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.369" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.369" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.369" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.369" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:29:21.369" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>heat stack-list | grep -i PerimetaStack4</arg>
+</arguments>
+<msg timestamp="20170919 10:29:21.385" level="INFO">[root@controller ~(keystone_admin)]# heat stack-list | grep -i PerimetaStack4</msg>
+<status status="PASS" endtime="20170919 10:29:21.385" starttime="20170919 10:29:21.369"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:29:26.395" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:29:26.395" starttime="20170919 10:29:21.385"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output1}</var>
+</assign>
+<msg timestamp="20170919 10:29:26.395" level="INFO">| f2fea114-11b3-4266-a88c-118371d29e9d | [01;31m[KPerimetaStack4[m[K   | CREATE_COMPLETE | 2017-09-19T04:57:14 | None         |
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:29:26.395" level="INFO">${output1} = | f2fea114-11b3-4266-a88c-118371d29e9d | [01;31m[KPerimetaStack4[m[K   | CREATE_COMPLETE | 2017-09-19T04:57:14 | None         |
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:29:26.395" starttime="20170919 10:29:26.395"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output1}</arg>
+<arg>CREATE_COMPLETE</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:29:26.395" starttime="20170919 10:29:26.395"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************VM Create \ Validation Completed**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:29:26.395" level="INFO">*****************************VM Create  Validation Completed**********************</msg>
+<status status="PASS" endtime="20170919 10:29:26.395" starttime="20170919 10:29:26.395"></status>
+</kw>
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:29:26.473" starttime="20170919 10:29:26.395"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:29:31.481" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:29:31.481" starttime="20170919 10:29:26.473"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:29:31.481" starttime="20170919 10:27:43.929"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="PASS" endtime="20170919 10:29:31.481" critical="yes" starttime="20170919 10:27:43.929"></status>
+</test>
+<test id="s1-t2" name="Neutron port updation">
+<kw name="Neutron port updation" library="Keywords2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Neutron Port Update Start**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:29:31.481" level="INFO">*****************************Neutron Port Update Start**********************</msg>
+<status status="PASS" endtime="20170919 10:29:31.481" starttime="20170919 10:29:31.481"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:29:31.481" starttime="20170919 10:29:31.481"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:29:31.481" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:29:37.627" level="INFO">Read output: Last login: Tue Sep 19 00:58:42 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:29:37.627" starttime="20170919 10:29:31.481"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:29:37.627" starttime="20170919 10:29:31.481"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.627" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:29:37.627" starttime="20170919 10:29:37.627"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.627" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:29:37.627" starttime="20170919 10:29:37.627"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.627" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:29:37.627" starttime="20170919 10:29:37.627"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.643" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:29:37.643" starttime="20170919 10:29:37.627"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.643" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:29:37.643" starttime="20170919 10:29:37.643"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.643" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:29:37.643" starttime="20170919 10:29:37.643"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.643" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:29:37.643" starttime="20170919 10:29:37.643"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:29:37.643" starttime="20170919 10:29:37.627"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>./perimeta.sh</arg>
+</arguments>
+<msg timestamp="20170919 10:29:37.643" level="INFO">[root@controller ~(keystone_admin)]# ./perimeta.sh</msg>
+<status status="PASS" endtime="20170919 10:29:37.643" starttime="20170919 10:29:37.643"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20170919 10:29:47.645" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20170919 10:29:47.645" starttime="20170919 10:29:37.643"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv2-b_portid.txt</arg>
+</arguments>
+<assign>
+<var>${serv2-b_portid}</var>
+</assign>
+<msg timestamp="20170919 10:29:52.793" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:29:52.793" level="INFO">${serv2-b_portid} = 90372296-6354-45ae-b315-802e873594bf</msg>
+<status status="PASS" endtime="20170919 10:29:52.793" starttime="20170919 10:29:47.645"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${serv2-b_portid}</arg>
+</arguments>
+<assign>
+<var>${a}</var>
+</assign>
+<msg timestamp="20170919 10:29:52.793" level="INFO">${a} = 90372296-6354-45ae-b315-802e873594bf --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:29:52.793" starttime="20170919 10:29:52.793"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${a}</arg>
+</arguments>
+<msg timestamp="20170919 10:29:52.808" level="INFO">neutron port-update 90372296-6354-45ae-b315-802e873594bf --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:29:52.808" starttime="20170919 10:29:52.793"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:29:55.819" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 10:29:55.819" starttime="20170919 10:29:52.808"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:29:55.819" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20170919 10:29:55.819" starttime="20170919 10:29:55.819"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>a-mgmt-portid.txt</arg>
+</arguments>
+<assign>
+<var>${a-mgmt-portid}</var>
+</assign>
+<msg timestamp="20170919 10:30:00.970" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:30:00.970" level="INFO">${a-mgmt-portid} = 98a5bb52-3352-4ffb-a142-8911db64d549</msg>
+<status status="PASS" endtime="20170919 10:30:00.970" starttime="20170919 10:29:55.819"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${a-mgmt-portid}</arg>
+</arguments>
+<assign>
+<var>${b}</var>
+</assign>
+<msg timestamp="20170919 10:30:00.970" level="INFO">${b} = 98a5bb52-3352-4ffb-a142-8911db64d549 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:00.970" starttime="20170919 10:30:00.970"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${b}</arg>
+</arguments>
+<msg timestamp="20170919 10:30:00.986" level="INFO">[root@controller ~(keystone_admin)]# neutron port-update 90372296-6354-45ae-b31 5-802e873594bf --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:00.986" starttime="20170919 10:30:00.970"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:30:03.996" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 10:30:03.996" starttime="20170919 10:30:00.986"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:30:03.996" level="INFO">Updated port: 90372296-6354-45ae-b315-802e873594bf
+ [root@controller ~(keystone_admin)]# neutron port-update 98a5bb52-3352-4ffb-a14 2-8911db64d549 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1
+Updated port: 98a5bb52-3352-4ffb-a142-8911db64d549
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:30:03.996" level="INFO">${output} = Updated port: 90372296-6354-45ae-b315-802e873594bf
+ [root@controller ~(keystone_admin)]# neutron port-update 98a5bb52-3352-4ffb-a14 2-8911db64d549 --allowed-address-pairs type=dict list=true ip_addr...</msg>
+<status status="PASS" endtime="20170919 10:30:03.996" starttime="20170919 10:30:03.996"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv1-port-b_portid.txt</arg>
+</arguments>
+<assign>
+<var>${serv1-port-b_portid}</var>
+</assign>
+<msg timestamp="20170919 10:30:09.129" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:30:09.129" level="INFO">${serv1-port-b_portid} = 90b5361f-ca5d-4ca1-9e0f-c3894355fddd</msg>
+<status status="PASS" endtime="20170919 10:30:09.129" starttime="20170919 10:30:03.996"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${serv1-port-b_portid}</arg>
+</arguments>
+<assign>
+<var>${c}</var>
+</assign>
+<msg timestamp="20170919 10:30:09.129" level="INFO">${c} = 90b5361f-ca5d-4ca1-9e0f-c3894355fddd --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:09.129" starttime="20170919 10:30:09.129"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${c}</arg>
+</arguments>
+<msg timestamp="20170919 10:30:09.144" level="INFO">neutron port-update 90b5361f-ca5d-4ca1-9e0 f-c3894355fddd --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:09.144" starttime="20170919 10:30:09.129"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:30:12.157" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 10:30:12.157" starttime="20170919 10:30:09.144"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:30:12.157" level="INFO">Updated port: 90b5361f-ca5d-4ca1-9e0f-c3894355fddd
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:30:12.157" level="INFO">${output} = Updated port: 90b5361f-ca5d-4ca1-9e0f-c3894355fddd
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:30:12.157" starttime="20170919 10:30:12.157"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv2-a_portid.txt</arg>
+</arguments>
+<assign>
+<var>${serv2-a_portid}</var>
+</assign>
+<msg timestamp="20170919 10:30:17.290" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:30:17.290" level="INFO">${serv2-a_portid} = 71b7f9ac-a1b6-4143-aef8-85e7d9249323</msg>
+<status status="PASS" endtime="20170919 10:30:17.290" starttime="20170919 10:30:12.157"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${serv2-a_portid}</arg>
+</arguments>
+<assign>
+<var>${d}</var>
+</assign>
+<msg timestamp="20170919 10:30:17.290" level="INFO">${d} = 71b7f9ac-a1b6-4143-aef8-85e7d9249323 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:17.290" starttime="20170919 10:30:17.290"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${d}</arg>
+</arguments>
+<msg timestamp="20170919 10:30:17.305" level="INFO">neutron port-update 71b7f9ac-a1b6-4143-aef 8-85e7d9249323 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:17.305" starttime="20170919 10:30:17.290"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:30:21.314" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:30:21.314" starttime="20170919 10:30:17.305"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:30:21.314" level="INFO">Updated port: 71b7f9ac-a1b6-4143-aef8-85e7d9249323
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:30:21.314" level="INFO">${output} = Updated port: 71b7f9ac-a1b6-4143-aef8-85e7d9249323
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:30:21.314" starttime="20170919 10:30:21.314"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv1-port-a_portid.txt</arg>
+</arguments>
+<assign>
+<var>${serv1-port-a_portid}</var>
+</assign>
+<msg timestamp="20170919 10:30:26.447" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:30:26.447" level="INFO">${serv1-port-a_portid} = e940de6e-8cae-416a-ac1a-a30b0d2f01bd</msg>
+<status status="PASS" endtime="20170919 10:30:26.447" starttime="20170919 10:30:21.314"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${serv1-port-a_portid}</arg>
+</arguments>
+<assign>
+<var>${e}</var>
+</assign>
+<msg timestamp="20170919 10:30:26.447" level="INFO">${e} = e940de6e-8cae-416a-ac1a-a30b0d2f01bd --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:26.447" starttime="20170919 10:30:26.447"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${e}</arg>
+</arguments>
+<msg timestamp="20170919 10:30:26.447" level="INFO">neutron port-update e940de6e-8cae-416a-ac1 a-a30b0d2f01bd --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:26.447" starttime="20170919 10:30:26.447"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:30:30.458" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:30:30.458" starttime="20170919 10:30:26.447"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:30:30.458" level="INFO">Updated port: e940de6e-8cae-416a-ac1a-a30b0d2f01bd
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:30:30.458" level="INFO">${output} = Updated port: e940de6e-8cae-416a-ac1a-a30b0d2f01bd
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:30:30.458" starttime="20170919 10:30:30.458"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>b-mgmt-portid.txt</arg>
+</arguments>
+<assign>
+<var>${b-mgmt-portid}</var>
+</assign>
+<msg timestamp="20170919 10:30:35.592" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:30:35.592" level="INFO">${b-mgmt-portid} = 3dd865a7-30cd-453b-b772-d35af3dcffa2</msg>
+<status status="PASS" endtime="20170919 10:30:35.592" starttime="20170919 10:30:30.458"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${b-mgmt-portid}</arg>
+</arguments>
+<assign>
+<var>${f}</var>
+</assign>
+<msg timestamp="20170919 10:30:35.592" level="INFO">${f} = 3dd865a7-30cd-453b-b772-d35af3dcffa2 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:35.592" starttime="20170919 10:30:35.592"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${f}</arg>
+</arguments>
+<msg timestamp="20170919 10:30:35.608" level="INFO">neutron port-update 3dd865a7-30cd-453b-b77 2-d35af3dcffa2 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:35.608" starttime="20170919 10:30:35.592"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:30:39.617" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:30:39.617" starttime="20170919 10:30:35.608"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:30:39.617" level="INFO">Updated port: 3dd865a7-30cd-453b-b772-d35af3dcffa2
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:30:39.617" level="INFO">${output} = Updated port: 3dd865a7-30cd-453b-b772-d35af3dcffa2
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:30:39.617" starttime="20170919 10:30:39.617"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>virt-mgmt-portid.txt</arg>
+</arguments>
+<assign>
+<var>${virt-mgmt-portid}</var>
+</assign>
+<msg timestamp="20170919 10:30:44.798" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:30:44.798" level="INFO">${virt-mgmt-portid} = f65e86e5-7937-4fc6-a1fb-3a10f2e70020</msg>
+<status status="PASS" endtime="20170919 10:30:44.798" starttime="20170919 10:30:39.617"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${virt-mgmt-portid}</arg>
+</arguments>
+<assign>
+<var>${g}</var>
+</assign>
+<msg timestamp="20170919 10:30:44.798" level="INFO">${g} = f65e86e5-7937-4fc6-a1fb-3a10f2e70020 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:44.798" starttime="20170919 10:30:44.798"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${output}=</arg>
+<arg>Read</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:30:44.798" starttime="20170919 10:30:44.798"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${g}</arg>
+</arguments>
+<msg timestamp="20170919 10:30:44.814" level="INFO">neutron port-update f65e86e5-7937-4fc6-a1f b-3a10f2e70020 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:44.814" starttime="20170919 10:30:44.798"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:30:48.823" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:30:48.823" starttime="20170919 10:30:44.814"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:30:48.823" level="INFO">Updated port: f65e86e5-7937-4fc6-a1fb-3a10f2e70020
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:30:48.823" level="INFO">${output} = Updated port: f65e86e5-7937-4fc6-a1fb-3a10f2e70020
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:30:48.823" starttime="20170919 10:30:48.823"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>virt-serv1_port_portid.txt</arg>
+</arguments>
+<assign>
+<var>${virt-serv1_port_portid}</var>
+</assign>
+<msg timestamp="20170919 10:30:53.956" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:30:53.956" level="INFO">${virt-serv1_port_portid} = 8167c422-2068-4f92-961a-4d25561d20a3</msg>
+<status status="PASS" endtime="20170919 10:30:53.956" starttime="20170919 10:30:48.823"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${virt-serv1_port_portid}</arg>
+</arguments>
+<assign>
+<var>${h}</var>
+</assign>
+<msg timestamp="20170919 10:30:53.956" level="INFO">${h} = 8167c422-2068-4f92-961a-4d25561d20a3 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:53.956" starttime="20170919 10:30:53.956"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${h}</arg>
+</arguments>
+<msg timestamp="20170919 10:30:53.971" level="INFO">neutron port-update 8167c422-2068-4f92-961 a-4d25561d20a3 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:30:53.971" starttime="20170919 10:30:53.956"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:30:57.981" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:30:57.981" starttime="20170919 10:30:53.971"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:30:57.981" level="INFO">Updated port: 8167c422-2068-4f92-961a-4d25561d20a3
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:30:57.981" level="INFO">${output} = Updated port: 8167c422-2068-4f92-961a-4d25561d20a3
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:30:57.981" starttime="20170919 10:30:57.981"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>virt-serv2_portid.txt</arg>
+</arguments>
+<assign>
+<var>${virt-serv2_portid}</var>
+</assign>
+<msg timestamp="20170919 10:31:03.115" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:31:03.115" level="INFO">${virt-serv2_portid} = 0a3a0f26-56b2-465c-b93e-8b8b47150aaf</msg>
+<status status="PASS" endtime="20170919 10:31:03.115" starttime="20170919 10:30:57.981"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${virt-serv2_portid}</arg>
+</arguments>
+<assign>
+<var>${i}</var>
+</assign>
+<msg timestamp="20170919 10:31:03.115" level="INFO">${i} = 0a3a0f26-56b2-465c-b93e-8b8b47150aaf --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:31:03.115" starttime="20170919 10:31:03.115"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${i}</arg>
+</arguments>
+<msg timestamp="20170919 10:31:03.131" level="INFO">neutron port-update 0a3a0f26-56b2-465c-b93 e-8b8b47150aaf --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:31:03.131" starttime="20170919 10:31:03.115"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:31:07.142" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:31:07.142" starttime="20170919 10:31:03.131"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:31:07.142" level="INFO">Updated port: 0a3a0f26-56b2-465c-b93e-8b8b47150aaf
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:31:07.142" level="INFO">${output} = Updated port: 0a3a0f26-56b2-465c-b93e-8b8b47150aaf
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:31:07.142" starttime="20170919 10:31:07.142"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>ha-port-b_portid.txt</arg>
+</arguments>
+<assign>
+<var>${ha-port-b_portid}</var>
+</assign>
+<msg timestamp="20170919 10:31:12.281" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:31:12.281" level="INFO">${ha-port-b_portid} = 3e19dd57-836a-4fa0-8774-84c9d494ef9c</msg>
+<status status="PASS" endtime="20170919 10:31:12.281" starttime="20170919 10:31:07.142"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${ha-port-b_portid}</arg>
+</arguments>
+<assign>
+<var>${j}</var>
+</assign>
+<msg timestamp="20170919 10:31:12.281" level="INFO">${j} = 3e19dd57-836a-4fa0-8774-84c9d494ef9c --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:31:12.281" starttime="20170919 10:31:12.281"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${j}</arg>
+</arguments>
+<msg timestamp="20170919 10:31:12.297" level="INFO">neutron port-update 3e19dd57-836a-4fa0-877 4-84c9d494ef9c --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:31:12.297" starttime="20170919 10:31:12.281"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:31:16.306" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:31:16.306" starttime="20170919 10:31:12.297"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>b-mgmt-portid.txt</arg>
+</arguments>
+<assign>
+<var>${b-mgmt-portid}</var>
+</assign>
+<msg timestamp="20170919 10:31:21.439" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:31:21.439" level="INFO">${b-mgmt-portid} = 3dd865a7-30cd-453b-b772-d35af3dcffa2</msg>
+<status status="PASS" endtime="20170919 10:31:21.439" starttime="20170919 10:31:16.306"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${b-mgmt-portid}</arg>
+</arguments>
+<assign>
+<var>${k}</var>
+</assign>
+<msg timestamp="20170919 10:31:21.439" level="INFO">${k} = 3dd865a7-30cd-453b-b772-d35af3dcffa2 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:31:21.439" starttime="20170919 10:31:21.439"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${k}</arg>
+</arguments>
+<msg timestamp="20170919 10:31:21.439" level="INFO">Updated port: 3e19dd57-836a-4fa0-8774-84c9d494ef9c</msg>
+<status status="PASS" endtime="20170919 10:31:21.439" starttime="20170919 10:31:21.439"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:31:25.449" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:31:25.449" starttime="20170919 10:31:21.439"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:31:25.449" level="INFO">[root@controller ~(keystone_admin)]# neutron port-update 3dd865a7-30cd-453b-b77 2-d35af3dcffa2 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1
+Updated port: 3dd865a7-30cd-453b-b772-d35af3dcffa2
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:31:25.449" level="INFO">${output} =  [root@controller ~(keystone_admin)]# neutron port-update 3dd865a7-30cd-453b-b77 2-d35af3dcffa2 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::...</msg>
+<status status="PASS" endtime="20170919 10:31:25.449" starttime="20170919 10:31:25.449"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>ha-port-a_portid.txt</arg>
+</arguments>
+<assign>
+<var>${ha-port-b_portid}</var>
+</assign>
+<msg timestamp="20170919 10:31:30.582" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:31:30.582" level="INFO">${ha-port-b_portid} = 2bf7a92e-2129-4a21-9c94-f54a3493dd08</msg>
+<status status="PASS" endtime="20170919 10:31:30.582" starttime="20170919 10:31:25.449"></status>
+</kw>
+<kw name="Join String5" library="Iteration">
+<arguments>
+<arg>${ha-port-b_portid}</arg>
+</arguments>
+<assign>
+<var>${l}</var>
+</assign>
+<msg timestamp="20170919 10:31:30.582" level="INFO">${l} = 2bf7a92e-2129-4a21-9c94-f54a3493dd08 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1 ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:31:30.582" starttime="20170919 10:31:30.582"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>neutron port-update ${l}</arg>
+</arguments>
+<msg timestamp="20170919 10:31:30.598" level="INFO">neutron port-update 2bf7a92e-2129-4a21-9c9 4-f54a3493dd08 --allowed-address-pairs type=dict list=true ip_address=0.0.0.0/1  ip_address=128.0.0.0/1 ip_address=::/1 ip_address=8000::/1</msg>
+<status status="PASS" endtime="20170919 10:31:30.598" starttime="20170919 10:31:30.582"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:31:34.609" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:31:34.609" starttime="20170919 10:31:30.598"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:31:34.609" level="INFO">Updated port: 2bf7a92e-2129-4a21-9c94-f54a3493dd08
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:31:34.609" level="INFO">${output} = Updated port: 2bf7a92e-2129-4a21-9c94-f54a3493dd08
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:31:34.609" starttime="20170919 10:31:34.609"></status>
+</kw>
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:31:34.749" starttime="20170919 10:31:34.609"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*************************Neutron Port Updation Completed**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:31:34.749" level="INFO">*************************Neutron Port Updation Completed**********************</msg>
+<status status="PASS" endtime="20170919 10:31:34.749" starttime="20170919 10:31:34.749"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:31:39.760" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:31:39.760" starttime="20170919 10:31:34.749"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:31:39.760" starttime="20170919 10:29:31.481"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="PASS" endtime="20170919 10:31:39.760" critical="yes" starttime="20170919 10:29:31.481"></status>
+</test>
+<test id="s1-t3" name="HA SYNC">
+<kw name="HA sync" library="Keywords2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************HA Sync \ Start**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:31:39.760" level="INFO">*****************************HA Sync  Start**********************</msg>
+<status status="PASS" endtime="20170919 10:31:39.760" starttime="20170919 10:31:39.760"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:31:39.760" starttime="20170919 10:31:39.760"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:31:39.760" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:31:45.908" level="INFO">Read output: Last login: Tue Sep 19 00:58:58 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:31:45.908" starttime="20170919 10:31:39.760"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:31:45.908" starttime="20170919 10:31:39.760"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.908" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:31:45.908" starttime="20170919 10:31:45.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.908" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:31:45.908" starttime="20170919 10:31:45.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.908" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:31:45.908" starttime="20170919 10:31:45.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.924" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:31:45.924" starttime="20170919 10:31:45.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.924" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:31:45.924" starttime="20170919 10:31:45.924"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.924" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:31:45.924" starttime="20170919 10:31:45.924"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.924" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:31:45.924" starttime="20170919 10:31:45.924"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:31:45.924" starttime="20170919 10:31:45.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>./perimeta.sh</arg>
+</arguments>
+<msg timestamp="20170919 10:31:45.924" level="INFO">[root@controller ~(keystone_admin)]# ./perimeta.sh</msg>
+<status status="PASS" endtime="20170919 10:31:45.924" starttime="20170919 10:31:45.924"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20170919 10:31:55.939" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20170919 10:31:55.939" starttime="20170919 10:31:45.924"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>perimeta_a.txt</arg>
+</arguments>
+<assign>
+<var>${perimeta_a_ip}</var>
+</assign>
+<msg timestamp="20170919 10:32:01.071" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:32:01.071" level="INFO">${perimeta_a_ip} = 172.18.0.193</msg>
+<status status="PASS" endtime="20170919 10:32:01.071" starttime="20170919 10:31:55.939"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Close Connection</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:32:01.071" starttime="20170919 10:32:01.071"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${perimeta_a_ip}</arg>
+</arguments>
+<assign>
+<var>${ConnectionIndex}</var>
+</assign>
+<msg timestamp="20170919 10:32:01.071" level="INFO">${ConnectionIndex} = 2</msg>
+<status status="PASS" endtime="20170919 10:32:01.071" starttime="20170919 10:32:01.071"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${vm_username}</arg>
+<arg>${vm_password}</arg>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:32:01.071" level="INFO">Logging into '172.18.0.193:22' as 'root'.</msg>
+<msg timestamp="20170919 10:32:06.439" level="INFO">Read output: 
+[?1h=SUMMARY
+-------
+Tue Sep 19 04:55:03 UTC 2017 = Tue Sep 19 04:55:03 UTC 2017
+This is processor A.
+Processor A is the primary processor
+
+System type: ISC
+
+# Process          RunningTime
+# vpsi                   00:43
+# mscli                  00:28
+# ethmgr                 01:03
+# vpcn                   00:56
+
+
+[K[?1l&gt;|-----------------------------------------------------------------------------|
+|                                   CAUTION                                   |
+|   You have logged into this system as the superuser.  This account has      |
+|   considerable power, and is capable of causing severe damage to your       |
+|   Perimeta system.  You are responsible for the commands you run and the    |
+|   impact they have.                                                         |
+|-----------------------------------------------------------------------------|
+
+[?1034h[0mCPU1:Perimeta-vnf-isc-a:~#</msg>
+<status status="PASS" endtime="20170919 10:32:06.439" starttime="20170919 10:32:01.071"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:32:11.447" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:32:11.447" starttime="20170919 10:32:06.439"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sdc</arg>
+</arguments>
+<msg timestamp="20170919 10:32:11.447" level="INFO">sdc</msg>
+<status status="PASS" endtime="20170919 10:32:11.447" starttime="20170919 10:32:11.447"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:32:16.458" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:32:16.458" starttime="20170919 10:32:11.447"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170919 10:32:16.458" level="INFO">THIS COMPUTER SYSTEM IS FOR AUTHORIZED USERS ONLY.  YOU SHOULD HAVE NO</msg>
+<status status="PASS" endtime="20170919 10:32:16.458" starttime="20170919 10:32:16.458"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:32:19.469" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 10:32:19.469" starttime="20170919 10:32:16.458"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20170919 10:32:19.469" level="INFO">EXPECTATION OF PRIVACY IN YOUR USE OF THIS SYSTEM.  USE OF THE SYSTEM</msg>
+<status status="PASS" endtime="20170919 10:32:19.469" starttime="20170919 10:32:19.469"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:32:22.480" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 10:32:22.480" starttime="20170919 10:32:19.469"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:32:22.480" level="INFO">CONSTITUTES CONSENT TO MONITORING, RETRIEVAL, AND DISCLOSURE OF ANY
+INFORMATION STORED WITHIN THE SYSTEM FOR ANY PURPOSE, INCLUDING
+CRIMINAL PROSECUTION.
+
+
+--------------------------------------------------------------------------------
+
+                                                     19-Sep-2017 04:55:14 +0000
+Perimeta ISC Perimeta-vnf-isc is running
+This is processor-blade A; processor-blade B is contactable;
+Session Controller is not partnered
+[Main] [=]
+  Select a command group or command
+  Press ENTER to refresh
+0   Exit        &lt; Log off the craft menu
+1   CLI           Command Line Interface
+2   Admin       &gt; Administrator Function
+3   Software    &gt; Update Perimeta Session Controller Software
+4   Diagnostics &gt; Retrieve Diagnostic Information
+: 2
+
+--------------------------------------------------------------------------------
+
+                                                     19-Sep-2017 04:55:19 +0000
+Perimeta ISC Perimeta-vnf-isc is running
+This is processor-blade A; processor-blade B is contactable;
+Session Controller is not partnered
+[Main-&gt;Admin] [=2]
+  Administrator Function
+  Press ENTER to refresh
+0   Back                  &lt; Back to previous menu
+1   Start/stop            &gt; Start/stop the Perimeta Session Controller running
+2   Protection Switch       Force a Software Protection Switch
+3   Reboot                  Reboot the Perimeta processor-blade
+4   Power-off               Safely power-off the Perimeta processor-blade
+5   Network               &gt; Network configuration
+6   System config         &gt; System Configuration
+7   Billing               &gt; Manage billing record handling
+8   Snapshots             &gt; Manage manual and scheduled snapshots, restore from a snapshot
+9   Commissioning         &gt; Commission or decommission system
+10  Partnering            &gt; Partner or unpartner system
+11  Login Banners         &gt; Login Banner and Message-of-the-Day
+12  Geographic Redundancy &gt; Manage Geographic Redundancy
+13  License Management    &gt; Manage License Configuration
+14  Signal Scale          &gt; Get or Set the Signal Scale
+: 10
+
+--------------------------------------------------------------------------------
+
+                                                     19-Sep-2017 04:55:22 +0000
+Perimeta ISC Perimeta-vnf-isc is running
+This is processor-blade A; processor-blade B is contactable;
+Session Controller is not partnered
+[Main-&gt;Admin-&gt;Partnering] [=2 10]
+  Partner or unpartner system
+  Press ENTER to refresh
+0   Back               &lt; Back to previous menu
+1   Get Replication IP   Get current replication IP configuration
+2   Set Replication IP   Set current replication IP configuration
+3   Propose              Propose partnership with remote processor-blade
+4   Switch               Switch local processor-blade ID, ready for partnering
+:</msg>
+<msg timestamp="20170919 10:32:22.480" level="INFO">${output} = CONSTITUTES CONSENT TO MONITORING, RETRIEVAL, AND DISCLOSURE OF ANY
+INFORMATION STORED WITHIN THE SYSTEM FOR ANY PURPOSE, INCLUDING
+CRIMINAL PROSECUTION.
+
+
+---------------------------------------...</msg>
+<status status="PASS" endtime="20170919 10:32:22.480" starttime="20170919 10:32:22.480"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:32:22.838" level="INFO">3</msg>
+<status status="PASS" endtime="20170919 10:32:22.838" starttime="20170919 10:32:22.480"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170919 10:32:24.851" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170919 10:32:24.851" starttime="20170919 10:32:22.838"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:32:24.851" starttime="20170919 10:32:24.851"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:32:29.858" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:32:29.858" starttime="20170919 10:32:24.851"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>yes</arg>
+</arguments>
+<msg timestamp="20170919 10:32:29.858" level="INFO">--------------------------------------------------------------------------------</msg>
+<status status="PASS" endtime="20170919 10:32:29.858" starttime="20170919 10:32:29.858"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>250</arg>
+</arguments>
+<msg timestamp="20170919 10:36:39.863" level="INFO">Slept 4 minutes 10 seconds</msg>
+<status status="PASS" endtime="20170919 10:36:39.863" starttime="20170919 10:32:29.858"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:36:39.863" level="INFO">Propose
+Propose partnership with remote processor-blade.
+
+  Please verify that this command is correct
+1  *OK        Execute this command
+2   Cancel    Cancel this operation
+: 1
+
+--------------------------------------------------------------------------------
+
+yes
+WARNING:  All configuration on the remote processor-blade will be overwritten
+with configuration from this processor-blade.  The remote processor-blade will
+be rebooted up to three times, and the process will take up to 45 minutes.
+
+Please enter 'yes' to continue, or any other input to cancel.
+Remote processor-blade contactable.
+Sent root key to remote processor-blade.
+Established password-free root access to other processor-blade.
+Established password-free root access from the other processor-blade.
+Core software installed on remote processor-blade.
+User configuration corrected on remote processor-blade.
+Configuration files copied to remote processor-blade.
+FTP directory copied to remote processor-blade.
+Billing files copied to remote processor-blade.
+Custom Transform copied to remote processor-blade.
+SSL files copied to remote processor-blade.
+No local customization file.
+A default customization file will be used for the remote blade.
+
+Processor-blades partnered.
+Waiting for other processor-blade to reboot
+ .  . 
+Other processor-blade has rebooted
+
+Result: The command has completed successfully
+Press ENTER to get list of commands:</msg>
+<msg timestamp="20170919 10:36:39.863" level="INFO">${output} = 
+Propose
+Propose partnership with remote processor-blade.
+
+  Please verify that this command is correct
+1  *OK        Execute this command
+2   Cancel    Cancel this operation
+: 1
+
+-----------...</msg>
+<status status="PASS" endtime="20170919 10:36:39.863" starttime="20170919 10:36:39.863"></status>
+</kw>
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:36:40.050" starttime="20170919 10:36:39.863"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>******************************HA SYNC Done**********************************</arg>
+</arguments>
+<msg timestamp="20170919 10:36:40.050" level="INFO">******************************HA SYNC Done**********************************</msg>
+<status status="PASS" endtime="20170919 10:36:40.050" starttime="20170919 10:36:40.050"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:36:45.060" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:36:45.060" starttime="20170919 10:36:40.050"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:36:45.060" starttime="20170919 10:31:39.760"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="PASS" endtime="20170919 10:36:45.060" critical="yes" starttime="20170919 10:31:39.760"></status>
+</test>
+<test id="s1-t4" name="DNS COnfig">
+<kw name="DNS COnfig" library="Keywords2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************DNS Config Start**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:36:45.060" level="INFO">*****************************DNS Config Start**********************</msg>
+<status status="PASS" endtime="20170919 10:36:45.060" starttime="20170919 10:36:45.060"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:36:45.060" starttime="20170919 10:36:45.060"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:36:45.060" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:36:51.240" level="INFO">Read output: Last login: Tue Sep 19 01:01:06 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:36:51.240" starttime="20170919 10:36:45.060"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:36:51.240" starttime="20170919 10:36:45.060"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:36:51.240" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:36:51.240" starttime="20170919 10:36:51.240"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:36:51.240" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:36:51.240" starttime="20170919 10:36:51.240"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:36:51.240" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:36:51.240" starttime="20170919 10:36:51.240"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:36:51.240" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:36:51.255" starttime="20170919 10:36:51.240"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:36:51.255" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:36:51.255" starttime="20170919 10:36:51.255"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:36:51.255" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:36:51.255" starttime="20170919 10:36:51.255"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:36:51.255" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:36:51.255" starttime="20170919 10:36:51.255"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:36:51.255" starttime="20170919 10:36:51.240"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>perimeta_a.txt</arg>
+</arguments>
+<assign>
+<var>${perimeta_a_ip}</var>
+</assign>
+<msg timestamp="20170919 10:36:56.403" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:36:56.403" level="INFO">${perimeta_a_ip} = 172.18.0.193</msg>
+<status status="PASS" endtime="20170919 10:36:56.403" starttime="20170919 10:36:51.255"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Close Connection</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:36:56.403" starttime="20170919 10:36:56.403"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${perimeta_a_ip}</arg>
+</arguments>
+<assign>
+<var>${ConnectionIndex}</var>
+</assign>
+<msg timestamp="20170919 10:36:56.403" level="INFO">${ConnectionIndex} = 2</msg>
+<status status="PASS" endtime="20170919 10:36:56.403" starttime="20170919 10:36:56.403"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${vm_username}</arg>
+<arg>${vm_password}</arg>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:36:56.403" level="INFO">Logging into '172.18.0.193:22' as 'root'.</msg>
+<msg timestamp="20170919 10:37:01.754" level="INFO">Read output: 
+[?1h=SUMMARY
+-------
+Tue Sep 19 04:59:59 UTC 2017 = Tue Sep 19 04:59:59 UTC 2017
+This is processor A.
+Processor A is the primary processor
+
+System type: ISC
+
+# Process          RunningTime
+# vpsi                   05:38
+# ethmgr                 05:58
+# vpcn                   05:51
+
+
+[K[?1l&gt;|-----------------------------------------------------------------------------|
+|                                   CAUTION                                   |
+|   You have logged into this system as the superuser.  This account has      |
+|   considerable power, and is capable of causing severe damage to your       |
+|   Perimeta system.  You are responsible for the commands you run and the    |
+|   impact they have.                                                         |
+|-----------------------------------------------------------------------------|
+
+[?1034h[0mCPU1:Perimeta-vnf-isc-a:~#</msg>
+<status status="PASS" endtime="20170919 10:37:01.754" starttime="20170919 10:36:56.403"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:37:06.763" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:37:06.763" starttime="20170919 10:37:01.754"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sed -i 's,^\\(nameserver \\).*,\\1'172.18.0.221',' /etc/resolv.conf</arg>
+</arguments>
+<msg timestamp="20170919 10:37:06.763" level="INFO">sed -i 's,^\(nameserver \).*,\1'172.18.0.221',' /etc/ resolv.conf</msg>
+<status status="PASS" endtime="20170919 10:37:06.763" starttime="20170919 10:37:06.763"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*********************************DNS Configuration Completed************************************</arg>
+</arguments>
+<msg timestamp="20170919 10:37:06.763" level="INFO">*********************************DNS Configuration Completed************************************</msg>
+<status status="PASS" endtime="20170919 10:37:06.763" starttime="20170919 10:37:06.763"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:37:11.771" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:37:11.771" starttime="20170919 10:37:06.763"></status>
+</kw>
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:37:11.912" starttime="20170919 10:37:11.771"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:37:11.912" starttime="20170919 10:36:45.060"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="PASS" endtime="20170919 10:37:11.912" critical="yes" starttime="20170919 10:36:45.060"></status>
+</test>
+<test id="s1-t5" name="Perimeta Node COnfig">
+<kw name="Perimeta Node COnfig" library="Keywords2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Perimeta Node Config Start**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:37:11.912" level="INFO">*****************************Perimeta Node Config Start**********************</msg>
+<status status="PASS" endtime="20170919 10:37:11.912" starttime="20170919 10:37:11.912"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:37:11.912" starttime="20170919 10:37:11.912"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:37:11.912" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:37:18.044" level="INFO">Read output: Last login: Tue Sep 19 01:06:12 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:37:18.044" starttime="20170919 10:37:11.912"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:37:18.044" starttime="20170919 10:37:11.912"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.044" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:37:18.044" starttime="20170919 10:37:18.044"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.044" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:37:18.044" starttime="20170919 10:37:18.044"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.044" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:37:18.044" starttime="20170919 10:37:18.044"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.060" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:37:18.060" starttime="20170919 10:37:18.044"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.062" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:37:18.062" starttime="20170919 10:37:18.061"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.062" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:37:18.062" starttime="20170919 10:37:18.062"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.062" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:37:18.062" starttime="20170919 10:37:18.062"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:37:18.062" starttime="20170919 10:37:18.044"></status>
+</kw>
+<kw name="Remove Files" library="OperatingSystem">
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<arguments>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\perimeta\\virt-serv1_portip.txt</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.062" html="yes" level="INFO">Removed file '&lt;a href="file://C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv1_portip.txt"&gt;C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv1_portip.txt&lt;/a&gt;'.</msg>
+<status status="PASS" endtime="20170919 10:37:18.062" starttime="20170919 10:37:18.062"></status>
+</kw>
+<kw name="Remove Files" library="OperatingSystem">
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<arguments>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\perimeta\\virt-serv2_portip.txt</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.062" html="yes" level="INFO">Removed file '&lt;a href="file://C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv2_portip.txt"&gt;C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv2_portip.txt&lt;/a&gt;'.</msg>
+<status status="PASS" endtime="20170919 10:37:18.062" starttime="20170919 10:37:18.062"></status>
+</kw>
+<kw name="Get File" library="SSHLibrary">
+<doc>Downloads file(s) from the remote machine to the local machine.</doc>
+<arguments>
+<arg>virt-serv1_portip.txt</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\perimeta\\</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.124" level="INFO">[chan 1] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:37:18.140" level="INFO">'/root/virt-serv1_portip.txt' -&gt; 'C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv1_portip.txt'</msg>
+<status status="PASS" endtime="20170919 10:37:18.140" starttime="20170919 10:37:18.062"></status>
+</kw>
+<kw name="Get File" library="SSHLibrary">
+<doc>Downloads file(s) from the remote machine to the local machine.</doc>
+<arguments>
+<arg>virt-serv2_portip.txt</arg>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\perimeta\\</arg>
+</arguments>
+<msg timestamp="20170919 10:37:18.156" level="INFO">'/root/virt-serv2_portip.txt' -&gt; 'C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv2_portip.txt'</msg>
+<status status="PASS" endtime="20170919 10:37:18.156" starttime="20170919 10:37:18.140"></status>
+</kw>
+<kw name="Join String" library="Iteration">
+<assign>
+<var>${content1}</var>
+</assign>
+<msg timestamp="20170919 10:37:18.156" level="INFO">${content1} = 10.80.1.247 service-network 1</msg>
+<status status="PASS" endtime="20170919 10:37:18.156" starttime="20170919 10:37:18.156"></status>
+</kw>
+<kw name="Join String1" library="Iteration">
+<assign>
+<var>${content2}</var>
+</assign>
+<msg timestamp="20170919 10:37:18.156" level="INFO">${content2} = 10.80.1.248 service-network 2</msg>
+<status status="PASS" endtime="20170919 10:37:18.156" starttime="20170919 10:37:18.156"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:37:18.156" level="INFO">[root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:37:18.156" level="INFO">${output} =  [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:37:18.171" starttime="20170919 10:37:18.156"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>virt-serv1_portip.txt</arg>
+</arguments>
+<assign>
+<var>${virt-serv1_portip}</var>
+</assign>
+<msg timestamp="20170919 10:37:23.306" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:37:23.306" level="INFO">${virt-serv1_portip} = 10.80.1.247</msg>
+<status status="PASS" endtime="20170919 10:37:23.306" starttime="20170919 10:37:18.171"></status>
+</kw>
+<kw name="Join String4" library="Iteration">
+<arguments>
+<arg>${virt-serv1_portip}</arg>
+</arguments>
+<assign>
+<var>${str1}</var>
+</assign>
+<msg timestamp="20170919 10:37:23.306" level="INFO">${str1} = # signaling-local-address ipv4 10.80.1.247</msg>
+<status status="PASS" endtime="20170919 10:37:23.306" starttime="20170919 10:37:23.306"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:37:23.306" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20170919 10:37:23.306" starttime="20170919 10:37:23.306"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>virt-serv2_portip.txt</arg>
+</arguments>
+<assign>
+<var>${virt-serv2_portip}</var>
+</assign>
+<msg timestamp="20170919 10:37:28.454" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:37:28.454" level="INFO">${virt-serv2_portip} = 10.80.1.248</msg>
+<status status="PASS" endtime="20170919 10:37:28.454" starttime="20170919 10:37:23.306"></status>
+</kw>
+<kw name="Join String4" library="Iteration">
+<arguments>
+<arg>${virt-serv2_portip}</arg>
+</arguments>
+<assign>
+<var>${str2}</var>
+</assign>
+<msg timestamp="20170919 10:37:28.454" level="INFO">${str2} = # signaling-local-address ipv4 10.80.1.248</msg>
+<status status="PASS" endtime="20170919 10:37:28.454" starttime="20170919 10:37:28.454"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:37:28.454" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20170919 10:37:28.454" starttime="20170919 10:37:28.454"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>perimeta_a.txt</arg>
+</arguments>
+<assign>
+<var>${perimeta_a_ip}</var>
+</assign>
+<msg timestamp="20170919 10:37:33.633" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:37:33.633" level="INFO">${perimeta_a_ip} = 172.18.0.193</msg>
+<status status="PASS" endtime="20170919 10:37:33.633" starttime="20170919 10:37:28.454"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ssh -o "StrictHostKeyChecking no" ${vm_username}@${perimeta_a_ip}</arg>
+</arguments>
+<msg timestamp="20170919 10:37:33.633" level="INFO">ssh -o "StrictHostKeyChecking no" root@172 .18.0.193</msg>
+<status status="PASS" endtime="20170919 10:37:33.633" starttime="20170919 10:37:33.633"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:37:36.646" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 10:37:36.646" starttime="20170919 10:37:33.633"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${vm_password}</arg>
+</arguments>
+<msg timestamp="20170919 10:37:36.646" level="INFO">Warning: Permanently added '172.18.0.193' (RSA) to the list of known hosts.</msg>
+<status status="PASS" endtime="20170919 10:37:36.646" starttime="20170919 10:37:36.646"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 10:37:39.656" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 10:37:39.656" starttime="20170919 10:37:36.646"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sdc</arg>
+</arguments>
+<msg timestamp="20170919 10:37:39.656" level="INFO">THIS COMPUTER SYSTEM IS FOR AUTHORIZED USERS ONLY.  YOU SHOULD HAVE NO</msg>
+<status status="PASS" endtime="20170919 10:37:39.656" starttime="20170919 10:37:39.656"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sdc</arg>
+</arguments>
+<msg timestamp="20170919 10:37:39.656" level="INFO">EXPECTATION OF PRIVACY IN YOUR USE OF THIS SYSTEM.  USE OF THE SYSTEM</msg>
+<status status="PASS" endtime="20170919 10:37:39.656" starttime="20170919 10:37:39.656"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sdc</arg>
+</arguments>
+<msg timestamp="20170919 10:37:39.656" level="INFO">CONSTITUTES CONSENT TO MONITORING, RETRIEVAL, AND DISCLOSURE OF ANY</msg>
+<status status="PASS" endtime="20170919 10:37:39.656" starttime="20170919 10:37:39.656"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:37:44.664" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:37:44.664" starttime="20170919 10:37:39.656"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170919 10:37:44.664" level="INFO">INFORMATION STORED WITHIN THE SYSTEM FOR ANY PURPOSE, INCLUDING</msg>
+<status status="PASS" endtime="20170919 10:37:44.664" starttime="20170919 10:37:44.664"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170919 10:37:46.676" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170919 10:37:46.676" starttime="20170919 10:37:44.664"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170919 10:37:46.676" level="INFO">CRIMINAL PROSECUTION.</msg>
+<status status="PASS" endtime="20170919 10:37:46.676" starttime="20170919 10:37:46.676"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:46.676"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>config</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">Password:</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>system</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>users</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">[?1h=SUMMARY</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>user defcraft</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">-------</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>description "Default craft user"</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">Tue Sep 19 05:00:39 UTC 2017 = Tue Sep 19 05:00:39 UTC 2017</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>level super-user</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">This is processor A.</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>password hashed-value $6$W.DSgWhX$F1Q5HJlu9tO.Vl4iVJZ4FUojMK0Qp7Mi4p0c6avHtQgGiKnX19U6P/bjBh00QrmqF1m4sFSyTMzqqXb1OYmeS/</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">Processor A is the primary processor</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-interface serv1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>description Clearwater</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.688" level="INFO">System type: ISC</msg>
+<status status="PASS" endtime="20170919 10:37:51.688" starttime="20170919 10:37:51.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-network 1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:37:51.704" starttime="20170919 10:37:51.704"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>port-group-name CoreNetwork</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.704" level="INFO"># Process          RunningTime</msg>
+<status status="PASS" endtime="20170919 10:37:51.704" starttime="20170919 10:37:51.704"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ipv4</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.704" level="INFO"># vpsi                   06:18</msg>
+<status status="PASS" endtime="20170919 10:37:51.704" starttime="20170919 10:37:51.704"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>subnet-prefix-length 24</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.704" level="INFO"># ethmgr                 06:38</msg>
+<status status="PASS" endtime="20170919 10:37:51.704" starttime="20170919 10:37:51.704"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>gateway-ip-address 10.80.1.1</arg>
+</arguments>
+<msg timestamp="20170919 10:37:51.704" level="INFO"># vpcn                   06:31</msg>
+<status status="PASS" endtime="20170919 10:37:51.704" starttime="20170919 10:37:51.704"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>virt-serv1_portip.txt</arg>
+</arguments>
+<assign>
+<var>${virt-serv1_portip}</var>
+</assign>
+<msg timestamp="20170919 10:37:56.852" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:37:56.852" level="INFO">${virt-serv1_portip} = 10.80.1.247</msg>
+<status status="PASS" endtime="20170919 10:37:56.852" starttime="20170919 10:37:51.704"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>local-ip-address ${virt-serv1_portip}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:37:56.852" starttime="20170919 10:37:56.852"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-address core-address</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:37:56.852" starttime="20170919 10:37:56.852"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-target 10.80.1.1</arg>
+</arguments>
+<msg timestamp="20170919 10:37:56.867" level="INFO">[K[?1l&gt;|-----------------------------------------------------------------------------|</msg>
+<status status="PASS" endtime="20170919 10:37:56.867" starttime="20170919 10:37:56.852"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-source-style specific-source</arg>
+</arguments>
+<msg timestamp="20170919 10:37:56.867" level="INFO">|                                   CAUTION                                   |</msg>
+<status status="PASS" endtime="20170919 10:37:56.867" starttime="20170919 10:37:56.867"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv1-port-a_portip.txt</arg>
+</arguments>
+<assign>
+<var>${serv1-port-a_portip}</var>
+</assign>
+<msg timestamp="20170919 10:38:02.000" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:38:02.000" level="INFO">${serv1-port-a_portip} = 10.80.1.250</msg>
+<status status="PASS" endtime="20170919 10:38:02.000" starttime="20170919 10:37:56.867"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv1-port-b_portip.txt</arg>
+</arguments>
+<assign>
+<var>${serv1-port-b_portip}</var>
+</assign>
+<msg timestamp="20170919 10:38:07.148" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:38:07.148" level="INFO">${serv1-port-b_portip} = 10.80.1.249</msg>
+<status status="PASS" endtime="20170919 10:38:07.148" starttime="20170919 10:38:02.000"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-source-ip shelf A interface 1 ${serv1-port-a_portip}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.148" level="INFO">|   You have logged into this system as the superuser.  This account has      |</msg>
+<status status="PASS" endtime="20170919 10:38:07.148" starttime="20170919 10:38:07.148"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-source-ip shelf B interface 1 ${serv1-port-b_portip}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.148" level="INFO">|   considerable power, and is capable of causing severe damage to your       |</msg>
+<status status="PASS" endtime="20170919 10:38:07.148" starttime="20170919 10:38:07.148"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>activate</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.163" level="INFO">|   Perimeta system.  You are responsible for the commands you run and the    |</msg>
+<status status="PASS" endtime="20170919 10:38:07.163" starttime="20170919 10:38:07.148"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>network-security trusted</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.163" level="INFO">|   impact they have.                                                         |</msg>
+<status status="PASS" endtime="20170919 10:38:07.163" starttime="20170919 10:38:07.163"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-interface serv2</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.163" level="INFO">|-----------------------------------------------------------------------------|</msg>
+<status status="PASS" endtime="20170919 10:38:07.163" starttime="20170919 10:38:07.163"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>description EPC</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:38:07.163" starttime="20170919 10:38:07.163"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-network 2</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.163" level="INFO">[?1034h[0mCPU1:Perimeta-vnf-isc-a:~# sdc</msg>
+<status status="PASS" endtime="20170919 10:38:07.163" starttime="20170919 10:38:07.163"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>port-group-name AccessNetwork</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.163" level="INFO">sdc</msg>
+<status status="PASS" endtime="20170919 10:38:07.163" starttime="20170919 10:38:07.163"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ipv4</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.163" level="INFO">sdc</msg>
+<status status="PASS" endtime="20170919 10:38:07.163" starttime="20170919 10:38:07.163"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>subnet-prefix-length 24</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.179" level="INFO">THIS COMPUTER SYSTEM IS FOR AUTHORIZED USERS ONLY.  YOU SHOULD HAVE NO</msg>
+<status status="PASS" endtime="20170919 10:38:07.179" starttime="20170919 10:38:07.179"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>gateway-ip-address 10.80.1.1</arg>
+</arguments>
+<msg timestamp="20170919 10:38:07.179" level="INFO">EXPECTATION OF PRIVACY IN YOUR USE OF THIS SYSTEM.  USE OF THE SYSTEM</msg>
+<status status="PASS" endtime="20170919 10:38:07.179" starttime="20170919 10:38:07.179"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>virt-serv2_portip.txt</arg>
+</arguments>
+<assign>
+<var>${virt-serv2_portip}</var>
+</assign>
+<msg timestamp="20170919 10:38:12.313" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:38:12.313" level="INFO">${virt-serv2_portip} = 10.80.1.248</msg>
+<status status="PASS" endtime="20170919 10:38:12.313" starttime="20170919 10:38:07.179"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>local-ip-address ${virt-serv2_portip}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:12.313" level="INFO">CONSTITUTES CONSENT TO MONITORING, RETRIEVAL, AND DISCLOSURE OF ANY</msg>
+<status status="PASS" endtime="20170919 10:38:12.313" starttime="20170919 10:38:12.313"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-address access-address</arg>
+</arguments>
+<msg timestamp="20170919 10:38:12.313" level="INFO">INFORMATION STORED WITHIN THE SYSTEM FOR ANY PURPOSE, INCLUDING</msg>
+<status status="PASS" endtime="20170919 10:38:12.313" starttime="20170919 10:38:12.313"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-target 10.80.1.1</arg>
+</arguments>
+<msg timestamp="20170919 10:38:12.329" level="INFO">CRIMINAL PROSECUTION.</msg>
+<status status="PASS" endtime="20170919 10:38:12.329" starttime="20170919 10:38:12.313"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-source-style specific-source</arg>
+</arguments>
+<msg timestamp="20170919 10:38:12.329" level="INFO">sdc</msg>
+<status status="PASS" endtime="20170919 10:38:12.329" starttime="20170919 10:38:12.329"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv2-a_portip.txt</arg>
+</arguments>
+<assign>
+<var>${serv2-a_portip}</var>
+</assign>
+<msg timestamp="20170919 10:38:17.508" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:38:17.508" level="INFO">${serv2-a_portip} = 10.80.1.25</msg>
+<status status="PASS" endtime="20170919 10:38:17.508" starttime="20170919 10:38:12.329"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>serv2-b_portip.txt</arg>
+</arguments>
+<assign>
+<var>${serv2-b_portip}</var>
+</assign>
+<msg timestamp="20170919 10:38:22.689" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:38:22.689" level="INFO">${serv2-b_portip} = 10.80.1.26</msg>
+<status status="PASS" endtime="20170919 10:38:22.689" starttime="20170919 10:38:17.508"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-source-ip shelf A interface 1 ${serv2-a_portip}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.689" level="INFO">sdc</msg>
+<status status="PASS" endtime="20170919 10:38:22.689" starttime="20170919 10:38:22.689"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>probes-source-ip shelf B interface 1 ${serv2-b_portip}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.689" level="INFO">sdc</msg>
+<status status="PASS" endtime="20170919 10:38:22.689" starttime="20170919 10:38:22.689"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>activate</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.689" level="INFO">sdc</msg>
+<status status="PASS" endtime="20170919 10:38:22.689" starttime="20170919 10:38:22.689"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>network-security trusted</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:38:22.689" starttime="20170919 10:38:22.689"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sbc</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:38:22.689" starttime="20170919 10:38:22.689"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>diagnostics</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.705" level="INFO">--------------------------------------------------------------------------------</msg>
+<status status="PASS" endtime="20170919 10:38:22.705" starttime="20170919 10:38:22.689"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>alarm-thresholds</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:38:22.705" starttime="20170919 10:38:22.705"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>call-alarms</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.705" level="INFO">19-Sep-2017 05:00:42 +0000</msg>
+<status status="PASS" endtime="20170919 10:38:22.705" starttime="20170919 10:38:22.705"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>active-failures-perc max 2% clear 2%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.705" level="INFO">Perimeta ISC Perimeta-vnf-isc is running</msg>
+<status status="PASS" endtime="20170919 10:38:22.705" starttime="20170919 10:38:22.705"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>license-alarms</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.705" level="INFO">This is processor-blade A; processor-blade B is contactable;</msg>
+<status status="PASS" endtime="20170919 10:38:22.705" starttime="20170919 10:38:22.705"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>minor-threshold 60% clear 50%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.705" level="INFO">Session Controller is partnered; processor-blade A is primary</msg>
+<status status="PASS" endtime="20170919 10:38:22.705" starttime="20170919 10:38:22.705"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>major-threshold 80% clear 70%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.705" level="INFO">[Main] [=]</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.705"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>critical-clear 90%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">Select a command group or command</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>media-alarms</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">Press ENTER to refresh</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>hardware-capacity-perc max 90% clear 80%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">0   Exit        &lt; Log off the craft menu</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>pkts-discarded-perc max 10% clear 9%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">1   CLI           Command Line Interface</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>policy-alarms</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">2   Admin       &gt; Administrator Function</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>setup-failures-capac-perc max 1% clear 1%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">3   Software    &gt; Update Perimeta Session Controller Software</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>setup-failures-na-perc max 1% clear 1%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">4   Diagnostics &gt; Retrieve Diagnostic Information</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>setup-failures-rtg-perc max 1% clear 1%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">:</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sip-alarms</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">--------------------------------------------------------------------------------</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>oldest-queued-packet max 1000 clear 900</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>system-alarms</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">[YOUR INPUT WAS NOT UNDERSTOOD]</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>cpu max 70% clear 65%</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">Select a command group or command</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>free-mem-mb min 1500 clear 1750</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">Press ENTER to refresh</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>marker-diags</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.720" level="INFO">0   Exit        &lt; Log off the craft menu</msg>
+<status status="PASS" endtime="20170919 10:38:22.720" starttime="20170919 10:38:22.720"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-network-marker corenet</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.736" level="INFO">1   CLI           Command Line Interface</msg>
+<status status="PASS" endtime="20170919 10:38:22.736" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-network 2</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.736" level="INFO">2   Admin       &gt; Administrator Function</msg>
+<status status="PASS" endtime="20170919 10:38:22.736" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>log-level user-experience</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.736" level="INFO">3   Software    &gt; Update Perimeta Session Controller Software</msg>
+<status status="PASS" endtime="20170919 10:38:22.736" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sas remote-address ipv4 172.18.0.196</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.736" level="INFO">4   Diagnostics &gt; Retrieve Diagnostic Information</msg>
+<status status="PASS" endtime="20170919 10:38:22.736" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>snmp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.736" level="INFO">:</msg>
+<status status="PASS" endtime="20170919 10:38:22.736" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>snmp-client Monolith</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.736" level="INFO">--------------------------------------------------------------------------------</msg>
+<status status="PASS" endtime="20170919 10:38:22.736" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170919 10:38:22.736" level="INFO">[YOUR INPUT WAS NOT UNDERSTOOD]
+  Select a command group or command
+  Press ENTER to refresh
+0   Exit        &lt; Log off the craft menu
+1   CLI           Command Line Interface
+2   Admin       &gt; Administrator Function
+3   Software    &gt; Update Perimeta Session Controller Software
+4   Diagnostics &gt; Retrieve Diagnostic Information
+: 1
+
+--------------------------------------------------------------------------------
+
+CLI
+Start the Command Line Interface.
+
+--------------------------------------------------------------------------------
+
+CLI - Command Line Interface
+
+  Please verify that this command is correct
+1  *OK        Execute this command
+2   Cancel    Cancel this operation
+3   Modify    Modify the parameters of this command
+: 1
+
+--------------------------------------------------------------------------------
+
+Perimeta-vnf-isc#config
+Perimeta-vnf-isc(config)#system
+Perimeta-vnf-isc(system)#users
+Perimeta-vnf-isc(users)#user defcraft
+Perimeta-vnf-isc(user)#description "Default craft user"
+Perimeta-vnf-isc(user)#level super-user
+Perimeta-vnf-isc(user)#password hashed-value $6$W.DSgWhX$F1Q5HJlu9tO.Vl4iVJZ4FUo jMK0Qp7Mi4p0c6avHtQgGiKnX19U6P/bjBh00QrmqF1m4sFSyTMzqqXb1OYmeS/
+Perimeta-vnf-isc(user)#service-interface serv1
+Perimeta-vnf-isc(serv-intf)[partial]#description Clearwater
+Perimeta-vnf-isc(serv-intf)[partial]#service-network 1
+Perimeta-vnf-isc(serv-intf)[partial]#port-group-name CoreNetwork
+Perimeta-vnf-isc(serv-intf)[partial]#ipv4
+Perimeta-vnf-isc(sif-ipv4)#subnet-prefix-length 24
+Perimeta-vnf-isc(sif-ipv4)#gateway-ip-address 10.80.1.1
+Perimeta-vnf-isc(sif-ipv4)#local-ip-address 10.80.1.247
+Perimeta-vnf-isc(local-ip-addr)#service-address core-address
+Perimeta-vnf-isc(local-ip-addr)#probes-target 10.80.1.1
+Perimeta-vnf-isc(sif-ipv4)#probes-source-style specific-source
+Perimeta-vnf-isc(sif-ipv4)#probes-source-ip shelf A interface 1 10.80.1.250
+Perimeta-vnf-isc(sif-ipv4)#probes-source-ip shelf B interface 1 10.80.1.249
+Perimeta-vnf-isc(sif-ipv4)#activate
+Perimeta-vnf-isc(sif-ipv4)#network-security trusted
+Perimeta-vnf-isc(serv-intf)#service-interface serv2
+Perimeta-vnf-isc(serv-intf)[partial]#description EPC
+Perimeta-vnf-isc(serv-intf)[partial]#service-network 2
+Perimeta-vnf-isc(serv-intf)[partial]#port-group-name AccessNetwork
+Perimeta-vnf-isc(serv-intf)[partial]#ipv4
+Perimeta-vnf-isc(sif-ipv4)#subnet-prefix-length 24
+Perimeta-vnf-isc(sif-ipv4)#gateway-ip-address 10.80.1.1
+Perimeta-vnf-isc(sif-ipv4)#local-ip-address 10.80.1.248
+Perimeta-vnf-isc(local-ip-addr)#service-address access-address
+Perimeta-vnf-isc(local-ip-addr)#probes-target 10.80.1.1
+Perimeta-vnf-isc(sif-ipv4)#probes-source-style specific-source
+Perimeta-vnf-isc(sif-ipv4)#probes-source-ip shelf A interface 1 10.80.1.25
+Perimeta-vnf-isc(sif-ipv4)#probes-source-ip shelf B interface 1 10.80.1.26
+Perimeta-vnf-isc(sif-ipv4)#activate</msg>
+<msg timestamp="20170919 10:38:22.736" level="INFO">${output} = 
+[YOUR INPUT WAS NOT UNDERSTOOD]
+  Select a command group or command
+  Press ENTER to refresh
+0   Exit        &lt; Log off the craft menu
+1   CLI           Command Line Interface
+2   Admin       &gt; ...</msg>
+<status status="PASS" endtime="20170919 10:38:22.736" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>client-address ipv4 172.18.0.231</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.752" level="INFO">Perimeta-vnf-isc(sif-ipv4)#network-security trusted</msg>
+<status status="PASS" endtime="20170919 10:38:22.752" starttime="20170919 10:38:22.736"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>community clearwater</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.830" level="INFO">Perimeta-vnf-isc(serv-intf)#sbc</msg>
+<status status="PASS" endtime="20170919 10:38:22.830" starttime="20170919 10:38:22.752"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>allow-stats-requests</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.861" level="INFO">Perimeta-vnf-isc(sbc)#diagnostics</msg>
+<status status="PASS" endtime="20170919 10:38:22.861" starttime="20170919 10:38:22.830"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>notifications</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.861" level="INFO">Perimeta-vnf-isc(diagnostics)#alarm-thresholds</msg>
+<status status="PASS" endtime="20170919 10:38:22.861" starttime="20170919 10:38:22.861"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>general-notifications use-traps</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.861" level="INFO">Perimeta-vnf-isc(alarm-thresh)#call-alarms</msg>
+<status status="PASS" endtime="20170919 10:38:22.861" starttime="20170919 10:38:22.861"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>allow-system-mib-requests</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.861" level="INFO">Perimeta-vnf-isc(thresh-calls)#active-failures-perc max 2% clear 2%</msg>
+<status status="PASS" endtime="20170919 10:38:22.861" starttime="20170919 10:38:22.861"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>snmp-server contact Perimeta</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.861" level="INFO">Perimeta-vnf-isc(thresh-calls)#license-alarms</msg>
+<status status="PASS" endtime="20170919 10:38:22.861" starttime="20170919 10:38:22.861"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>snmp-server location Perimeta</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.861" level="INFO">Perimeta-vnf-isc(license-alarms)#minor-threshold 60% clear 50%</msg>
+<status status="PASS" endtime="20170919 10:38:22.861" starttime="20170919 10:38:22.861"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>media</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.876" level="INFO">Perimeta-vnf-isc(license-alarms)#major-threshold 80% clear 70%</msg>
+<status status="PASS" endtime="20170919 10:38:22.876" starttime="20170919 10:38:22.861"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>media-address ipv4 ${content1}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.876" level="INFO">Perimeta-vnf-isc(license-alarms)#critical-clear 90%</msg>
+<status status="PASS" endtime="20170919 10:38:22.876" starttime="20170919 10:38:22.876"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>realm Core</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.876" level="INFO">Perimeta-vnf-isc(license-alarms)#media-alarms</msg>
+<status status="PASS" endtime="20170919 10:38:22.876" starttime="20170919 10:38:22.876"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>media-address ipv4 ${content2}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.876" level="INFO">Perimeta-vnf-isc(thresh-media)#hardware-capacity-perc max 90% clear 80%</msg>
+<status status="PASS" endtime="20170919 10:38:22.876" starttime="20170919 10:38:22.876"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>realm Access</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-media)#pkts-discarded-perc max 10% clear 9%</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.876"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>vmsc global</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-media)#policy-alarms</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>activate</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-policy)#setup-failures-capac-perc max 1% clear 1%</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-policy)#setup-failures-na-perc max 1% clear 1%</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>burst-rate-limit-period 6 seconds</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-policy)#setup-failures-rtg-perc max 1% clear 1%</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sip message-manipulation</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-policy)#sip-alarms</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>header-profile vm1InsertPCFA</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-sip)#oldest-queued-packet max 1000 clear 900</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>description "Insert PCFA header for VM1 Rf Billing"</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-sip)#system-alarms</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>header P-Charging-Function-Addresses</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-sys)#cpu max 70% clear 65%</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>action add-first-header value ccf=cdf.example.demo</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-sys)#free-mem-mb min 1500 clear 1750</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sip timer</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.892" level="INFO">Perimeta-vnf-isc(thresh-sys)#marker-diags</msg>
+<status status="PASS" endtime="20170919 10:38:22.892" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>tcp-connect-timeout 2000</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.908" level="INFO">Perimeta-vnf-isc(diags-marker)#service-network-marker corenet</msg>
+<status status="PASS" endtime="20170919 10:38:22.908" starttime="20170919 10:38:22.892"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>sip dns-lookup srv-records</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.908" level="INFO">Perimeta-vnf-isc(marker-servnet)[partial]#service-network 2</msg>
+<status status="PASS" endtime="20170919 10:38:22.908" starttime="20170919 10:38:22.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>adjacency sip Core</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.908" level="INFO">Perimeta-vnf-isc(marker-servnet)#log-level user-experience</msg>
+<status status="PASS" endtime="20170919 10:38:22.908" starttime="20170919 10:38:22.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>deactivation-mode normal</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.908" level="INFO">Perimeta-vnf-isc(marker-servnet)#sas remote-address ipv4 172.18.0.196</msg>
+<status status="PASS" endtime="20170919 10:38:22.908" starttime="20170919 10:38:22.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ims</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.908" level="INFO">Perimeta-vnf-isc(diagnostics)#snmp</msg>
+<status status="PASS" endtime="20170919 10:38:22.908" starttime="20170919 10:38:22.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>visited network identifier vm1.example.demo</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.908" level="INFO">Perimeta-vnf-isc(snmp)#snmp-client Monolith</msg>
+<status status="PASS" endtime="20170919 10:38:22.908" starttime="20170919 10:38:22.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>listen-transports tcp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.923" level="INFO">Perimeta-vnf-isc(snmp-cl)[partial]#client-address ipv4 172.18.0.231</msg>
+<status status="PASS" endtime="20170919 10:38:22.923" starttime="20170919 10:38:22.908"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>adjacency-type preset-p-cscf-core</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.939" level="INFO">Perimeta-vnf-isc(snmp-cl)#community clearwater</msg>
+<status status="PASS" endtime="20170919 10:38:22.939" starttime="20170919 10:38:22.923"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>mandated-transport tcp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.939" level="INFO">Perimeta-vnf-isc(snmp-cl)#allow-stats-requests</msg>
+<status status="PASS" endtime="20170919 10:38:22.939" starttime="20170919 10:38:22.939"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>realm Core</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.970" level="INFO">Perimeta-vnf-isc(snmp-cl)#notifications</msg>
+<status status="PASS" endtime="20170919 10:38:22.970" starttime="20170919 10:38:22.939"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-address core-address</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.970" level="INFO">Perimeta-vnf-isc(ntfns)#general-notifications use-traps</msg>
+<status status="PASS" endtime="20170919 10:38:22.970" starttime="20170919 10:38:22.970"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${serv1}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:22.986" level="INFO">Perimeta-vnf-isc(ntfns)#allow-system-mib-requests</msg>
+<status status="PASS" endtime="20170919 10:38:22.986" starttime="20170919 10:38:22.970"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str1}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.017" level="INFO">Perimeta-vnf-isc(snmp-cl)#snmp-server contact Perimeta</msg>
+<status status="PASS" endtime="20170919 10:38:23.017" starttime="20170919 10:38:22.986"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-peer sprout-0.example.demo</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.032" level="INFO">Perimeta-vnf-isc(snmp)#snmp-server location Perimeta</msg>
+<status status="PASS" endtime="20170919 10:38:23.032" starttime="20170919 10:38:23.017"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-peer-port 5060</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.048" level="INFO">Perimeta-vnf-isc(snmp)#media</msg>
+<status status="PASS" endtime="20170919 10:38:23.048" starttime="20170919 10:38:23.032"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>activate</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.048" level="INFO">Perimeta-vnf-isc(media)#media-address ipv4 10.80.1.247 service-network 1</msg>
+<status status="PASS" endtime="20170919 10:38:23.048" starttime="20170919 10:38:23.048"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>adjacency sip Access</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.048" level="INFO">Perimeta-vnf-isc(media-address)#realm Core</msg>
+<status status="PASS" endtime="20170919 10:38:23.048" starttime="20170919 10:38:23.048"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>deactivation-mode normal</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.048" level="INFO">Perimeta-vnf-isc(media-address)#media-address ipv4 10.80.1.248 service-network 2 </msg>
+<status status="PASS" endtime="20170919 10:38:23.048" starttime="20170919 10:38:23.048"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>call-media-policy</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.048" level="INFO">Perimeta-vnf-isc(media-address)#realm Access</msg>
+<status status="PASS" endtime="20170919 10:38:23.048" starttime="20170919 10:38:23.048"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>media-bypass-policy allow</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.048" level="INFO">Perimeta-vnf-isc(media-address)#vmsc global</msg>
+<status status="PASS" endtime="20170919 10:38:23.048" starttime="20170919 10:38:23.048"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>interop</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(vmsc)#activate</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.048"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>registration min-expiry-time 300</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(vmsc)#signaling</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>ims</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(signaling)#burst-rate-limit-period 6 seconds</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>visited network identifier vm1.example.demo</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(signaling)#sip message-manipulation</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>adjacency-type preset-p-cscf-access</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(sip-msg-manip)#header-profile vm1InsertPCFA</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>realm Access</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(header-prof)#description "Insert PCFA header for VM1 Rf Billing "</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>secure-local-port 5080</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(header-prof)#header P-Charging-Function-Addresses</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-address access-address</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(header-rule)#action add-first-header value ccf=cdf.example.demo </msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${serv2}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(hdr-rule-act)#sip timer</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str2}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(sip-timers)#tcp-connect-timeout 2000</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-local-port 5060</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.064" level="INFO">Perimeta-vnf-isc(sip-timers)#sip dns-lookup srv-records</msg>
+<status status="PASS" endtime="20170919 10:38:23.064" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-peer 0.0.0.0</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.079" level="INFO">Perimeta-vnf-isc(signaling)#adjacency sip Core</msg>
+<status status="PASS" endtime="20170919 10:38:23.079" starttime="20170919 10:38:23.064"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-peer-port 0</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.112" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#deactivation-mode normal</msg>
+<status status="PASS" endtime="20170919 10:38:23.112" starttime="20170919 10:38:23.079"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>activate</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.112" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#ims</msg>
+<status status="PASS" endtime="20170919 10:38:23.112" starttime="20170919 10:38:23.112"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>adjacency sip Core-reg</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.112" level="INFO">Perimeta-vnf-isc(ims)#visited network identifier vm1.example.demo</msg>
+<status status="PASS" endtime="20170919 10:38:23.112" starttime="20170919 10:38:23.112"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>add-route-header icscf.sprout-0.example.demo</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.112" level="INFO">Perimeta-vnf-isc(ims)#listen-transports tcp</msg>
+<status status="PASS" endtime="20170919 10:38:23.128" starttime="20170919 10:38:23.112"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>listen-transports tcp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.128" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#adjacency-type preset-p-cscf-core</msg>
+<status status="PASS" endtime="20170919 10:38:23.128" starttime="20170919 10:38:23.128"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>adjacency-type preset-p-cscf-core</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.190" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#mandated-transport tcp</msg>
+<status status="PASS" endtime="20170919 10:38:23.190" starttime="20170919 10:38:23.128"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>mandated-transport tcp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.190" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#realm Core</msg>
+<status status="PASS" endtime="20170919 10:38:23.190" starttime="20170919 10:38:23.190"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>service-address core-address</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.190" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#service-address core-address</msg>
+<status status="PASS" endtime="20170919 10:38:23.190" starttime="20170919 10:38:23.190"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${serv1}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.206" level="INFO">Perimeta-vnf-isc(adj-sip)#</msg>
+<status status="PASS" endtime="20170919 10:38:23.206" starttime="20170919 10:38:23.190"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${str1}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.206" level="INFO">Perimeta-vnf-isc(adj-sip)## signaling-local-address ipv4 10.80.1.247</msg>
+<status status="PASS" endtime="20170919 10:38:23.206" starttime="20170919 10:38:23.206"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-local-port 5060</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.206" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-peer sprout-0.example.demo</msg>
+<status status="PASS" endtime="20170919 10:38:23.206" starttime="20170919 10:38:23.206"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>remote-address-range ipv4 1.1.1.1 prefix-len 32</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.206" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-peer-port 5060</msg>
+<status status="PASS" endtime="20170919 10:38:23.206" starttime="20170919 10:38:23.206"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-peer sprout-0.example.demo</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.206" level="INFO">Perimeta-vnf-isc(adj-sip)#activate</msg>
+<status status="PASS" endtime="20170919 10:38:23.206" starttime="20170919 10:38:23.206"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>signaling-peer-port 5062</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.206" level="INFO">Perimeta-vnf-isc(adj-sip)#adjacency sip Access</msg>
+<status status="PASS" endtime="20170919 10:38:23.206" starttime="20170919 10:38:23.206"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>statistics-setting detail</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.237" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#deactivation-mode normal</msg>
+<status status="PASS" endtime="20170919 10:38:23.237" starttime="20170919 10:38:23.206"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>activate</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.237" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#call-media-policy</msg>
+<status status="PASS" endtime="20170919 10:38:23.237" starttime="20170919 10:38:23.237"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>call-policy-set 2</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.253" level="INFO">Perimeta-vnf-isc(adj-call-medpol)#media-bypass-policy allow</msg>
+<status status="PASS" endtime="20170919 10:38:23.253" starttime="20170919 10:38:23.237"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>first-call-routing-table Non-Registration</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.253" level="INFO">Perimeta-vnf-isc(media-bypass-policy)#interop</msg>
+<status status="PASS" endtime="20170919 10:38:23.253" starttime="20170919 10:38:23.253"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>first-reg-routing-table Registration</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.253" level="INFO">Perimeta-vnf-isc(adj-int)#registration min-expiry-time 300</msg>
+<status status="PASS" endtime="20170919 10:38:23.253" starttime="20170919 10:38:23.253"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>rtg-src-adjacency-table Registration</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.253" level="INFO">Perimeta-vnf-isc(adj-int)#ims</msg>
+<status status="PASS" endtime="20170919 10:38:23.253" starttime="20170919 10:38:23.253"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>entry 1</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.253" level="INFO">Perimeta-vnf-isc(ims)#visited network identifier vm1.example.demo</msg>
+<status status="PASS" endtime="20170919 10:38:23.253" starttime="20170919 10:38:23.253"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>match-adjacency Access</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.253" level="INFO">Perimeta-vnf-isc(ims)#adjacency-type preset-p-cscf-access</msg>
+<status status="PASS" endtime="20170919 10:38:23.253" starttime="20170919 10:38:23.253"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>dst-adjacency Core-reg</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.315" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#realm Access</msg>
+<status status="PASS" endtime="20170919 10:38:23.315" starttime="20170919 10:38:23.253"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>action complete</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.315" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#secure-local-port 5080</msg>
+<status status="PASS" endtime="20170919 10:38:23.315" starttime="20170919 10:38:23.315"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>rtg-src-adjacency-table Non-Registration</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.331" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#service-address access-address</msg>
+<status status="PASS" endtime="20170919 10:38:23.331" starttime="20170919 10:38:23.315"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>entry 1</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.331" level="INFO">Perimeta-vnf-isc(adj-sip)#</msg>
+<status status="PASS" endtime="20170919 10:38:23.331" starttime="20170919 10:38:23.331"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>match-adjacency Access</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.331" level="INFO">Perimeta-vnf-isc(adj-sip)## signaling-local-address ipv4 10.80.1.248</msg>
+<status status="PASS" endtime="20170919 10:38:23.331" starttime="20170919 10:38:23.331"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>dst-adjacency Core</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.331" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-local-port 5060</msg>
+<status status="PASS" endtime="20170919 10:38:23.331" starttime="20170919 10:38:23.331"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>action complete</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.331" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-peer 0.0.0.0</msg>
+<status status="PASS" endtime="20170919 10:38:23.331" starttime="20170919 10:38:23.331"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>complete</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.346" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-peer-port 0</msg>
+<status status="PASS" endtime="20170919 10:38:23.346" starttime="20170919 10:38:23.331"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>active-call-policy-set 2</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.346" level="INFO">Perimeta-vnf-isc(adj-sip)#activate</msg>
+<status status="PASS" endtime="20170919 10:38:23.346" starttime="20170919 10:38:23.346"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>qos sig default</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.346" level="INFO">Perimeta-vnf-isc(adj-sip)#adjacency sip Core-reg</msg>
+<status status="PASS" endtime="20170919 10:38:23.346" starttime="20170919 10:38:23.346"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>dscp 24</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.393" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#add-route-header icscf.sprout-0.example.demo</msg>
+<status status="PASS" endtime="20170919 10:38:23.393" starttime="20170919 10:38:23.346"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>marking dscp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.393" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#listen-transports tcp</msg>
+<status status="PASS" endtime="20170919 10:38:23.393" starttime="20170919 10:38:23.393"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>qos sig defaultexit</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.393" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#adjacency-type preset-p-cscf-core</msg>
+<status status="PASS" endtime="20170919 10:38:23.393" starttime="20170919 10:38:23.393"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>dscp 24</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.471" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#mandated-transport tcp</msg>
+<status status="PASS" endtime="20170919 10:38:23.471" starttime="20170919 10:38:23.393"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>marking dscp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.487" level="INFO">Perimeta-vnf-isc(adj-sip)[partial]#service-address core-address</msg>
+<status status="PASS" endtime="20170919 10:38:23.487" starttime="20170919 10:38:23.471"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>qos video default</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.487" level="INFO">Perimeta-vnf-isc(adj-sip)#</msg>
+<status status="PASS" endtime="20170919 10:38:23.487" starttime="20170919 10:38:23.487"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>dscp 46</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.487" level="INFO">Perimeta-vnf-isc(adj-sip)## signaling-local-address ipv4 10.80.1.247</msg>
+<status status="PASS" endtime="20170919 10:38:23.487" starttime="20170919 10:38:23.487"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>marking dscp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.487" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-local-port 5060</msg>
+<status status="PASS" endtime="20170919 10:38:23.487" starttime="20170919 10:38:23.487"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>qos voice default</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.502" level="INFO">Perimeta-vnf-isc(adj-sip)#remote-address-range ipv4 1.1.1.1 prefix-len 32</msg>
+<status status="PASS" endtime="20170919 10:38:23.502" starttime="20170919 10:38:23.487"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>dscp 46</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.502" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-peer sprout-0.example.demo</msg>
+<status status="PASS" endtime="20170919 10:38:23.502" starttime="20170919 10:38:23.502"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>marking dscp</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.502" level="INFO">Perimeta-vnf-isc(adj-sip)#signaling-peer-port 5062</msg>
+<status status="PASS" endtime="20170919 10:38:23.502" starttime="20170919 10:38:23.502"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>activate</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.518" level="INFO">Perimeta-vnf-isc(adj-sip)#statistics-setting detail</msg>
+<status status="PASS" endtime="20170919 10:38:23.518" starttime="20170919 10:38:23.502"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>**********************************Perimeta Node Configuration Done****************************</arg>
+</arguments>
+<msg timestamp="20170919 10:38:23.518" level="INFO">**********************************Perimeta Node Configuration Done****************************</msg>
+<status status="PASS" endtime="20170919 10:38:23.518" starttime="20170919 10:38:23.518"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:38:28.526" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:38:28.526" starttime="20170919 10:38:23.518"></status>
+</kw>
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:38:28.541" starttime="20170919 10:38:28.526"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:38:28.541" starttime="20170919 10:37:11.912"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="PASS" endtime="20170919 10:38:28.541" critical="yes" starttime="20170919 10:37:11.912"></status>
+</test>
+<test id="s1-t6" name="Perimeta VNF Validation">
+<kw name="Perimeta VNF Validation" library="Keywords2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Perimeta VNF Validation Started**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:38:28.541" level="INFO">*****************************Perimeta VNF Validation Started**********************</msg>
+<status status="PASS" endtime="20170919 10:38:28.541" starttime="20170919 10:38:28.541"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:38:28.541" starttime="20170919 10:38:28.541"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:38:28.541" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:38:34.688" level="INFO">Read output: Last login: Tue Sep 19 01:06:38 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:38:34.688" starttime="20170919 10:38:28.541"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:38:34.688" starttime="20170919 10:38:28.541"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.688" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:38:34.688" starttime="20170919 10:38:34.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.688" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:38:34.688" starttime="20170919 10:38:34.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.688" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:38:34.688" starttime="20170919 10:38:34.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.688" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:38:34.688" starttime="20170919 10:38:34.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.688" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:38:34.688" starttime="20170919 10:38:34.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.703" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:38:34.703" starttime="20170919 10:38:34.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.703" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:38:34.703" starttime="20170919 10:38:34.703"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:38:34.703" starttime="20170919 10:38:34.688"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>./perimeta.sh</arg>
+</arguments>
+<msg timestamp="20170919 10:38:34.703" level="INFO">[root@controller ~(keystone_admin)]# ./perimeta.sh</msg>
+<status status="PASS" endtime="20170919 10:38:34.703" starttime="20170919 10:38:34.703"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20170919 10:38:44.706" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20170919 10:38:44.706" starttime="20170919 10:38:34.703"></status>
+</kw>
+<kw name="Get Data" library="Iteration">
+<arguments>
+<arg>perimeta_a.txt</arg>
+</arguments>
+<assign>
+<var>${perimeta_a_ip}</var>
+</assign>
+<msg timestamp="20170919 10:38:49.838" level="INFO">[chan 0] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170919 10:38:49.838" level="INFO">${perimeta_a_ip} = 172.18.0.193</msg>
+<status status="PASS" endtime="20170919 10:38:49.838" starttime="20170919 10:38:44.706"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Close Connection</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:38:49.838" starttime="20170919 10:38:49.838"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${perimeta_a_ip}</arg>
+</arguments>
+<assign>
+<var>${ConnectionIndex}</var>
+</assign>
+<msg timestamp="20170919 10:38:49.838" level="INFO">${ConnectionIndex} = 2</msg>
+<status status="PASS" endtime="20170919 10:38:49.838" starttime="20170919 10:38:49.838"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${vm_username}</arg>
+<arg>${vm_password}</arg>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:38:49.838" level="INFO">Logging into '172.18.0.193:22' as 'root'.</msg>
+<msg timestamp="20170919 10:38:55.222" level="INFO">Read output: 
+[?1h=SUMMARY
+-------
+Tue Sep 19 05:01:52 UTC 2017 = Tue Sep 19 05:01:52 UTC 2017
+This is processor A.
+Processor A is the primary processor
+
+System type: ISC
+
+# Process          RunningTime
+# vpsi                   07:31
+# ethmgr                 07:51
+# vpcn                   07:44
+
+
+[K[?1l&gt;|-----------------------------------------------------------------------------|
+|                                   CAUTION                                   |
+|   You have logged into this system as the superuser.  This account has      |
+|   considerable power, and is capable of causing severe damage to your       |
+|   Perimeta system.  You are responsible for the commands you run and the    |
+|   impact they have.                                                         |
+|-----------------------------------------------------------------------------|
+
+[?1034h[0mCPU1:Perimeta-vnf-isc-a:~#</msg>
+<status status="PASS" endtime="20170919 10:38:55.222" starttime="20170919 10:38:49.838"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:39:00.231" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:39:00.231" starttime="20170919 10:38:55.222"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>dig sprout.example.demo</arg>
+</arguments>
+<msg timestamp="20170919 10:39:00.231" level="INFO">dig sprout.example.demo</msg>
+<status status="PASS" endtime="20170919 10:39:00.231" starttime="20170919 10:39:00.231"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>8</arg>
+</arguments>
+<msg timestamp="20170919 10:39:08.234" level="INFO">Slept 8 seconds</msg>
+<status status="PASS" endtime="20170919 10:39:08.234" starttime="20170919 10:39:00.231"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output2}</var>
+</assign>
+<msg timestamp="20170919 10:39:08.234" level="INFO">; &lt;&lt;&gt;&gt; DiG 9.8.2rc1-RedHat-9.8.2-0.47.rc1.el6 &lt;&lt;&gt;&gt; sprout.example.demo
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 50906
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;sprout.example.demo.		IN	A
+
+;; ANSWER SECTION:
+sprout.example.demo.	60	IN	A	10.80.1.70
+
+;; AUTHORITY SECTION:
+example.demo.		3600	IN	NS	ns.example.demo.
+
+;; ADDITIONAL SECTION:
+ns.example.demo.	3600	IN	A	172.18.0.221
+
+;; Query time: 4 msec
+;; SERVER: 172.18.0.221#53(172.18.0.221)
+;; WHEN: Tue Sep 19 05:02:02 2017
+;; MSG SIZE  rcvd: 86
+
+[0mCPU1:Perimeta-vnf-isc-a:~#</msg>
+<msg timestamp="20170919 10:39:08.234" level="INFO">${output2} = 
+; &lt;&lt;&gt;&gt; DiG 9.8.2rc1-RedHat-9.8.2-0.47.rc1.el6 &lt;&lt;&gt;&gt; sprout.example.demo
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 50906
+;; flags: qr aa rd ra; QUE...</msg>
+<status status="PASS" endtime="20170919 10:39:08.234" starttime="20170919 10:39:08.234"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output2}</arg>
+<arg>10.80.1.70</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:39:08.234" starttime="20170919 10:39:08.234"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>DNS Query Success..........!</arg>
+</arguments>
+<msg timestamp="20170919 10:39:08.234" level="INFO">DNS Query Success..........!</msg>
+<status status="PASS" endtime="20170919 10:39:08.234" starttime="20170919 10:39:08.234"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>chnetns 2 \ netstat -anp | grep 5060</arg>
+</arguments>
+<msg timestamp="20170919 10:39:08.234" level="INFO">chnetns 2  netstat -anp | grep 5060</msg>
+<status status="PASS" endtime="20170919 10:39:08.234" starttime="20170919 10:39:08.234"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20170919 10:39:12.244" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20170919 10:39:12.244" starttime="20170919 10:39:08.234"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output3}</var>
+</assign>
+<msg timestamp="20170919 10:39:12.244" level="INFO">tcp        0      0 10.80.1.248:5060            0.0.0.0:*                   LISTEN      983/MetaSwitch SI   
+udp        0      0 10.80.1.248:5060            0.0.0.0:*                               983/MetaSwitch SI   
+[0mCPU1:Perimeta-vnf-isc-a:~#</msg>
+<msg timestamp="20170919 10:39:12.244" level="INFO">${output3} = tcp        0      0 10.80.1.248:5060            0.0.0.0:*                   LISTEN      983/MetaSwitch SI   
+udp        0      0 10.80.1.248:5060            0.0.0.0:*                               98...</msg>
+<status status="PASS" endtime="20170919 10:39:12.244" starttime="20170919 10:39:12.244"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output3}</arg>
+<arg>5060</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:39:12.244" starttime="20170919 10:39:12.244"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Perimeta VNF Validation Completed**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:39:12.244" level="INFO">*****************************Perimeta VNF Validation Completed**********************</msg>
+<status status="PASS" endtime="20170919 10:39:12.244" starttime="20170919 10:39:12.244"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:39:17.254" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:39:17.254" starttime="20170919 10:39:12.244"></status>
+</kw>
+<kw name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:39:17.332" starttime="20170919 10:39:17.254"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:39:17.332" starttime="20170919 10:38:28.541"></status>
+</kw>
+<tags>
+<tag>Onboard</tag>
+</tags>
+<status status="PASS" endtime="20170919 10:39:17.332" critical="yes" starttime="20170919 10:38:28.541"></status>
+</test>
+<kw type="teardown" name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:39:17.332" starttime="20170919 10:39:17.332"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:39:17.332" starttime="20170919 10:27:37.312"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="6">Critical Tests</stat>
+<stat fail="0" pass="6">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="6">Onboard</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="VolteComponent" pass="6">VolteComponent</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

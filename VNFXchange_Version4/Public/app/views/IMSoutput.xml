@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170919 12:06:59.700" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta" id="s1" name="Perimeta">
+<suite source="C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\VolteComponent.robot" id="s1-s1" name="VolteComponent">
+<kw type="setup" name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:07:00.184" starttime="20170919 12:07:00.184"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 12:07:00.184" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 12:07:06.394" level="INFO">Read output: Last login: Tue Sep 19 02:34:04 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 12:07:06.394" starttime="20170919 12:07:00.184"></status>
+</kw>
+<status status="PASS" endtime="20170919 12:07:06.394" starttime="20170919 12:07:00.184"></status>
+</kw>
+<test id="s1-s1-t1" name="Register and Make Call">
+<kw name="Register&amp; Call" library="Keywords2">
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>C:\\Users\\Admin\\Desktop\\Sukesh-Automation\\RobotFramework\\perimeta\\virt-serv2_portip.txt</arg>
+</arguments>
+<assign>
+<var>${virt-serv2_portip}</var>
+</assign>
+<msg timestamp="20170919 12:07:06.394" html="yes" level="INFO">Getting file '&lt;a href="file://C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv2_portip.txt"&gt;C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\virt-serv2_portip.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20170919 12:07:06.394" level="INFO">${virt-serv2_portip} = 10.80.1.54
+</msg>
+<status status="PASS" endtime="20170919 12:07:06.394" starttime="20170919 12:07:06.394"></status>
+</kw>
+<kw name="Register On RemoteMachine" library="Remote">
+<msg timestamp="20170919 12:07:53.001" level="INFO">Ims Client Registered on Remote Machine</msg>
+<status status="PASS" endtime="20170919 12:07:53.001" starttime="20170919 12:07:06.394"></status>
+</kw>
+<kw name="Run" library="AutoItLibrary">
+<doc>Direct wrapper for AutoIt's Run method.</doc>
+<arguments>
+<arg>C:\\Program Files (x86)\\Doubango\\Boghe IMS Client x86\\BogheApp.exe</arg>
+</arguments>
+<msg timestamp="20170919 12:07:53.017" level="INFO">AutoItLibrary.Run(FileName='C:\Program Files (x86)\Doubango\Boghe IMS Client x86\BogheApp.exe', WorkingDir='', Flag='')</msg>
+<status status="PASS" endtime="20170919 12:07:53.017" starttime="20170919 12:07:53.017"></status>
+</kw>
+<kw name="Wait For Active Window" library="AutoItLibrary">
+<doc>Wait up to _TimeOut_ seconds for the window with the given _WindowTitle_ and optional</doc>
+<arguments>
+<arg>Boghe - IMS/RCS Client</arg>
+</arguments>
+<msg timestamp="20170919 12:07:54.544" level="INFO">AutoItLibrary.WaitForActiveWindow(WindowTitle='Boghe - IMS/RCS Client', WindowText='', TimeOut=-1)</msg>
+<msg timestamp="20170919 12:07:54.544" level="INFO">AutoItLibrary.WinWait(WindowTitle='Boghe - IMS/RCS Client', WindowText='', TimeOut=60)</msg>
+<msg timestamp="20170919 12:07:54.544" level="INFO">AutoItLibrary.WinWaitActive(WindowTitle='Boghe - IMS/RCS Client', WindowText='', TimeOut=60)</msg>
+<status status="PASS" endtime="20170919 12:07:54.545" starttime="20170919 12:07:53.017"></status>
+</kw>
+<kw name="Win Activate" library="AutoItLibrary">
+<doc>method WinActivate</doc>
+<arguments>
+<arg>Boghe - IMS/RCS Client</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:07:55.060" starttime="20170919 12:07:54.546"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 12:07:58.062" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 12:07:58.062" starttime="20170919 12:07:55.061"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:07:58.084" starttime="20170919 12:07:58.063"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{ENTER}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:07:58.096" starttime="20170919 12:07:58.085"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170919 12:08:00.097" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:00.097" starttime="20170919 12:07:58.096"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{ENTER}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.109" starttime="20170919 12:08:00.098"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>6</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.170" starttime="20170919 12:08:00.109"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{DOWN}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.181" starttime="20170919 12:08:00.171"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.192" starttime="20170919 12:08:00.182"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>^a</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.213" starttime="20170919 12:08:00.193"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{BS}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.224" starttime="20170919 12:08:00.214"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>tasuser1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.305" starttime="20170919 12:08:00.225"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.316" starttime="20170919 12:08:00.306"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>^a</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.337" starttime="20170919 12:08:00.317"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{BS}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.348" starttime="20170919 12:08:00.337"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>sip:tasuser1@example.demo</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.620" starttime="20170919 12:08:00.348"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.630" starttime="20170919 12:08:00.620"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>^a</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.652" starttime="20170919 12:08:00.631"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{BS}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.663" starttime="20170919 12:08:00.652"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>tasuser1@example.demo</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.885" starttime="20170919 12:08:00.663"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.896" starttime="20170919 12:08:00.886"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>^a</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.917" starttime="20170919 12:08:00.897"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{BS}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:00.928" starttime="20170919 12:08:00.917"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>example.demo</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.049" starttime="20170919 12:08:00.928"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.070" starttime="20170919 12:08:01.050"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>^a</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.091" starttime="20170919 12:08:01.070"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{BS}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.102" starttime="20170919 12:08:01.091"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>tasuser1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.183" starttime="20170919 12:08:01.102"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>13</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.314" starttime="20170919 12:08:01.183"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{DOWN}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.325" starttime="20170919 12:08:01.315"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.336" starttime="20170919 12:08:01.326"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>^a</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.357" starttime="20170919 12:08:01.337"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{BS}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.368" starttime="20170919 12:08:01.357"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>${virt-serv2_portip}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.489" starttime="20170919 12:08:01.368"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>9</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.580" starttime="20170919 12:08:01.489"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{SPACE}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:01.591" starttime="20170919 12:08:01.581"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 12:08:04.592" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:04.592" starttime="20170919 12:08:01.592"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>6</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:04.654" starttime="20170919 12:08:04.593"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{LEFT}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:04.665" starttime="20170919 12:08:04.655"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20170919 12:08:06.666" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:06.666" starttime="20170919 12:08:04.666"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>6</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:06.728" starttime="20170919 12:08:06.667"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{SPACE}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:06.740" starttime="20170919 12:08:06.729"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 12:08:09.740" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:09.740" starttime="20170919 12:08:06.740"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>4</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:09.781" starttime="20170919 12:08:09.740"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 12:08:12.782" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:12.782" starttime="20170919 12:08:09.781"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>tasuser2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:12.864" starttime="20170919 12:08:12.782"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20170919 12:08:15.864" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:15.864" starttime="20170919 12:08:12.864"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:15.885" starttime="20170919 12:08:15.865"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{SPACE}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:15.896" starttime="20170919 12:08:15.886"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 12:08:20.897" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:20.897" starttime="20170919 12:08:15.897"></status>
+</kw>
+<kw name="CallAnswer On RemoteMachine" library="Remote">
+<msg timestamp="20170919 12:08:21.505" level="INFO">Call Answered on Remote Machine</msg>
+<status status="PASS" endtime="20170919 12:08:21.506" starttime="20170919 12:08:20.898"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>20</arg>
+</arguments>
+<msg timestamp="20170919 12:08:41.508" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" endtime="20170919 12:08:41.508" starttime="20170919 12:08:21.507"></status>
+</kw>
+<kw name="Tabloop" library="Iteration">
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:41.561" starttime="20170919 12:08:41.509"></status>
+</kw>
+<kw name="Send" library="AutoItLibrary">
+<doc>method Send</doc>
+<arguments>
+<arg>{ENTER}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 12:08:41.572" starttime="20170919 12:08:41.561"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Orginator dropped the call</arg>
+</arguments>
+<msg timestamp="20170919 12:08:41.572" level="INFO">Orginator dropped the call</msg>
+<status status="PASS" endtime="20170919 12:08:41.573" starttime="20170919 12:08:41.572"></status>
+</kw>
+<status status="PASS" endtime="20170919 12:08:41.573" starttime="20170919 12:07:06.394"></status>
+</kw>
+<tags>
+<tag>Testing</tag>
+</tags>
+<status status="PASS" endtime="20170919 12:08:41.573" critical="yes" starttime="20170919 12:07:06.394"></status>
+</test>
+<kw type="teardown" name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 12:08:41.638" starttime="20170919 12:08:41.574"></status>
+</kw>
+<status status="PASS" endtime="20170919 12:08:41.639" starttime="20170919 12:06:59.747"></status>
+</suite>
+<status status="PASS" endtime="20170919 12:08:41.642" starttime="20170919 12:06:59.731"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Testing</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Perimeta" pass="1">Perimeta</stat>
+<stat fail="0" id="s1-s1" name="VolteComponent" pass="1">Perimeta.VolteComponent</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

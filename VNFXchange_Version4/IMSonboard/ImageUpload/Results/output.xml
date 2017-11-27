@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170919 10:04:21.210" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\Users\Admin\Desktop\Sukesh-Automation\RobotFramework\perimeta\VolteComponent.robot" id="s1" name="VolteComponent">
+<kw type="setup" name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:04:21.631" starttime="20170919 10:04:21.631"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:04:21.631" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:04:27.826" level="INFO">Read output: Last login: Tue Sep 19 00:28:24 2017 from 10.53.214.2
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:04:27.826" starttime="20170919 10:04:21.631"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:04:27.826" starttime="20170919 10:04:21.631"></status>
+</kw>
+<test id="s1-t1" name="UploadImage">
+<kw name="Upload Image" library="Keywords2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Uploading Image Started**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:04:27.826" level="INFO">*****************************Uploading Image Started**********************</msg>
+<status status="PASS" endtime="20170919 10:04:27.826" starttime="20170919 10:04:27.826"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:04:27.826" starttime="20170919 10:04:27.826"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:04:27.826" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:04:33.959" level="INFO">Read output: Last login: Tue Sep 19 00:33:48 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:04:33.959" starttime="20170919 10:04:27.826"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:04:33.959" starttime="20170919 10:04:27.826"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.959" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:04:33.959" starttime="20170919 10:04:33.959"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.959" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:04:33.959" starttime="20170919 10:04:33.959"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.959" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:04:33.959" starttime="20170919 10:04:33.959"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.975" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:04:33.975" starttime="20170919 10:04:33.959"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.975" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:04:33.975" starttime="20170919 10:04:33.975"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.975" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:04:33.975" starttime="20170919 10:04:33.975"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.975" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:04:33.975" starttime="20170919 10:04:33.975"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:04:33.975" starttime="20170919 10:04:33.959"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>glance image-create --name "Perimeta-VNF-Image" --disk-format qcow2 --container-format bare --file /root/auto_heatfiles/MSwVA-Perimeta-V4.1.00_SU5_P01.qcow2</arg>
+</arguments>
+<msg timestamp="20170919 10:04:33.990" level="INFO">[root@controller ~(keystone_admin)]# glance image-create --name "Perimeta-VNF-I mage" --disk-format qcow2 --container-format bare --file /root/auto_heatfiles/MS wVA-Perimeta-V4.1.00_SU5_P01.qcow2</msg>
+<status status="PASS" endtime="20170919 10:04:33.990" starttime="20170919 10:04:33.975"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>15</arg>
+</arguments>
+<msg timestamp="20170919 10:04:48.997" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" endtime="20170919 10:04:48.997" starttime="20170919 10:04:33.990"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Uploading Image Completed**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:04:48.997" level="INFO">*****************************Uploading Image Completed**********************</msg>
+<status status="PASS" endtime="20170919 10:04:48.997" starttime="20170919 10:04:48.997"></status>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" endtime="20170919 10:04:49.138" starttime="20170919 10:04:48.997"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Image Validation started**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:04:49.138" level="INFO">*****************************Image Validation started**********************</msg>
+<status status="PASS" endtime="20170919 10:04:49.138" starttime="20170919 10:04:49.138"></status>
+</kw>
+<kw name="open_connection_and_login" library="keywords1">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:04:49.138" starttime="20170919 10:04:49.138"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170919 10:04:49.138" level="INFO">Logging into '10.53.214.10:22' as 'root'.</msg>
+<msg timestamp="20170919 10:04:55.257" level="INFO">Read output: Last login: Tue Sep 19 00:33:54 2017 from 10.53.172.235
+[root@controller ~]#</msg>
+<status status="PASS" endtime="20170919 10:04:55.257" starttime="20170919 10:04:49.138"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:04:55.257" starttime="20170919 10:04:49.138"></status>
+</kw>
+<kw name="openstack authentciation" library="keywords1">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>unset OS_SERVICE_TOKEN</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.257" level="INFO">unset OS_SERVICE_TOKEN</msg>
+<status status="PASS" endtime="20170919 10:04:55.257" starttime="20170919 10:04:55.257"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_USERNAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.257" level="INFO">[root@controller ~]# export OS_USERNAME=admin</msg>
+<status status="PASS" endtime="20170919 10:04:55.257" starttime="20170919 10:04:55.257"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_PASSWORD=techm123</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.257" level="INFO">[root@controller ~]# export OS_PASSWORD=techm123</msg>
+<status status="PASS" endtime="20170919 10:04:55.257" starttime="20170919 10:04:55.257"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.257" level="INFO">[root@controller ~]# export OS_AUTH_URL=http://172.18.0.60:5000/v2.0</msg>
+<status status="PASS" endtime="20170919 10:04:55.257" starttime="20170919 10:04:55.257"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export PS1=' [\\u@\\h \\W(keystone_admin)]\\$ '</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.273" level="INFO">[root@controller ~]# export PS1=' [\u@\h \W(keystone_admin)]\$ '</msg>
+<status status="PASS" endtime="20170919 10:04:55.273" starttime="20170919 10:04:55.273"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_TENANT_NAME=admin</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.273" level="INFO">[root@controller ~(keystone_admin)]# export OS_TENANT_NAME=admin</msg>
+<status status="PASS" endtime="20170919 10:04:55.273" starttime="20170919 10:04:55.273"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>export OS_REGION_NAME=RegionOne</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.273" level="INFO">[root@controller ~(keystone_admin)]# export OS_REGION_NAME=RegionOne</msg>
+<status status="PASS" endtime="20170919 10:04:55.273" starttime="20170919 10:04:55.273"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:04:55.273" starttime="20170919 10:04:55.257"></status>
+</kw>
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given `text` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>glance image-list |grep -i Perimeta-VNF-Image</arg>
+</arguments>
+<msg timestamp="20170919 10:04:55.273" level="INFO">[root@controller ~(keystone_admin)]# glance image-list |grep -i Perimeta-VNF-Im age</msg>
+<status status="PASS" endtime="20170919 10:04:55.273" starttime="20170919 10:04:55.273"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170919 10:05:00.280" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170919 10:05:00.280" starttime="20170919 10:04:55.273"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<assign>
+<var>${output1}</var>
+</assign>
+<msg timestamp="20170919 10:05:00.280" level="INFO">| 3e246b66-a40d-4da2-ac2d-cb2740fbcbf2 | [01;31m[KPerimeta-VNF-Image[m[K                              |
+ [root@controller ~(keystone_admin)]#</msg>
+<msg timestamp="20170919 10:05:00.280" level="INFO">${output1} = | 3e246b66-a40d-4da2-ac2d-cb2740fbcbf2 | [01;31m[KPerimeta-VNF-Image[m[K                              |
+ [root@controller ~(keystone_admin)]# </msg>
+<status status="PASS" endtime="20170919 10:05:00.280" starttime="20170919 10:05:00.280"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output1}</arg>
+<arg>Perimeta-VNF-Image</arg>
+</arguments>
+<status status="PASS" endtime="20170919 10:05:00.280" starttime="20170919 10:05:00.280"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>*****************************Image Validation Completed**********************</arg>
+</arguments>
+<msg timestamp="20170919 10:05:00.280" level="INFO">*****************************Image Validation Completed**********************</msg>
+<status status="PASS" endtime="20170919 10:05:00.280" starttime="20170919 10:05:00.280"></status>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" endtime="20170919 10:05:00.374" starttime="20170919 10:05:00.280"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:05:00.374" starttime="20170919 10:04:27.826"></status>
+</kw>
+<tags>
+<tag>uploadimage</tag>
+</tags>
+<status status="PASS" endtime="20170919 10:05:00.374" critical="yes" starttime="20170919 10:04:27.826"></status>
+</test>
+<kw type="teardown" name="Close All Connections" library="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" endtime="20170919 10:05:00.467" starttime="20170919 10:05:00.374"></status>
+</kw>
+<status status="PASS" endtime="20170919 10:05:00.467" starttime="20170919 10:04:21.210"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">uploadimage</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="VolteComponent" pass="1">VolteComponent</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

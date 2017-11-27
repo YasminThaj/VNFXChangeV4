@@ -1,0 +1,23 @@
+<div ng-app="routerApp" ng-controller="dashboardController">
+<div id="report" class="tab-pane fade in active">
+		 <table style="margin-top:20px">
+<tr>
+<th>VNF Name</th>
+<th>VNF Type</th>
+<th>Test Case</th>
+<th>Status</th>
+<th>Date</th>
+<th>Report</th>
+</tr>
+
+<tr ng-repeat="x in dashboardData">
+<td>{{x.VnfName}}</td>
+<td>{{x.VnfTypeName}}</td>
+<td>TC1_Verification of on-boarded vnf on RHOSP</td>
+<td>{{x.Result}}</td>
+<td>{{x.VnfDate}}</td>
+<td ng-show="viewDisplay"><a target="_blank" href="./report.html">View</a></td>
+</tr>
+</table>
+</div>
+</div>

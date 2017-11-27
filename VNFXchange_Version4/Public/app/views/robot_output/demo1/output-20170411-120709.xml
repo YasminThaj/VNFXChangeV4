@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170411 12:07:10.003" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="D:\Automation_demo\back_tar\scripts" id="s1" name="Scripts">
+<suite source="D:\Automation_demo\back_tar\scripts\demo.robot" id="s1-s1" name="Demo">
+<test id="s1-s1-t1" name="demo1">
+<kw name="Graph Generation" library="VerizonDemo">
+<arguments>
+<arg>10</arg>
+<arg>8</arg>
+<arg>20</arg>
+<arg>33</arg>
+</arguments>
+<status status="PASS" endtime="20170411 12:07:11.594" starttime="20170411 12:07:11.569"></status>
+</kw>
+<status status="PASS" endtime="20170411 12:07:11.594" critical="yes" starttime="20170411 12:07:11.569"></status>
+</test>
+<status status="PASS" endtime="20170411 12:07:11.595" starttime="20170411 12:07:11.048"></status>
+</suite>
+<status status="PASS" endtime="20170411 12:07:11.595" starttime="20170411 12:07:11.029"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Scripts" pass="1">Scripts</stat>
+<stat fail="0" id="s1-s1" name="Demo" pass="1">Scripts.Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

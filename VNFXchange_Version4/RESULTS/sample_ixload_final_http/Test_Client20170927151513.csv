@@ -1,0 +1,44 @@
+CSVFormatID,IxLoad-1002
+DoReports,1
+App,IxLoad
+AppVersion,8.10.0.300
+RecordedOn,09/27/2017 15:08:08
+AgentName,Test
+AgentType,Client
+AgentInstanceName,N/A
+Community,N/A
+
+Elapsed Time,TCP SYN Sent,TCP SYN_SYN-ACK Received,TCP SYN Failed,TCP SYN-ACK Sent,TCP Connection Requests Failed,TCP Connections Established,TCP FIN Sent,TCP FIN Received,TCP FIN-ACK Sent,TCP FIN-ACK Received,TCP Resets Sent,TCP Resets Received,TCP Retries,TCP Timeouts,TCP Accept Queue Entries,TCP Listen Queue Drops,TCP Connections in ESTABLISHED State,TCP Connections in SYN-SENT State,TCP Connections in SYN-RECEIVED State,TCP Connections in FIN-WAIT-1 State,TCP Connections in FIN-WAIT-2 State,TCP Connections in TIME-WAIT State,TCP Connections in CLOSE STATE,TCP Connections in CLOSE-WAIT State,TCP Connections in LAST-ACK State,TCP Connections in LISTENING State,TCP Connections in CLOSING State,TCP Internally Aborted Connections,TCP SYN Sent/s,TCP SYN_SYN-ACK Received/s,TCP SYN Failed/s,TCP SYN-ACK Sent/s,TCP Connection Requests Failed/s,TCP Connections Established/s,TCP FIN Sent/s,TCP FIN Received/s,TCP FIN-ACK Sent/s,TCP FIN-ACK Received/s,TCP Resets Sent/s,TCP Resets Received/s,TCP Retries/s,TCP Timeouts/s
+,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Interpolated,Raw,Raw,Raw,Raw,Raw,Raw,Raw,Raw,Raw,Raw,Raw,Interpolated,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate,Interpolated Rate
+ET,:SyncSent,:SyncRcvd,:SyncFailed,:SyncAckSent,:ConnRequestFailed,:ConnEstab,:FinSent,:FinRcvd,:FinAckSent,:FinAckRcvd,:ResetsSent,:ResetRcvd,:Retries,:Timeouts,:connAcceptQueue,:ListenDrops,:EstabState,:SyncSentState,:SyncRcvdState,:FinWait-1State,:FinWait-2State,:TimeWaitState,:Close,:CloseWaitState,:LastAckState,:SocketsListenState,:ClosingState,:ConnAttemptFailed,:SyncSent,:SyncRcvd,:SyncFailed,:SyncAckSent,:ConnRequestFailed,:ConnEstab,:FinSent,:FinRcvd,:FinAckSent,:FinAckRcvd,:ResetsSent,:ResetRcvd,:Retries,:Timeouts
+0.0000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2.0000,512,512,0,0,0,512,0,0,0,0,0,0,0,0,0,0,512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+4.0000,512,512,0,0,0,512,0,0,0,0,0,0,245,0,0,0,512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,123,0
+6.0000,844,562,0,0,0,562,0,0,0,0,0,167,783,0,0,0,335,177,0,0,0,0,254,0,0,0,0,0,166,25,0,0,0,25,0,0,0,0,0,84,269,0
+8.0000,1134,649,0,0,0,649,0,0,0,0,0,254,1156,0,0,0,426,86,0,0,0,0,254,0,0,0,0,0,145,44,0,0,0,44,0,0,0,0,0,44,187,0
+10.0000,1266,746,0,0,0,746,0,0,0,0,66,254,1263,66,0,0,426,86,0,0,0,0,355,0,0,0,0,0,66,49,0,0,0,49,0,0,0,0,33,0,54,33
+12.0000,1360,837,0,0,0,837,0,0,0,0,101,254,1388,101,0,0,512,0,0,0,0,0,355,0,0,0,0,0,47,46,0,0,0,46,0,0,0,0,18,0,63,18
+14.0000,1390,867,0,0,0,867,0,0,0,0,101,254,1447,101,0,0,512,0,0,0,0,0,355,0,0,0,0,0,15,15,0,0,0,15,0,0,0,0,0,0,30,0
+16.0000,1400,877,0,0,0,877,0,0,0,0,111,254,1454,111,0,0,512,0,0,0,0,0,371,0,0,0,0,0,5,5,0,0,0,5,0,0,0,0,5,0,4,5
+18.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,3,3,0,0,0,3,0,0,0,0,3,0,2,3
+20.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+22.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+24.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+26.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+28.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+30.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+32.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+34.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+36.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+38.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+40.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+42.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+44.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+46.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+48.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+50.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+52.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+54.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+56.0000,1406,883,0,0,0,883,0,0,0,0,117,254,1458,117,0,0,512,0,0,0,0,0,371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+58.0000,1406,883,0,0,0,883,0,0,0,0,453,254,1458,117,0,0,0,0,0,0,0,0,883,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,168,0,0,0
+60.0000,1406,883,0,0,0,883,0,0,0,0,629,254,1458,117,0,0,0,0,0,0,0,0,883,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,88,0,0,0

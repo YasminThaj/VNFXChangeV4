@@ -1,0 +1,56 @@
+<div class="nav-side-menu" >
+
+   <!--> <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i> <!-->
+	
+	<div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+            <li style="padding-left:20px">
+                <a ui-sref="dashboard">
+                     Dashboard
+                </a>
+            </li>
+		</ul>
+	</div>
+	
+	<div data-role="page" id="pageone">
+    <div data-role="header"></div>
+	
+	<div data-role="main" class="ui-content">
+		<div data-role="collapsible">
+		    <li style="padding-left:20px">Core</l1>
+		<ul data-role="listview">
+			<li style="padding-left:20px">
+                 <a href="#" ui-sref="vnfgonboard"> VNF Onboarding </a>
+            </li>
+			<li  style="padding-left:20px">
+                <a href="#" ui-sref="vnfFunc">VNF Functional Testing</a> 
+            </li> 
+		</ul>
+        </div>
+              
+	
+		<div data-role="collapsible">
+		    <li style="padding-left:20px">Enterprise</l1>
+		<ul data-role="listview">		
+			
+			<li  style="padding-left:20px">
+                <a href="#" ui-sref="vnfimsonbord">VNF Onboarding   
+				</a>
+            </li>
+			<li  style="padding-left:20px">
+                <a href="#" ui-sref="vnfFunc">VNF Functional Testing   
+				</a>
+            </li>
+		</div>
+
+		
+	</div>
+	</div>
+		
+           <!-- <li data-role="collapse" data-target="#new" class="collapsed" style="padding-left:20px">
+                <a ui-sref="vnfwikilink">VNF Wiki Link  
+				</a>
+            </li> -->
+            
+        </ul>
+    </div>

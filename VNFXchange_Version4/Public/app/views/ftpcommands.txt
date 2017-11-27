@@ -1,0 +1,5 @@
+open 10.53.172.4
+admin
+admin123
+mget log.html report.html
+bye

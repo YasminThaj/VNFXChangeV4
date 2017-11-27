@@ -1,0 +1,15 @@
+[ConfigDetails]
+Server="RedHat"
+VNFName=demo
+ImageName=demo-img
+DiskFormat=qcow2
+ImageFilePath=/root/auto_heatfiles
+ContainerFormat=bare
+FlavourPath=C:\xampp\htdocs\VNFXchange
+AvailabilityZone=nova:compute2
+SecurityGroupname=default
+Protocol=TCP
+Direction=Ingress
+Ethertype=ipv4
+FlavourName=Oracle_SBC_Flavour_Template.txt
+ImageFileName=nnSCZ739p1-img-vm_kvm.qcow2

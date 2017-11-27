@@ -1,0 +1,4 @@
+open 10.53.172.4
+admin
+admin123
+bye

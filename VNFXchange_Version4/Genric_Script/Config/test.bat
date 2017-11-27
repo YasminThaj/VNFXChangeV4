@@ -1,0 +1,1 @@
+xcopy kalai.txt C:\\10.53.172.9\vnf

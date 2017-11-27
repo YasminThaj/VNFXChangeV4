@@ -1,0 +1,16 @@
+<div class="container-fluid">
+<div class="row">
+<div ng-include="'sidenav.html'"></div>
+<div class="col-md-12 frame" >
+<div style="float: left;padding: 10px;background-color: #a7a9ac;width: 100%;font-size: 18px;color: white;margin-bottom: 20px;">
+	<span style="font-weight:bold">VNF Functional Testing</span>
+</div>
+
+	<ul class="nav nav-tabs" >
+    <li id="test" class="active"><a data-toggle="tab"  ng-click="gotofun1('testcases.html')">TestCase</a></li>
+    <li id="rep"><a data-toggle="tab" ng-click="gotofun1('reports.html')" ng-class="{enabledtab: nval}">Reports</a></li>    
+  </ul>
+  <div ng-include="fpath"/>   
+</div>
+</div>
+</div>

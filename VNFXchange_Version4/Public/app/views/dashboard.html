@@ -1,0 +1,30 @@
+<div class="container-fluid" style="height:600px;ovarflow:scroll">
+<div class="row" >
+<div ng-include="'sidenav.html'"></div>
+<div>
+<div class="col-md-9 frame" >
+<div style="float: left;padding: 10px;background-color: #a7a9ac;width: 100%;font-size:18px;color:white;">
+	<span style="font-weight:bold">Dashboard</span>
+</div>
+<table style="margin-top:60px">
+<tr>
+<th>VNF Name</th>
+<th>VNF Image</th>
+<th>VNF Type</th>
+<th>Platform</th>
+<th>Onboarding Status</th>
+<th>Onboarded Date </th>
+</tr>
+  <tr ng-repeat="x in dashboardData">
+    <td>{{x.VnfName}}</td>
+	<td>{{x.ImageName}}</td>
+    <td>{{x.VnfTypeName}}</td>
+	<td>RedHat - Mitaka</td>
+	<td width="130px">{{x.Result}}</td>
+	<td width="120px">{{ x.VnfDate}}</td>
+	
+  </tr>
+</table>
+</div>
+</div>
+</div>

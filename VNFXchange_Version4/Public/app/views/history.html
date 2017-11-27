@@ -1,0 +1,19 @@
+<div class="tab-content">
+<div id="report" class="tab-pane fade in active">
+
+<h2>{{testcasenames | uppercase}}</h2>
+		 <table style="margin-top:20px">
+<tr>
+<th>Report</th>
+<th>Date</th>
+<th>Time</th>
+
+</tr>
+  <tr ng-repeat="x in repnames">
+  <td><a target="_blank" href="./robot_output/{{testcasenames}}/{{x}}">{{x}}</td>
+    <td>{{rportdate[$index] }}</td>
+	<td>{{rporttime[$index] }}</td>
+  </tr>
+</table>
+	  </div>
+	</div>

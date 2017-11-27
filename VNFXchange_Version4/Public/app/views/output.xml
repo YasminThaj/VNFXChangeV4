@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171103 16:04:32.247" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="D:\automation_verizon\Automation_demo\back_tar\scripts" id="s1" name="Scripts">
+<suite source="D:\automation_verizon\Automation_demo\back_tar\scripts\Verizon_OpenStack.robot" id="s1-s1" name="Verizon OpenStack">
+<test id="s1-s1-t1" name="Config_setup_traffic">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>config_default</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:33.901" starttime="20171103 16:04:33.901"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Config_Traffic_in</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:33.902" starttime="20171103 16:04:33.901"></status>
+</kw>
+<kw name="config_interfaces">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${IP}</arg>
+<arg>Ip_address</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:33.902" starttime="20171103 16:04:33.902"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>${IP}</arg>
+<arg>10.53.173.210</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:33.903" starttime="20171103 16:04:33.903"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>10.53.173.210</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:33.903" starttime="20171103 16:04:33.903"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20171103 16:04:33.904" level="INFO">Logging into '10.53.173.210:22' as 'vyos'.</msg>
+<msg timestamp="20171103 16:04:36.906" level="FAIL">timeout: timed out</msg>
+<status status="FAIL" endtime="20171103 16:04:36.906" starttime="20171103 16:04:33.903"></status>
+</kw>
+<status status="FAIL" endtime="20171103 16:04:36.907" starttime="20171103 16:04:33.902"></status>
+</kw>
+<status status="FAIL" endtime="20171103 16:04:36.907" critical="yes" starttime="20171103 16:04:33.900">timeout: timed out</status>
+</test>
+<test id="s1-s1-t2" name="ixia">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${ip}</arg>
+<arg>Ip_address</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:36.908" starttime="20171103 16:04:36.908"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Open Connection</arg>
+<arg>${ip}</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:36.908" starttime="20171103 16:04:36.908"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>10.53.173.210</arg>
+</arguments>
+<status status="PASS" endtime="20171103 16:04:36.909" starttime="20171103 16:04:36.908"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20171103 16:04:36.910" level="INFO">Logging into '10.53.173.210:22' as 'vyos'.</msg>
+<msg timestamp="20171103 16:04:39.911" level="FAIL">timeout: timed out</msg>
+<status status="FAIL" endtime="20171103 16:04:39.911" starttime="20171103 16:04:36.909"></status>
+</kw>
+<status status="FAIL" endtime="20171103 16:04:39.911" critical="yes" starttime="20171103 16:04:36.907">timeout: timed out</status>
+</test>
+<status status="FAIL" endtime="20171103 16:04:39.912" starttime="20171103 16:04:33.288"></status>
+</suite>
+<status status="FAIL" endtime="20171103 16:04:39.914" starttime="20171103 16:04:33.263"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="Scripts" pass="0">Scripts</stat>
+<stat fail="2" id="s1-s1" name="Verizon OpenStack" pass="0">Scripts.Verizon OpenStack</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

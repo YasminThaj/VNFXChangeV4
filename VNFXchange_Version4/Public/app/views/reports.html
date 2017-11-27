@@ -1,0 +1,24 @@
+<div ng-app="routerApp" ng-controller="funReportController">
+<div id="report" class="tab-pane fade in active">
+		 <table style="margin-top:20px">
+<tr>
+<th>VNF Name</th>
+<th>VNF Type</th>
+<th>Test Case</th>
+<th>Status</th>
+<th>Date</th>
+<th>Report</th>
+</tr>
+
+<tr ng-repeat="x in reportData">
+<td>{{x.Vnf_Name}}</td>
+<td>{{x.Vnf_Type}}</td>
+<td>{{x.TestCase1+x.TestCase2+x.TestCase3}}</td>
+<td>{{x.Status}}</td>
+<td>{{x.ExeDate}}</td>
+<td ng-show="viewDisplay"><a target="_blank" href="./report.html">View</a></td>
+</tr>
+</table>
+</div>
+</div>
+	

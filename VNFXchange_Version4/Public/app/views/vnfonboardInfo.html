@@ -1,0 +1,40 @@
+<div class="container-fluid" style="height:600px;ovarflow:scroll">
+<div class="row">
+<div ng-include="'sidenav.html'"></div>
+<div>
+<div class="col-md-9 frame" ng-controller="vnfonboardInfoController">
+<div style="float: left;padding: 10px;background-color: #a7a9ac;width: 100%;font-size:18px;color:white;">
+	<span style="font-weight:bold">Dashboard</span>
+</div>
+<table style="margin-top:60px">
+<tr>
+<th>VNF Name</th>
+<th>Cpu</th>
+<th>Memory</th>
+<th>status</th>
+<th>Onboarding Date</th>
+<th>Ip Address </th>
+</tr>
+
+<!-- <tr ng-repeat="x in names">
+<td>{{x.name}}</td>
+	<td>{{x.image}}</td>
+    <td>{{x.type}}</td>
+	<td>{{x.platform}}</td>
+	<td width="130px">{{ x.status}}</td>
+	<td width="120px">{{ x.date}}</td>	
+</tr> -->
+	
+	<tr ng-repeat="x in vnf_name">
+	<td>{{x}}</td>
+    <td>{{Cpus[$index]}}</td>
+	<td>{{Memory[$index]}}</td>
+	<td>{{Status[$index]}}</td>
+	<td>{{onboardedDate[$index]}}</td>
+	<td>{{IpAddress[$index]}}</td>
+	</tr>  
+</table>
+  </div>
+ 
+</div>
+</div>

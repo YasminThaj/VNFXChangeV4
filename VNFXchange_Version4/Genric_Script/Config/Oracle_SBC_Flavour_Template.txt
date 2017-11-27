@@ -1,0 +1,3 @@
+Ram:8192
+disk:80
+vcpus:4

@@ -1,0 +1,217 @@
+*** Settings ***
+Library           Collections
+Library           SSHLibrary
+Library           BuiltIn
+Resource          Genric_Variable.robot
+Library           Python_Script/Library.py
+Resource          Genric_Keywords.robot
+
+*** Variables ***
+${Label}          ConfigDetails
+${NicMCM}         --user-data /root/auto_heatfiles/MCM-New-config.xml --nic net-id=5c967962-504a-46ef-8664-b6cbc5c1afd3,v4-fixed-ip=169.254.1.51 --nic net-id=3f4a053f-3b05-4388-8e4a-8e47bcd757fb,v4-fixed-ip=172.18.0.209
+${NicCSM}         --user-data /root/auto_heatfiles/CSM-New-config.xml --nic net-id=5c967962-504a-46ef-8664-b6cbc5c1afd3,v4-fixed-ip=169.254.1.59 --nic net-id=3f4a053f-3b05-4388-8e4a-8e47bcd757fb,v4-fixed-ip=172.18.0.11 --nic net-id=3af36c05-5fc0-41ef-925f-5bc8674071cf,v4-fixed-ip=167.254.17.11
+${NicSSM}         --user-data /root/auto_heatfiles/SSM-New-config.xml --nic net-id=5c967962-504a-46ef-8664-b6cbc5c1afd3,v4-fixed-ip=169.254.1.54 --nic net-id=3f4a053f-3b05-4388-8e4a-8e47bcd757fb,v4-fixed-ip=172.18.0.12 --nic net-id=3af36c05-5fc0-41ef-925f-5bc8674071cf,v4-fixed-ip=167.254.17.52 --nic net-id=78d1ec17-397d-455c-9d4d-3e79116d6337,v4-fixed-ip=10.80.1.171 --nic net-id=fe74c577-c257-45d2-b277-638a68940b87,v4-fixed-ip=10.81.1.171
+
+*** Keywords ***
+Affirmed_CreateFlavour_MCM
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\MCM_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    Create Flavor
+
+Affirmed_CreateFlavour_CSM
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\CSM_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    Create Flavor
+
+Affirmed_CreateFlavour_SSM
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    Create Flavor
+
+Affirmed_CreateImage_MCM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    **************Push Image started***********
+    PushimagefiletoServer    @{Server}
+    log    **************Push Image Completed***********
+    log    **************Image Create Started ***********
+    GlanceImageUpload
+    log    **************Image Create Completed ***********
+    Close Connection
+
+Affirmed_CreateImage_CSM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    **************Push Image started***********
+    PushimagefiletoServer    @{Server}
+    log    **************Push Image Completed***********
+    log    **************Image Create Started ***********
+    GlanceImageUpload
+    log    **************Image Create Completed ***********
+    Close Connection
+
+Affirmed_CreateImage_SSM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    **************Push Image started***********
+    PushimagefiletoServer    @{Server}
+    log    **************Push Image Completed***********
+    log    **************Image Create Started ***********
+    GlanceImageUpload
+    log    **************Image Create Completed ***********
+    Close Connection
+
+Affirmed_Image_Validation
+    @{Param}    Parseconfdata    ${CURDIR}\\Config\\testfile2.txt    ${Label1}
+    ${MCM_Image}    Get From List    ${Param}    2
+    @{Param}    Parseconfdata    ${CURDIR}\\Config\\testfile2.txt    ${Label2}
+    ${CSM_Image}    Get From List    ${Param}    2
+    @{Param}    Parseconfdata    ${CURDIR}\\Config\\testfile2.txt    ${Label3}
+    ${SSM_Image}    Get From List    ${Param}    2
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label2}
+    Server_Login    @{Server}
+    log    *****************************Image Validation Started**********************
+    ${str}    Catenate    nova image-list |grep \ -i    ${MCM_Image}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${MCM_Image}
+    log    *****************************MCM_Image Validation Completed**********************
+    ${str}    Catenate    nova image-list |grep \ -i    ${CSM_Image}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${CSM_Image}
+    log    *****************************CSM_Image Validation Completed**********************
+    ${str}    Catenate    nova image-list |grep \ -i    ${SSM_Image}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${SSM_Image}
+    log    *****************************SSM_Image Validation Completed**********************
+
+Affirmed_SecurityPolicy_MCM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    *************Security Group rules create Started ***********
+    SecurityGroup_Rules
+    log    *************Security Group rules create Completed ***********
+
+Affirmed_SecurityPolicy_CSM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    *************Security Group rules create Started ***********
+    SecurityGroup_Rules
+    log    *************Security Group rules create Completed ***********
+
+Affirmed_SecurityPolicy_SSM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    *************Security Group rules create Started ***********
+    SecurityGroup_Rules
+    log    *************Security Group rules create Completed ***********
+
+Security_Validation
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label1}
+    Server_Login    @{Server}
+    log    ***************************** SecurityGroup Validation Started**********************
+    ${str}    Catenate    neutron security-group-list |grep -i    ${Security}
+    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${Security}
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label2}
+    Server_Login    @{Server}
+    log    ***************************** SecurityGroup Validation Started**********************
+    ${str}    Catenate    neutron security-group-list |grep -i    ${Security}
+    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${Security}
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label3}
+    Server_Login    @{Server}
+    log    ***************************** SecurityGroup Validation Started**********************
+    ${str}    Catenate    neutron security-group-list |grep -i    ${Security}
+    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${Security}
+
+Affirmed_Onboarding_MCM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    *************VM Create Started ***********
+    VMCreation    ${Label1}    ${NicMCM}
+    log    *************VM Create Completed ***********
+
+Affirmed_Onboarding_CSM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    *************VM Create Started ***********
+    VMCreation    ${Label1}    ${NicCSM}
+    log    *************VM Create Completed ***********
+
+Affirmed_Onboarding_SSM
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    *************VM Create Started ***********
+    VMCreation    ${Label1}    ${NicSSM}
+    log    *************VM Create Completed ***********
+
+Affirmed_Onboarding_Validation
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    ***************************** Onboard Validation Started**********************
+    ${str}    Catenate    nova list |grep -i    ${VNFName}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${VNFName}
+    log    ***************************** Onboard Validation Completed**********************
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label2}
+    Server_Login    @{Server}
+    log    ***************************** Onboard Validation Started**********************
+    ${str}    Catenate    nova list |grep -i    ${VNFName}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${VNFName}
+    log    ***************************** Onboard Validation Completed**********************
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label3}
+    Server_Login    @{Server}
+    log    ***************************** Onboard Validation Started**********************
+    ${str}    Catenate    nova list |grep -i    ${VNFName}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${VNFName}
+    log    ***************************** Onboard Validation Completed**********************
+
+Affirmed_Flavor_Validation
+    @{Param}    Parseconfdata    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    ${MCM_Flavor}    Get From List    ${Param}    15
+    @{Param}    Parseconfdata    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    ${CSM_Flavor}    Get From List    ${Param}    15
+    @{Param}    Parseconfdata    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    ${SSM_Flavor}    Get From List    ${Param}    15
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\testfile2.txt    ${Label}
+    Server_Login    @{Server}
+    log    *****************************Image Validation Started**********************
+    ${str}    Catenate    nova flavor-list |grep -i    ${MCM_Flavor}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${MCM_Flavor}
+    log    *****************************MCM_Image Validation Completed**********************
+    ${str}    Catenate    nova flavor-list |grep -i    ${CSM_Flavor}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${CSM_Flavor}
+    log    *****************************CSM_Image Validation Completed**********************
+    ${str}    Catenate    nova flavor-list |grep -i    ${SSM_Flavor}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${SSM_Flavor}
+    log    *****************************SSM_Image Validation Completed**********************

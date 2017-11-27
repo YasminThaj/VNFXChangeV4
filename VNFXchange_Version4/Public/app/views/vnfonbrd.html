@@ -1,0 +1,18 @@
+<div class="container-fluid">
+<div class="row">
+<div ng-include="'sidenav.html'"></div>
+<div class="col-md-9 frame" >
+<div style="float: left;padding: 10px;background-color: #a7a9ac;width: 100%;font-size: 18px;color: white;margin-bottom: 20px;">
+	<span style="font-weight:bold" >{{oppathname}}</span>
+</div>
+   <ul class="nav nav-tabs"  >
+   <li id="test" class="active" style="width:25% !important;text-align: center;"><a data-toggle="tab" ng-click="gotoonbrd('vnfgonboard.html')" >Onboard</a></li> 
+   <li id="rep"><a data-toggle="tab" ng-click="gotofun1('onboardreports.html')" ng-class="{enabledtab: nval}">Reports</a></li>   
+   <li style="width:25% !important;text-align: center;"><a data-toggle="tab"  ng-click="gotoonbrd('offboard.html')">OffBoard</a></li>
+      
+  </ul>
+  <div ng-include="onpath"/> 
+  
+</div>
+</div>
+</div>

@@ -1,0 +1,758 @@
+*** Settings ***
+Library           Collections
+Library           SSHLibrary
+Library           BuiltIn
+Resource          Genric_Variable.robot
+Library           Python_Script/Library.py
+Resource          Genric_Keywords.robot
+Library           AutoItLibrary
+Library           Python_Script/Library.py
+
+*** Variables ***
+${SBC_Username}    user
+${SBC_Pwd}        acme
+${NicSBC}         --nic net-id=3f4a053f-3b05-4388-8e4a-8e47bcd757fb --nic net-id=78d1ec17-397d-455c-9d4d-3e79116d6337 --nic net-id=78d1ec17-397d-455c-9d4d-3e79116d6337
+${SBC_NewPassword}    Root@123
+${SBC_EN_Password}    packet
+${Label}          ConfigDetails
+${P-CSCF_mvfile_Path_Src}    C:/Users/Techm/Sukesh-Automation/RobotFramework/Volte/VOLTE_TestCases/ims_trace_pcscf.pcap
+${P-CSCF_mvfile_Path_Dst}    C://Users//Admin//Desktop//Sukesh-Automation//RobotFramework//Volte//VOLTE_TestCases//PCAP_Files//
+${Rename_Path}    C://Users//Admin//Desktop//Sukesh-Automation//RobotFramework//Genric_Script//PcapFiles//
+${P-CSCF_Controller_IP}    172.18.0.60
+${P-CSCF_Controller_UserLogin}    root
+${P-CSCF_Controller_Pwd}    techm123
+${App_Exe_Path}    C:\\Program Files (x86)\\Doubango\\Boghe IMS Client x86\\BogheApp.exe
+${P-CSCF_Perimita_IP}    172.18.0.237
+${P-CSCF_Permita_UserLogin}    root
+${P-CSCF_Permita_Pwd}    !bootstrap
+${DNS IP}         10.80.1.134
+${GATEWAY IP}     10.80.1.1    #Default gateway for 10.80
+${CSM IP}         10.80.1.211
+${DEFAULT-GATEWAY}    172.18.0.1
+
+*** Keywords ***
+SBC_CreateFlavor
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    Create Flavor    #Genric Flavor Function
+
+SBC_CreateImage
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    Comment    log    **************Push Image started***********
+    Comment    PushimagefiletoServer    @{Server}
+    Comment    log    **************Push Image Completed***********
+    log    **************Image Create Started ***********
+    GlanceImageUpload
+    log    **************Image Create Completed ***********
+
+SBC_OnboardVM
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    log    *************VM Create Started ***********
+    VMCreation    ${Label}    ${NicSBC}
+    sleep    60
+    log    ********Reboot Process In Progress Bringing up the VM *************
+    Reboot_loop    #Delay for VM to come up
+    known_hostremoval
+    log    *************VM Create Completed ***********
+
+Flavor_Validation
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    ${str}    Catenate    nova flavor-list |grep \ -i    ${FlavourName}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    10
+    ${output}    read
+    Should Contain    ${output}    ${FlavourName}
+
+Image_Validation
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    log    *****************************Image Validation Started**********************
+    ${str}    Catenate    nova image-list |grep \ -i    ${ImageName}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${ImageName}
+    log    *****************************Image Validation Completed**********************
+
+Onboard_Validation
+    [Arguments]    ${Index}
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    Switch Connection    ${Index}
+    log    ***************************** Onboard Validation Started**********************
+    ${str}    Catenate    nova list |grep -i    ${VNFName}
+    Wait Until Keyword Succeeds    20s    2    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${VNFName}
+    log    ***************************** Onboard Validation Completed**********************
+
+SBC_SecurityGroupRules
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    log    *************Security Group rules create Started ***********
+    SecurityGroup_Rules
+    log    *************Security Group rules create Completed ***********
+
+SecurityGroup_Validation
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    log    ***************************** SecurityGroup Validation Started**********************
+    ${str}    Catenate    neutron security-group-list |grep -i    ${Security}
+    write    ${str}
+    sleep    5
+    ${output}    read
+    Should Contain    ${output}    ${Security}
+
+AvailabilityZone_Validation
+    [Timeout]
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    Write    nova show \ ${VNFName} | egrep -i 'OS-EXT-AZ:availability_zone|OS-EXT-SRV-ATTR:host' | awk -F "|" '{ print $3}'
+    sleep    3
+    @{list}    Split String From Right    ${AvZone}    :
+    ${Zone}    Get From List    ${list}    1
+    ${output}    read
+    Should Contain    ${output}    ${Zone}
+
+Networks_Validation
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}
+    write    nova list | grep -i ${VNFName}| awk -F ";" '{print $2}' | awk -F "=" '{print $2}'| awk -F " \ " '{print $1}'    #get IP of SBC
+    sleep    5
+    ${output}    read
+    ${output}    Split String    ${output}
+    ${MGmt_IP}    Get From List    ${output}    0
+    Write    nova show ${VNFName}| grep network
+    sleep    14
+    ${output}    read
+    Should Contain    ${output}    AN-MGMT    ${MGmt_IP}
+
+SBC_PortUpdation
+    log    ****************Port UpdationStart************
+    Comment    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Comment    Server_Login    @{Server}    #Controller Login
+    write    rm -rf value.txt
+    write    nova list | grep -i ${VNFName}|awk -F "=" '{print $2}'|awk -F "," '{print $1}'
+    sleep    4
+    ${output}    read
+    ${output}    Split String    ${output}
+    ${IP1}    Get From List    ${output}    0
+    Set Global Variable    ${IP1}
+    write    clear
+    write    nova list | grep -i ${VNFName}|awk -F "=" '{print $2}'|awk -F "," '{print $2}'|awk -F ";" '{print $1}'
+    sleep    4
+    ${output}    read
+    ${output}    Split String    ${output}
+    ${IP2}    Get From List    ${output}    0
+    Set Global Variable    ${IP2}
+    write    clear
+    write    nova list | grep -i ${VNFName}| awk -F ";" '{print $2}' | awk -F "=" '{print $2}'| awk -F " \ " '{print $1}'    #get IP of SBC
+    sleep    5
+    ${output}    read
+    ${output}    Split String    ${output}
+    ${MGmt_IP}    Get From List    ${output}    0
+    Set Global Variable    ${MGmt_IP}
+    write    clear    #getting IP Done
+    write    neutron port-list | grep -i ${IP1} |awk -F "|" '{print $2}'    #port update 1
+    sleep    3
+    ${output}    read
+    @{output}    Split String    ${output}
+    ${port-1}    Get From List    ${output}    0
+    ${str}    Catenate    neutron port-update    ${port-1}    --allowed-address-pairs type=dict list=true    ip_address=${IP1}    #Port1 Updation
+    write    ${str}
+    sleep    3
+    ${output}    read
+    write    clear
+    write    neutron port-list | grep -i ${IP2} |awk -F "|" '{print $2}'    #Port update 2
+    sleep    3
+    ${output}    read
+    @{output}    Split String    ${output}
+    ${port-2}    Get From List    ${output}    0
+    ${str}    Catenate    neutron port-update    ${port-2}    --allowed-address-pairs type=dict list=true    ip_address=${IP2}
+    write    ${str}
+    sleep    2
+    ${output}    read
+    write    clear
+    write    neutron port-list | grep -i ${MGmt_IP}|awk -F "|" '{print $2}'    #port update 3
+    sleep    3
+    ${output3}    read
+    @{output3}    Split String    ${output3}
+    ${port-3}    Get From List    ${output3}    0
+    ${str}    Catenate    neutron port-update    ${port-3}    --allowed-address-pairs type=dict list=true    ip_address=${MGmt_IP}
+    write    ${str}
+    sleep    3
+    ${output}    read
+    log    ****************Port Updation Complete************
+    read
+
+PasswordUpdation
+    log    ****************Password Updation Start************
+    sleep    10
+    Write    ssh -o "StrictHostKeyChecking no" user@${MGmt_IP}
+    sleep    3
+    write    ${SBC_Pwd}
+    sleep    4
+    write    ${SBC_NewPassword}
+    sleep    3
+    write    ${SBC_NewPassword}
+    sleep    4
+    ${output}=    Read
+    sleep    3
+    write    en
+    sleep    3
+    write    ${SBC_EN_Password}
+    sleep    5
+    write    ${SBC_NewPassword}
+    sleep    5
+    write    ${SBC_NewPassword}
+    sleep    6
+    ${output}=    Read
+    License
+    License
+    write    exit
+    write    exit
+    read
+    log    **************portUpdation completed**************
+    sleep    10
+
+License
+    write    setup product
+    sleep    2
+    write    1
+    sleep    2
+    write    1
+    sleep    2
+    write    s
+    sleep    2
+
+Setup Entitlements
+    log    ****************SetupEntitlements Start************
+    write    ssh -o "StrictHostKeyChecking no" user@${MGmt_IP}
+    sleep    4
+    ${output}=    Read
+    write    ${SBC_NewPassword}
+    sleep    3
+    write    en
+    sleep    10
+    write    ${SBC_NewPassword}
+    ${output}=    Read
+    sleep    2
+    write    setup entitlements
+    write    1
+    write    8000
+    write    2
+    write    enabled
+    write    3
+    write    enabled
+    write    4
+    write    enabled
+    write    5
+    write    enabled
+    write    6
+    write    enabled
+    write    7
+    write    enabled
+    write    8
+    write    enabled
+    write    9
+    write    enabled
+    write    10
+    write    8000
+    write    11
+    write    1024
+    write    12
+    write    1024
+    write    13
+    write    1024
+    write    14
+    write    1024
+    sleep    3
+    write    s
+    Write    con ter
+    write    bootparam
+    sleep    2
+    write    /boot/bzImage
+    ${output}=    Read
+    log    ${output}
+    write    ${MGmt_IP}
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    Write    255.255.255.0
+    ${output}=    Read
+    log    ${output}
+    write    172.18.0.1
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    Write    SBC
+    ${output}=    Read
+    log    ${output}
+    Write    VGA
+    ${output}=    Read
+    log    ${output}
+    Write    115200
+    ${output}=    Read
+    log    ${output}
+    Write Bare    \n
+    ${output}=    Read
+    log    ${output}
+    sleep    5
+    write    exit
+    sleep    5
+    write    ssh -o "StrictHostKeyChecking no" user@${MGmt_IP}
+    sleep    5
+    write    ${SBC_NewPassword}
+    write    interface-mapping
+    write    show
+    write    swap wancom1 s1p0
+    sleep    4
+    write    y
+    sleep    4
+    write    exit
+    write    exit
+    write    exit
+    sleep    10
+    log    ****************Setup Entitlements Complete************
+    read
+
+Configuration
+    log    **************** Configuration Start ************
+    # phy-interface
+    sleep    5
+    Write    ssh -o "StrictHostKeyChecking no" user@${MGmt_IP}
+    sleep    5
+    ${output}=    Read
+    write    ${SBC_NewPassword}
+    sleep    2
+    write    en
+    sleep    1
+    write    ${SBC_NewPassword}
+    ${output}=    Read
+    sleep    2
+    write    con ter
+    write    system
+    sleep    2
+    write    phy-interface
+    write    name ext
+    write    operation-type Media
+    write    slot 0
+    write    port 0
+    write    done
+    sleep    2
+    write    name in
+    write    operation-type Media
+    write    slot 1
+    write    done
+    sleep    2
+    write    exit
+    #network-interface
+    write    network-interface
+    write    name ext
+    write    sub-port-id 0
+    write    description toEPC
+    write    ip-address ${IP2}
+    write    netmask 255.255.255.0
+    write    gateway ${GATEWAY IP}
+    write    dns-ip-primary ${DNS IP}
+    write    dns-domain example.demo
+    write    add-hip-ip ${IP2}
+    write    add-icmp-ip ${IP2}
+    write    done
+    sleep    5
+    write    name in
+    write    description toCSM
+    write    ip-address ${IP1}
+    write    netmask 255.255.255.0
+    write    gateway ${GATEWAY IP}
+    write    dns-ip-primary ${DNS IP}
+    write    dns-domain example.demo
+    write    add-hip-ip ${IP1}
+    write    add-icmp-ip ${IP1}
+    write    signaling-mtu 1000
+    write    done
+    sleep    10
+    write    exit
+    #system config
+    write    system-config
+    write    hostname sbc
+    write    description Oracle-SBC
+    write    default-gateway ${DEFAULT-GATEWAY}
+    write    done
+    sleep    5
+    write    exit
+    write    exit
+    # Session Router
+    write    session-router
+    write    sip-config
+    write    state enabled
+    write    home-realm-id csm
+    write    registrar-domain *
+    write    registrar-host *
+    write    registrar-port 5060
+    write    options +force-unregistration
+    write    options +max-udp-length=0
+    write    done
+    write    exit
+    #Sip-interfaces
+    write    sip-interface
+    write    state enabled
+    write    realm-id epc
+    write    description EPC->SBC
+    write    sip-ims-feature enabled
+    write    proxy-mode proxy
+    write    registration-caching enabled
+    write    route-to-registrar enabled
+    write    network-id example.demo
+    write    sip-ports
+    write    address ${IP2}
+    write    done
+    write    exit
+    write    done
+    write    state enabled
+    write    realm-id csm
+    write    description SBC->CSM
+    write    sip-ims-feature enabled
+    Comment    write    proxy-mode
+    Comment    write    registration-caching disabled
+    Comment    write    route-to-registrar disabled
+    write    sip-ports
+    write    address ${IP1}
+    write    done
+    sleep    5
+    write    exit
+    read
+    sleep    5
+    write    exit
+    write    Y
+    #Session Agent
+    write    session-agent
+    write    hostname ${CSM IP}
+    write    ip-address ${CSM IP}
+    write    port 5060
+    write    state enabled
+    write    realm-id csm
+    write    egress-realm-id
+    write    trust-me enabled
+    write    done
+    write    exit
+    #Local Policies
+    write    local-policy
+    write    from-address *
+    write    to-address *
+    write    source-realm epc
+    write    description EPC->SBC->CSM
+    write    policy-attributes
+    write    next-hop ${CSM IP}
+    write    realm csm
+    write    state enabled
+    write    done
+    write    exit
+    sleep    4
+    write    exit
+    sleep    4
+    write    y
+    sleep    3
+    write    exit
+    #Media-Manager
+    write    media-manager
+    write    realm-config
+    write    identifier epc
+    write    addr-prefix 0.0.0.0
+    write    network-interfaces ext:0
+    write    done
+    write    identifier csm
+    write    addr-prefix 0.0.0.0
+    write    network-interfaces in:0
+    write    done
+    write    exit
+    #Steering Pool
+    write    steering-pool
+    write    ip-address ${IP2}
+    write    start-port 10000
+    write    end-port 29999
+    write    realm-id epc
+    write    network-interface ext:0
+    write    done
+    write    ip-address ${IP1}
+    write    start-port 30000
+    write    end-port 49999
+    write    realm-id csm
+    write    network-interface in:0
+    write    done
+    write    exit
+    read
+    #Media manager
+    write    media-manager
+    write    state enabled
+    write    latching enabled
+    write    initial-guard-timer 300
+    write    flow-time-limit 86400
+    write    subsq-guard-timer 300
+    write    tcp-flow-time-limit 86400
+    write    tcp-initial-guard-timer 300
+    write    done
+    write    exit
+    Write    exit
+    write    exit
+    #Save-Config and Activate
+    write    save-config
+    sleep    2
+    write    reboot activate
+    sleep    4
+    write    y
+    log    **********Reboot Started**********
+    sleep    50
+    log    **************** Configuration Completed ************
+    read
+
+Launch_App
+    Get_SBC-IP
+    AutoItLibrary.Run    ${App_Exe_Path}
+    Wait For Active Window    Boghe - IMS/RCS Client
+    Win Activate    Boghe - IMS/RCS Client
+    sleep    3
+
+Configure_App
+    [Arguments]    ${username}    ${Public Identity}    ${private Identity}    ${Domain}    ${Password}
+    Win Activate    Boghe - IMS/RCS Client
+    sleep    3
+    Tabloop    2
+    AutoItLibrary.Send    {ENTER}
+    sleep    2
+    AutoItLibrary.Send    {ENTER}
+    Tabloop    6
+    AutoItLibrary.Send    {DOWN}
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    ${username}    #Add \ Dsiplay Name
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    ${Public Identity}    #Add Public Identity    sip:tasuser2@example.demo
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    ${private Identity}    #Add private Identity    tasuser2@example.demo
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    ${Domain}    #Add domain    example.demo
+    Tabloop    2
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    ${Password}    #Add Password    oracle
+    Tabloop    13
+    AutoItLibrary.Send    {DOWN}
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    ${Proxy_IP}
+    Tabloop    9
+    AutoItLibrary.Send    {SPACE}
+    [Teardown]
+
+Register
+    Win Activate    Boghe - IMS/RCS Client
+    sleep    1
+    Tabloop    6
+    AutoItLibrary.Send    {LEFT}
+    sleep    2
+    Tabloop    6
+    AutoItLibrary.Send    {SPACE}
+    sleep    5
+
+MakeCall
+    [Arguments]    ${Caller}
+    sleep    6
+    Tabloop    4
+    AutoItLibrary.Send    ${Caller}    #User we are dialing
+    Tabloop    2
+    sleep    2
+    AutoItLibrary.Send    {ENTER}
+    sleep    10
+
+SBC_Start trace
+    Get_SBC-IP
+    ${Controller_Index}    Open Connection    ${P-CSCF_Controller_IP}
+    Login    ${P-CSCF_Controller_UserLogin}    ${P-CSCF_Controller_Pwd}    10
+    write    sftp -o "StrictHostKeyChecking no" admin@${MGmt_IP}    #run ssh script of Permita
+    sleep    2
+    write    ${SBC_NewPassword}
+    sleep    2
+    write    cd /opt/traces/
+    sleep    2
+    write    rm *
+    sleep    2
+    write    exit
+    write    ssh -o "StrictHostKeyChecking no" user@${MGmt_IP}    #run ssh script of Permita
+    sleep    2
+    write    ${SBC_NewPassword}
+    sleep    2
+    write    en
+    sleep    2
+    write    ${SBC_NewPassword}
+    sleep    2
+    write    packet-trace local start in    #Trace Command for SBC
+    log    P-CSCF trace started.....!
+    sleep    30
+    [Return]    ${Controller_Index}
+
+SBC_Stop trace
+    [Arguments]    ${Controller_Index}    ${Pcap_Name}
+    [Timeout]
+    Switch Connection    ${Controller_Index}
+    write    packet-trace local stop in
+    sleep    3
+    read
+    Close Connection
+    Open Connection    ${P-CSCF_Controller_IP}
+    Login    ${P-CSCF_Controller_UserLogin}    ${P-CSCF_Controller_Pwd}    10
+    write    sftp -o "StrictHostKeyChecking no" admin@${MGmt_IP}
+    sleep    2
+    write    ${SBC_NewPassword}
+    write    cd /opt/traces/
+    write    ls
+    sleep    2
+    ${output}    read
+    @{list}    Split String    ${output}
+    ${pcapfile}    Get From List    ${list}    8
+    write    mget /opt/traces/*
+    sleep    7
+    Open Connection    ${P-CSCF_Controller_IP}
+    Login    ${P-CSCF_Controller_UserLogin}    ${P-CSCF_Controller_Pwd}    10
+    sleep    4
+    SSHLibrary.Get File    /root/${pcapfile}    ${CURDIR}\\PcapFiles\\
+    sleep    3
+    Library.Rename File    ${CURDIR}\\PcapFiles\\    ${pcapfile}    ${Pcap_Name}
+
+Close Application
+    win activate    Boghe - IMS/RCS Client    #Close Application
+    Win Close    Boghe - IMS/RCS Client
+    log    Application Closed
+
+SBC Configuration
+    SBC_PortUpdation
+    PasswordUpdation
+    Setup Entitlements
+    Configuration
+    sleep    60
+    Reboot_loop
+
+Register& Call
+    Get_SBC-IP
+    Register On RemoteMachine    ${Proxy_IP}
+    AutoItLibrary.Run    C:\\Program Files (x86)\\Doubango\\Boghe IMS Client x86\\BogheApp.exe    #Luanch Bhogie on Local Machine
+    Wait For Active Window    Boghe - IMS/RCS Client
+    Win Activate    Boghe - IMS/RCS Client
+    sleep    3
+    Tabloop    2
+    AutoItLibrary.Send    {ENTER}
+    sleep    2
+    AutoItLibrary.Send    {ENTER}
+    Tabloop    6
+    AutoItLibrary.Send    {DOWN}
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    oracle1
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    sip:oracle1@example.demo
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    oracle1@example.demo
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    example.demo
+    Tabloop    2
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    oracle    #Password
+    Tabloop    13
+    AutoItLibrary.Send    {DOWN}
+    Tabloop    1
+    AutoItLibrary.Send    ^a
+    AutoItLibrary.Send    {BS}
+    AutoItLibrary.Send    ${Proxy_IP}    #${IP2}    #Enter Proxy IP
+    Tabloop    9
+    AutoItLibrary.Send    {SPACE}    #Configuration Complete
+    sleep    3
+    Tabloop    6
+    AutoItLibrary.Send    {LEFT}
+    sleep    2
+    Tabloop    6
+    AutoItLibrary.Send    {SPACE}
+    sleep    3
+    Tabloop    4
+    sleep    3
+    AutoItLibrary.Send    oracle2    # Enter \ remote user
+    sleep    3
+    Tabloop    2
+    AutoItLibrary.Send    {SPACE}    #Make call
+    sleep    5
+    Remote.CallAnswer On RemoteMachine    # Answer call on remote machine
+    sleep    20
+    Tabloop    5
+    AutoItLibrary.Send    {ENTER}
+    log    Orginator dropped the call
+    DropCall By RemoteMachine
+
+Get_SBC-IP
+    @{Server}    ImportDetails    ${CURDIR}\\Config\\Enterprise_Config.txt    ${Label}
+    Server_Login    @{Server}    #Controller Login
+    write    rm -rf value.txt
+    write    nova list | grep -i ${VNFName}|awk -F "=" '{print $2}'|awk -F "," '{print $2}'|awk -F ";" '{print $1}'
+    sleep    4
+    ${output}    read
+    ${output}    Split String    ${output}
+    ${Proxy_IP}    Get From List    ${output}    0
+    Set Global Variable    ${Proxy_IP}
+    write    nova list | grep -i ${VNFName}| awk -F ";" '{print $2}' | awk -F "=" '{print $2}'| awk -F " \ " '{print $1}'    #get IP of SBC
+    sleep    5
+    ${output}    read
+    ${output}    Split String    ${output}
+    ${MGmt_IP}    Get From List    ${output}    0
+    Set Global Variable    ${MGmt_IP}
+
+Reboot_loop
+    Get_SBC-IP
+    sleep    3
+    write    clear
+    ${i}    Set Variable    0
+    : FOR    ${i}    IN RANGE    0    200
+    \    ${store}    catenate    ping    -c 1    ${MGmt_IP}
+    \    Write    ${store}
+    \    sleep    5
+    \    ${Output}    read
+    \    ${status}    Run Keyword And Return Status    Should Contain    ${Output}    ttl=64
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    Exit For Loop
+    log    Reboot Completed,Server is UP...............!

@@ -1,0 +1,49 @@
+<div class="tab-content">
+<div id="imstestcase" class="tab-pane fade in active">
+<span id="overlay1" ng-show="searchButtonText == 'Searching'" >
+    <img class="loading_circle" src="../img/loading.gif" width="60px" height="60px" style="margin-top:100px;"></img>
+</span>  
+
+<div class="col-md-3" style="width:25%;margin-top:4%">
+<label for="onvnfimstype">VNF Type : </label>
+<select id="onvnfimstype" ng-model="selectedovnfimstype" ng-change="onvnfimstypechange(selectedovnfimstype);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="1,VPCSCF" >VPCSCF</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:25%;margin-top:4%">
+<label for="onvnfimsname">VNF Name : </label>
+<select id="onvnfimsname" ng-model="selectedovnfimsName" ng-change="onvnfimsNamechange(selectedovnfimsName);" style="height:27px;border-radius:20px;width:125px;">
+<option value="" >--Please Select--</option>
+<option value="1,Perimeta" >Perimeta</option>
+</select>
+</div >
+
+<div class="col-md-3" style="width:25%;margin-top:4%" >
+<label for="snmimstype">VNF Testing : </label>
+<select id="snmimstype" ng-model="selectedimstestName" ng-change="ontestimsChange(selectedimstestName);" style="height: 27px;">
+<option value="" >--Please Select--</option>
+<option value="Sanity Testing" selected="selected">Sanity Testing</option>
+<option value="Functional Testing" selected="selected">Functional Testing</option>
+</select>
+</div>
+
+<div ng-if="showimscheckbox" class="col-md-3" style="width:30%; font-size:30; margin: 19px; margin-top:5%" >
+<input id="chckbtn" name="chktest" ng-model="test1" type="checkbox" ng-change="VMCreation(test1);">IMS User Registration 
+<br>
+<input id="chckbtn" name="chktest" ng-model="test2" type="checkbox" ng-change="PortUpdatin(test2);">IMS Call
+<br>
+</div>
+
+
+
+<div  class="col-md-3" style="margin-top:10%;margin-left:8%;">
+<input type="button" value="Execute" id="tstbutn" class="btn btn-primary" style="width;130px;" ng-disabled="isDis" ng-click="gotoexecutebtn();">
+<input type="button" value="Reset" class="btn btn-primary" style="width;150px;" ng-click="selectedovnfimstype='';selectedovnfimsName='';selectedimstestName='';"/>
+<input type="button" value="Cancel" class="btn btn-primary" style="width;150px;" ng-click="imscancel();"/>
+</div>
+
+
+</div>
+</div>

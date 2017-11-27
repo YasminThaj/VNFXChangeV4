@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170411 12:13:33.989" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="D:\Automation_demo\back_tar\scripts" id="s1" name="Scripts">
+<suite source="D:\Automation_demo\back_tar\scripts\demo.robot" id="s1-s1" name="Demo">
+<test id="s1-s1-t1" name="configuration_setup">
+<kw name="Time_function">
+<assign>
+<var>${start_time}</var>
+</assign>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170411 12:13:35.575" level="INFO">${output} = 2017-04-11 12:13:35</msg>
+<status status="PASS" endtime="20170411 12:13:35.575" starttime="20170411 12:13:35.574"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20170411 12:13:35.575" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20170411 12:13:35.576" starttime="20170411 12:13:35.575"></status>
+</kw>
+<msg timestamp="20170411 12:13:35.576" level="INFO">${start_time} = 2017-04-11 12:13:35</msg>
+<status status="PASS" endtime="20170411 12:13:35.576" starttime="20170411 12:13:35.574"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${start_time}</arg>
+</arguments>
+<msg timestamp="20170411 12:13:35.576" level="INFO">${start_time} = 2017-04-11 12:13:35</msg>
+<status status="PASS" endtime="20170411 12:13:35.577" starttime="20170411 12:13:35.576"></status>
+</kw>
+<kw name="IP_Address">
+<assign>
+<var>${local_IP}</var>
+</assign>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${server_IP}</arg>
+</arguments>
+<status status="PASS" endtime="20170411 12:13:35.578" starttime="20170411 12:13:35.577"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${server_username}</arg>
+<arg>${server_password}</arg>
+</arguments>
+<msg timestamp="20170411 12:13:35.578" level="INFO">Logging into '192.168.255.252:22' as 'root'.</msg>
+<msg timestamp="20170411 12:13:47.076" level="INFO">Read output: Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 11 12:13:37 IST 2017
+
+  System load:  0.48                Processes:             492
+  Usage of /:   11.6% of 664.72GB   Users logged in:       1
+  Memory usage: 1%                  IP address for br0:    192.168.255.252
+  Swap usage:   0%                  IP address for virbr0: 192.168.122.1
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+Last login: Tue Apr 11 12:13:38 2017 from 10.53.172.8
+root@stacknode:~#</msg>
+<status status="PASS" endtime="20170411 12:13:47.076" starttime="20170411 12:13:35.578"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>login to router is succesful</arg>
+</arguments>
+<msg timestamp="20170411 12:13:47.078" level="INFO">login to router is succesful</msg>
+<status status="PASS" endtime="20170411 12:13:47.078" starttime="20170411 12:13:47.078"></status>
+</kw>
+<kw name="Get File" library="SSHLibrary">
+<doc>Downloads file(s) from the remote machine to the local machine.</doc>
+<arguments>
+<arg>${Ip_details_file}</arg>
+<arg>${IP_local_file}</arg>
+</arguments>
+<msg timestamp="20170411 12:13:47.085" level="INFO">[chan 1] Opened sftp connection (server version 3)</msg>
+<msg timestamp="20170411 12:13:47.102" level="INFO">'//root//robot_input.txt' -&gt; 'D:\Automation_demo\back_tar\scripts\robot_input.txt'</msg>
+<status status="PASS" endtime="20170411 12:13:47.102" starttime="20170411 12:13:47.079"></status>
+</kw>
+<kw name="IP Retreival" library="VerizonDemo">
+<arguments>
+<arg>${IP_local_file}</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170411 12:13:47.103" level="INFO">${output} = -</msg>
+<status status="PASS" endtime="20170411 12:13:47.103" starttime="20170411 12:13:47.102"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<assign>
+<var>${IP}</var>
+</assign>
+<msg timestamp="20170411 12:13:47.104" level="INFO">${IP} = -</msg>
+<status status="PASS" endtime="20170411 12:13:47.104" starttime="20170411 12:13:47.103"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${IP}</arg>
+</arguments>
+<msg timestamp="20170411 12:13:47.104" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20170411 12:13:47.104" starttime="20170411 12:13:47.104"></status>
+</kw>
+<msg timestamp="20170411 12:13:47.104" level="INFO">${local_IP} = -</msg>
+<status status="PASS" endtime="20170411 12:13:47.104" starttime="20170411 12:13:35.577"></status>
+</kw>
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given `host` and `port`.</doc>
+<arguments>
+<arg>${local_IP}</arg>
+</arguments>
+<status status="PASS" endtime="20170411 12:13:47.105" starttime="20170411 12:13:47.105"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given `username` and `password`.</doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170411 12:13:47.105" level="INFO">Logging into '-:22' as 'vyatta'.</msg>
+<msg timestamp="20170411 12:13:49.814" level="FAIL">gaierror: [Errno 11004] getaddrinfo failed</msg>
+<status status="FAIL" endtime="20170411 12:13:49.815" starttime="20170411 12:13:47.105"></status>
+</kw>
+<status status="FAIL" endtime="20170411 12:13:49.816" critical="yes" starttime="20170411 12:13:35.573">gaierror: [Errno 11004] getaddrinfo failed</status>
+</test>
+<status status="FAIL" endtime="20170411 12:13:49.817" starttime="20170411 12:13:35.047"></status>
+</suite>
+<status status="FAIL" endtime="20170411 12:13:49.820" starttime="20170411 12:13:35.011"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Scripts" pass="0">Scripts</stat>
+<stat fail="1" id="s1-s1" name="Demo" pass="0">Scripts.Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
